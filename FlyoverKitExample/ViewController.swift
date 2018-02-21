@@ -19,20 +19,11 @@ class ViewController: UIViewController {
     
     // MARK: Propertirs
 
-    /// The MapView
-    lazy private var mapView: MKMapView = {
-        let mapView = MKMapView()
-        mapView.showsCompass = false
-        mapView.showsBuildings = true
-        mapView.isUserInteractionEnabled = false
-        return mapView
+    /// The FlyoverMapView
+    lazy private var flyoverMapView: FlyoverMapView = {
+        return FlyoverMapView(configurationTheme: .default)
     }()
-    
-    /// The FlyoverCamera
-    lazy private var flyoverCamera: FlyoverCamera = {
-        return FlyoverCamera(mapView: self.mapView, configurationTheme: .default)
-    }()
-    
+
     /// The ConfigurationTableView
     lazy private var configurationTableView: ConfigurationTableView = {
         return ConfigurationTableView(configurationDelegate: self)
@@ -54,7 +45,7 @@ class ViewController: UIViewController {
         // Add Navigation Items
         self.addNavigationItems()
         // Add Subviews
-        self.view.addSubview(self.mapView)
+        self.view.addSubview(self.flyoverMapView)
         self.view.addSubview(self.configurationTableView)
         // Layout SubViews
         self.layoutSubViews()
@@ -64,27 +55,28 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Start
-        self.flyoverCamera.start(coordinate: self.location)
+        self.flyoverMapView.start(self.flyoverMapView.annotations.first!)
+        self.flyoverMapView.start(self.location)
     }
     
     /// viewDidDisappear
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         // Stop
-        self.flyoverCamera.stop()
+        self.flyoverMapView.stop()
     }
     
     // MARK: Layout
     
     /// Layout subviews
     private func layoutSubViews() {
-        self.mapView.snp.makeConstraints { (make) in
+        self.flyoverMapView.snp.makeConstraints { (make) in
             make.top.equalTo(self.view.safeAreaLayoutGuide)
             make.left.right.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.45)
         }
         self.configurationTableView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.mapView.snp.bottom)
+            make.top.equalTo(self.flyoverMapView.snp.bottom)
             make.left.right.bottom.equalTo(self.view)
         }
     }
@@ -103,12 +95,12 @@ class ViewController: UIViewController {
     
     /// Handle double tap
     @objc func actionBarButtonItemTouched(_ sender: UIBarButtonItem) {
-        self.mapView.snp.removeConstraints()
+        self.flyoverMapView.snp.removeConstraints()
         self.configurationTableView.snp.removeConstraints()
         if self.isMapFullscreen {
             self.layoutSubViews()
         } else {
-            self.mapView.snp.makeConstraints({ (make) in
+            self.flyoverMapView.snp.makeConstraints({ (make) in
                 make.edges.equalTo(self.view.safeAreaLayoutGuide)
             })
         }
@@ -142,26 +134,26 @@ extension ViewController: ConfigurationTableViewDelegate {
             // Check flyover started/stop state
             if started {
                 // Start
-                self.flyoverCamera.start(coordinate: self.location)
+                self.flyoverMapView.start(self.location)
             } else {
                 // Stop
-                self.flyoverCamera.stop()
+                self.flyoverMapView.stop()
             }
         case .mapType(let mapType):
             // Set MapView Type
-            self.mapView.mapType = mapType
+            self.flyoverMapView.mapType = mapType
         case .duration(let duration):
             // Set duration
-            self.flyoverCamera.configuration.duration = duration
+            self.flyoverMapView.configuration.duration = duration
         case .altitude(let altitude):
             // Set altitude
-            self.flyoverCamera.configuration.altitude = altitude
+            self.flyoverMapView.configuration.altitude = altitude
         case .pitch(let pitch):
             // Set pitch
-            self.flyoverCamera.configuration.pitch = pitch
+            self.flyoverMapView.configuration.pitch = pitch
         case .headingStep(let headingStep):
             // Set headingStep
-            self.flyoverCamera.configuration.headingStep = headingStep
+            self.flyoverMapView.configuration.headingStep = headingStep
         }
     }
     

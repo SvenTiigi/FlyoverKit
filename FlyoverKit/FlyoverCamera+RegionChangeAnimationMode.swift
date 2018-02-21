@@ -1,5 +1,5 @@
 //
-//  FlyoverCamera+StartAnimationMode.swift
+//  FlyoverCamera+RegionChangeAnimationMode.swift
 //  FlyoverKit
 //
 //  Created by Sven Tiigi on 21.02.18.
@@ -10,9 +10,9 @@ import Foundation
 
 public extension FlyoverCamera {
     
-    /// The StartAnimationMode Mode Enum specifies if the
+    /// The RegionChangeAnimationMode Enum specifies if the
     /// switch/transition to a new coordinate should be animated or not
-    enum StartAnimationMode {
+    enum RegionChangeAnimationMode {
         /// No animation should be applied
         case none
         /// Animation with given TimeInterval and AnimationCurve
