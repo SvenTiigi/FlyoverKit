@@ -55,7 +55,6 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Start
-        self.flyoverMapView.start(self.flyoverMapView.annotations.first!)
         self.flyoverMapView.start(self.location)
     }
     
