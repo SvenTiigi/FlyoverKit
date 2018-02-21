@@ -67,8 +67,6 @@ open class FlyoverMapView: MKMapView {
         self.showsCompass = false
         // Show buildings
         self.showsBuildings = true
-        // Disable userInteraction
-        self.isUserInteractionEnabled = false
     }
     
     /// Convenience initializer with flyover configuration theme and map type
@@ -98,6 +96,9 @@ open class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - annotation: The MKAnnotation
     open func start(annotation: MKAnnotation) {
+        // Disable userInteraction
+        self.isUserInteractionEnabled = false
+        // Start flyover with annotation coordinate
         self.start(flyover: annotation.coordinate)
     }
     
@@ -106,12 +107,17 @@ open class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
     open func start(flyover: Flyover) {
+        // Disable userInteraction
+        self.isUserInteractionEnabled = false
+        // Start flyover
         self.flyoverCamera.start(flyover: flyover)
     }
     
     /// Stop Flyover
     open func stop() {
         self.flyoverCamera.stop()
+        // Enable userInteraction
+        self.isUserInteractionEnabled = true
     }
     
 }
