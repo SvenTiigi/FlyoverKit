@@ -85,15 +85,14 @@ class ViewController: UIViewController {
     /// Add navigation items
     private func addNavigationItems() {
         self.title = "FlyoverCameraKit"
-        
-        let actionBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .plain, target: self, action: #selector(actionBarButtonItemTouched(_:)))
+        let fullscreenBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .plain, target: self, action: #selector(fullscreenBarButtonItemTouched(_:)))
         let githubBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "github"), style: .plain, target: self, action: #selector(githubBarButtonItemTouched(_:)))
-        self.navigationItem.leftBarButtonItem = actionBarButtonItem
+        self.navigationItem.leftBarButtonItem = fullscreenBarButtonItem
         self.navigationItem.rightBarButtonItem = githubBarButtonItem
     }
     
     /// Handle double tap
-    @objc func actionBarButtonItemTouched(_ sender: UIBarButtonItem) {
+    @objc func fullscreenBarButtonItemTouched(_ sender: UIBarButtonItem) {
         self.flyoverMapView.snp.removeConstraints()
         self.configurationTableView.snp.removeConstraints()
         if self.isMapFullscreen {
