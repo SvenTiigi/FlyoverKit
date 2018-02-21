@@ -21,14 +21,14 @@ open class FlyoverMapView: MKMapView {
     }()
     
     /// The FlyoverMapView MapType
-    open var flyoverMapType: MapType {
+    open var flyoverMapType: MapType? {
         set {
             // Set mapType rawValue
-            self.mapType = newValue.rawValue
+            newValue.flatMap { self.mapType = $0.rawValue }
         }
         get {
             // Return MapType constructed with MKMapType otherwise return standard
-            return MapType(rawValue: self.mapType) ?? .standard
+            return MapType(rawValue: self.mapType)
         }
     }
     
@@ -114,62 +114,6 @@ open class FlyoverMapView: MKMapView {
     /// Stop Flyover
     open func stop() {
         self.flyoverCamera.stop()
-    }
-    
-}
-
-// MARK: - SupportedMapType
-
-public extension FlyoverMapView {
-    
-    /// The FlyoverMapView supported MapType
-    enum MapType {
-        /// Standard
-        case standard
-        /// Satellite Flyover
-        case satelliteFlyover
-        /// Hybrid Flyover
-        case hybridFlyover
-    }
-    
-}
-
-// MARK: - SupportedMapType RawRepresentable
-
-extension FlyoverMapView.MapType: RawRepresentable {
-    
-    /// Associated type RawValue as MKMapType
-    public typealias RawValue = MKMapType
-    
-    /// RawRepresentable initializer
-    ///
-    /// - Parameters:
-    ///   - rawValue: The MapType
-    public init?(rawValue: RawValue) {
-        // Switch on rawValue
-        switch rawValue {
-        case .standard:
-            self = .standard
-        case .satelliteFlyover:
-            self = .satelliteFlyover
-        case .hybridFlyover:
-            self = .hybridFlyover
-        default:
-            return nil
-        }
-    }
-    
-    /// The MKMapType
-    public var rawValue: RawValue {
-        // Switch on self
-        switch self {
-        case .standard:
-            return .standard
-        case .satelliteFlyover:
-            return .satelliteFlyover
-        case .hybridFlyover:
-            return .hybridFlyover
-        }
     }
     
 }
