@@ -112,11 +112,11 @@ public class FlyoverMapView: MKMapView {
     /// Start flyover with FlyoverAble and the optional region change animation mode.
     ///
     /// - Parameters:
-    ///   - flyoverAble: The FlyoverAble Type (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
+    ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
     ///   - regionChangeAnimationMode: The region change animation mode (Default: none)
-    public func start(_ flyoverAble: FlyoverAble,
+    public func start(_ flyover: Flyover,
                       regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
-        self.flyoverCamera.start(flyoverAble, regionChangeAnimationMode: regionChangeAnimationMode)
+        self.flyoverCamera.start(flyover, regionChangeAnimationMode: regionChangeAnimationMode)
     }
     
     /// Stop Flyover

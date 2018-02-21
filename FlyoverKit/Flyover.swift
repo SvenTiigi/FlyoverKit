@@ -1,5 +1,5 @@
 //
-//  FlyoverAble.swift
+//  Flyover.swift
 //  FlyoverKit
 //
 //  Created by Sven Tiigi on 21.02.18.
@@ -8,67 +8,67 @@
 
 import MapKit
 
-// MARK: - FlyoverAble Protocol
+// MARK: - Flyover Protocol
 
-public protocol FlyoverAble {
-    /// The coordinate
+public protocol Flyover {
+    /// The flyover coordinate
     var coordinate: CLLocationCoordinate2D { get }
 }
 
-// MARK: - CoreLocation Framework FlyoverAble Extensions
+// MARK: - CoreLocation Framework Flyover Extensions
 
-extension CLLocationCoordinate2D: FlyoverAble {
-    /// The coordinate
+extension CLLocationCoordinate2D: Flyover {
+    /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {
         return self
     }
 }
-extension CLCircularRegion: FlyoverAble {
-    /// The coordinate
+extension CLCircularRegion: Flyover {
+    /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {
         return self.center
     }
 }
-extension CLLocation: FlyoverAble { }
-extension CLVisit: FlyoverAble { }
+extension CLLocation: Flyover { }
+extension CLVisit: Flyover { }
 
-// MARK: - MapKit Framework FlyoverAble Extensions
+// MARK: - MapKit Framework Flyover Extensions
 
-extension MKMapItem: FlyoverAble {
-    /// The coordinate
+extension MKMapItem: Flyover {
+    /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {
         return self.placemark.coordinate
     }
 }
-extension MKMapView: FlyoverAble {
-    /// The coordinate
+extension MKMapView: Flyover {
+    /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {
         return self.centerCoordinate
     }
 }
-extension MKMapPoint: FlyoverAble {
-    /// The coordinate
+extension MKMapPoint: Flyover {
+    /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {
         return MKCoordinateForMapPoint(self)
     }
 }
-extension MKCoordinateRegion: FlyoverAble {
-    /// The coordinate
+extension MKCoordinateRegion: Flyover {
+    /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {
         return self.center
     }
 }
-extension MKMapRect: FlyoverAble {
-    /// The coordinate
+extension MKMapRect: Flyover {
+    /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {
         return self.origin.coordinate
     }
 }
-extension MKCoordinateSpan: FlyoverAble {
-    /// The coordinate
+extension MKCoordinateSpan: Flyover {
+    /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: self.latitudeDelta, longitude: self.longitudeDelta)
     }
 }
-extension MKShape: FlyoverAble { }
-extension MKPlacemark: FlyoverAble { }
+extension MKShape: Flyover { }
+extension MKPlacemark: Flyover { }

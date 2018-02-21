@@ -91,20 +91,20 @@ public class FlyoverCamera {
     /// Start flyover with FlyoverAble object and optional region change animation mode
     ///
     /// - Parameters:
-    ///   - flyoverAble: The FlyoverAble Type (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
+    ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
     ///   - regionChangeAnimationMode: he region change animation mode (Default: none)
-    public func start(_ flyoverAble: FlyoverAble, regionChangeAnimationMode: RegionChangeAnimationMode = .none) {
+    public func start(_ flyover: Flyover, regionChangeAnimationMode: RegionChangeAnimationMode = .none) {
         // Set coordinate
-        self.coordinate = flyoverAble.coordinate
+        self.coordinate = flyover.coordinate
         // Stop current animation
         self.animator?.forceStopAnimation()
         // Set center coordinate
-        self.mapCamera.centerCoordinate = flyoverAble.coordinate
+        self.mapCamera.centerCoordinate = flyover.coordinate
         // Check if duration is zero or the current mapView camera center coordinates
         // equals nearly the same to the current coordinate
         if self.mapView?.camera.centerCoordinate ~~ self.coordinate {
             // Simply perform flyover as we still looking at the same coordinate
-            self.performFlyover(flyoverAble.coordinate)
+            self.performFlyover(flyover.coordinate)
         } else if case .animated(let duration, let curve) = regionChangeAnimationMode, duration > 0 {
             // Apply StartAnimationMode animated
             // Initialize start animatior
@@ -118,7 +118,7 @@ public class FlyoverCamera {
             // Add completion
             startAnimator.setCompletion {
                 // Start rotation
-                self.performFlyover(flyoverAble.coordinate)
+                self.performFlyover(flyover.coordinate)
             }
             // Start animation
             startAnimator.startAnimation()
@@ -127,7 +127,7 @@ public class FlyoverCamera {
             // Set MapView Camera to look at the coordinate
             self.mapView?.camera = self.mapCamera
             // Perform flyover
-            self.performFlyover(flyoverAble.coordinate)
+            self.performFlyover(flyover.coordinate)
         }
     }
     
