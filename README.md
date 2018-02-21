@@ -73,7 +73,7 @@ flyoverCamera.start(flyover: eiffelTower)
 ```
 
 ### FlyoverMapView
-If you wish to show MapView which is already preconfigured to perform a flyover on a given location.
+If you wish to show a MapView which is already preconfigured to perform a flyover on a given location.
 
 ```swift
 // Initialize the FlyoverMapView
