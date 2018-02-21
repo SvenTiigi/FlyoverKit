@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import SnapKit
+import SafariServices
 import FlyoverKit
 
 // MARK: - ViewController
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         let mapView = MKMapView()
         mapView.showsCompass = false
         mapView.showsBuildings = true
+        mapView.isUserInteractionEnabled = false
         return mapView
     }()
     
@@ -47,16 +49,29 @@ class ViewController: UIViewController {
     /// ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set white background color
         self.view.backgroundColor = .white
-        self.title = "FlyoverCameraKit"
+        // Add Navigation Items
+        self.addNavigationItems()
+        // Add Subviews
         self.view.addSubview(self.mapView)
         self.view.addSubview(self.configurationTableView)
+        // Layout SubViews
         self.layoutSubViews()
+    }
+    
+    /// viewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Start
         self.flyoverCamera.start(coordinate: self.location)
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
-        tapGestureRecognizer.numberOfTapsRequired = 2
-        tapGestureRecognizer.numberOfTouchesRequired = 2
-        self.view.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    /// viewDidDisappear
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        // Stop
+        self.flyoverCamera.stop()
     }
     
     // MARK: Layout
@@ -76,8 +91,18 @@ class ViewController: UIViewController {
     
     // MARK: Custom Functions
     
+    /// Add navigation items
+    private func addNavigationItems() {
+        self.title = "FlyoverCameraKit"
+        
+        let actionBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .plain, target: self, action: #selector(actionBarButtonItemTouched(_:)))
+        let githubBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "github"), style: .plain, target: self, action: #selector(githubBarButtonItemTouched(_:)))
+        self.navigationItem.leftBarButtonItem = actionBarButtonItem
+        self.navigationItem.rightBarButtonItem = githubBarButtonItem
+    }
+    
     /// Handle double tap
-    @objc func handleDoubleTap() {
+    @objc func actionBarButtonItemTouched(_ sender: UIBarButtonItem) {
         self.mapView.snp.removeConstraints()
         self.configurationTableView.snp.removeConstraints()
         if self.isMapFullscreen {
@@ -88,6 +113,17 @@ class ViewController: UIViewController {
             })
         }
         self.isMapFullscreen = !self.isMapFullscreen
+    }
+    
+    /// Github BarButtonItem touched handler
+    @objc func githubBarButtonItemTouched(_ sender: UIBarButtonItem) {
+        guard let url = URL(string: "https://github.com/SvenTiigi/FlyoverKit/blob/master/README.md") else {
+            print("Unable to construct Github Repo URL")
+            return
+        }
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.preferredControlTintColor = .main
+        self.present(safariViewController, animated: true)
     }
     
 }
