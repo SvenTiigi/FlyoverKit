@@ -93,7 +93,7 @@ public class FlyoverCamera {
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
     ///   - regionChangeAnimationMode: he region change animation mode (Default: none)
-    public func start(_ flyover: Flyover, regionChangeAnimationMode: RegionChangeAnimationMode = .none) {
+    public func start(flyover: Flyover, regionChangeAnimationMode: RegionChangeAnimationMode = .none) {
         // Set coordinate
         self.coordinate = flyover.coordinate
         // Stop current animation

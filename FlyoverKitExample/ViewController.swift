@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Start
-        self.flyoverMapView.start(self.location)
+        self.flyoverMapView.start(flyover: self.location)
     }
     
     /// viewDidDisappear
@@ -133,7 +133,7 @@ extension ViewController: ConfigurationTableViewDelegate {
             // Check flyover started/stop state
             if started {
                 // Start
-                self.flyoverMapView.start(self.location)
+                self.flyoverMapView.start(flyover: self.location)
             } else {
                 // Stop
                 self.flyoverMapView.stop()

@@ -104,9 +104,9 @@ public class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - annotation: The MKAnnotation
     ///   - regionChangeAnimationMode: The region change animation mode (Default: none)
-    public func start(_ annotation: MKAnnotation,
+    public func start(annotation: MKAnnotation,
                       regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
-        self.start(annotation.coordinate, regionChangeAnimationMode: regionChangeAnimationMode)
+        self.start(flyover: annotation.coordinate, regionChangeAnimationMode: regionChangeAnimationMode)
     }
     
     /// Start flyover with FlyoverAble and the optional region change animation mode.
@@ -114,9 +114,9 @@ public class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
     ///   - regionChangeAnimationMode: The region change animation mode (Default: none)
-    public func start(_ flyover: Flyover,
+    public func start(flyover: Flyover,
                       regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
-        self.flyoverCamera.start(flyover, regionChangeAnimationMode: regionChangeAnimationMode)
+        self.flyoverCamera.start(flyover: flyover, regionChangeAnimationMode: regionChangeAnimationMode)
     }
     
     /// Stop Flyover
