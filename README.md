@@ -10,11 +10,10 @@
 
 `FlyoverKit` enables you to present stunning 360° flyover views in your iOS App with zero effot and 100% configuration options
 
-## Example App
+## FlyoverKit Example App
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitExampleApplication.png" alt="Example Application Screenshot" align="right" width="300">
-<br/>
 
-Try out the `FlyoverKitExample` application to see `FlyoverKit` in action and get a brief look of configuration options. Please keep in mind that the `SatelliteFlyover` and `HybridFlyover` will only work on a real iOS device.
+The `FlyoverKitExample` Application is an excellent way to see `FlyoverKit` in action. You can get a brief look of configuration options and how they change the flyover behaviour. Please keep in mind that the `SatelliteFlyover` and `HybridFlyover` will only work on a real iOS device.
 
 In order to run the example Application you have to first generate the Frameworks via `Carthage`
 
