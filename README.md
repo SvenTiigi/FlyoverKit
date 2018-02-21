@@ -10,12 +10,84 @@
 A simple and small `Kit` to perform awesome 360° flyovers on your MKMapView.
 
 ## Installation
-`Coming soon`
+
+### CocoaPods
+
+STLocationRequest is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```bash
+pod 'FlyoverKit'
+```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate STLocationRequest into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "SvenTiigi/FlyoverKit"
+```
+
+Run `carthage update --platform iOS` to build the framework and drag the built `FlyoverKit.framework` into your Xcode project. 
 
 ## Usage
-`Coming soon`
+`FlyoverKit` offers three ways to implement a flyover.
 
-# Architecture
+### FlyoverMapView
+If you wish to show MapView which is already preconfigured to perform a flyover on a given location.
+
+```swift
+// Initialize the FlyoverMapView
+let flyoverMapView = FlyoverMapView()
+
+// Initialize a location
+let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+
+// Start flyover
+flyoverMapView.start(flyover: eiffelTower)
+```
+
+### FlyoverCamera
+If you already have a `MKMapView` in your `Controller` and want to add a flyover to this MapView, use the `FlyoverCamera`.
+
+```swift
+// Initialize the FlyoverCamera with a MKMapView
+let flyoverCamera = FlyoverCamera(
+    mapView: mapView,
+    configuration: configuration
+)
+
+// Initialize a location
+let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+
+// Start flyover
+flyoverCamera.start(flyover: eiffelTower)
+```
+
+### FlyoverMapViewController
+If you wish to present a `UIViewController` with an embedded `FlyoverMapView` to perform a flyover on a given location.
+
+```swift
+// Initialize a location
+let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+
+// Initialize the FlyoverMapViewController with a Flyover object
+let controller = FlyoverMapViewController(flyover: eiffelTower)
+
+// Present controller
+self.present(controller, animated: true)
+```
+
+## Advanced
 The `FlyoverKit` is based on a 4-layer architecture:
 
 * Flyover
