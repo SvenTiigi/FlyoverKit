@@ -11,17 +11,17 @@ import MapKit
 // MARK: - FlyoverMapView
 
 /// The FlyoverMapView
-public class FlyoverMapView: MKMapView {
+open class FlyoverMapView: MKMapView {
     
     // MARK: Properties
     
     /// The FlyoverCamera
-    public lazy var flyoverCamera: FlyoverCamera = {
+    open lazy var flyoverCamera: FlyoverCamera = {
         return FlyoverCamera(mapView: self, configurationTheme: .default)
     }()
     
     /// The FlyoverMapView MapType
-    public var flyoverMapType: MapType {
+    open var flyoverMapType: MapType {
         set {
             // Set mapType rawValue
             self.mapType = newValue.rawValue
@@ -33,7 +33,7 @@ public class FlyoverMapView: MKMapView {
     }
     
     /// The FlyoverCamera Configuration computed property for easy access
-    public var configuration: FlyoverCamera.Configuration {
+    open var configuration: FlyoverCamera.Configuration {
         set {
             // Set new value
             self.flyoverCamera.configuration = newValue
@@ -45,7 +45,7 @@ public class FlyoverMapView: MKMapView {
     }
     
     /// Retrieve boolean if the FlyoverCamera is started
-    public var isStarted: Bool {
+    open var isStarted: Bool {
         // Return FlyoverCamera isStarted property
         return self.flyoverCamera.isStarted
     }
@@ -67,6 +67,8 @@ public class FlyoverMapView: MKMapView {
         self.showsCompass = false
         // Show buildings
         self.showsBuildings = true
+        // Disable userInteraction
+        self.isUserInteractionEnabled = false
     }
     
     /// Convenience initializer with flyover configuration theme and map type
@@ -96,8 +98,7 @@ public class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - annotation: The MKAnnotation
     ///   - regionChangeAnimationMode: The region change animation mode (Default: none)
-    public func start(annotation: MKAnnotation,
-                      regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
+    open func start(annotation: MKAnnotation, regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
         self.start(flyover: annotation.coordinate, regionChangeAnimationMode: regionChangeAnimationMode)
     }
     
@@ -106,13 +107,12 @@ public class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
     ///   - regionChangeAnimationMode: The region change animation mode (Default: none)
-    public func start(flyover: Flyover,
-                      regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
+    open func start(flyover: Flyover, regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
         self.flyoverCamera.start(flyover: flyover, regionChangeAnimationMode: regionChangeAnimationMode)
     }
     
     /// Stop Flyover
-    public func stop() {
+    open func stop() {
         self.flyoverCamera.stop()
     }
     

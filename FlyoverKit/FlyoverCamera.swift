@@ -11,12 +11,12 @@ import MapKit
 // MARK: - FlyoverCamera
 
 /// The FlyoverCamera
-public class FlyoverCamera {
+open class FlyoverCamera {
     
     // MARK: Public properties
     
     /// The configuration
-    public var configuration: Configuration {
+    open var configuration: Configuration {
         willSet {
             // Force stop animation
             self.animator?.forceStopAnimation()
@@ -32,7 +32,7 @@ public class FlyoverCamera {
     }
     
     /// Retrieve boolean if flyover has been started and is active
-    public var isStarted: Bool {
+    open var isStarted: Bool {
         return self.coordinate != nil
     }
     
@@ -42,7 +42,7 @@ public class FlyoverCamera {
     private weak var mapView: MKMapView?
     
     /// The MapView Camera
-    lazy private var mapCamera: MKMapCamera = {
+    private lazy var mapCamera: MKMapCamera = {
         let camera = MKMapCamera()
         camera.altitude = self.configuration.altitude
         camera.pitch = CGFloat(self.configuration.pitch)
@@ -50,7 +50,7 @@ public class FlyoverCamera {
     }()
     
     /// The animation curve
-    public let curve: UIViewAnimationCurve = .linear
+    open let curve: UIViewAnimationCurve = .linear
     
     /// The current coordinate
     private var coordinate: CLLocationCoordinate2D?
@@ -93,7 +93,7 @@ public class FlyoverCamera {
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
     ///   - regionChangeAnimationMode: he region change animation mode (Default: none)
-    public func start(flyover: Flyover, regionChangeAnimationMode: RegionChangeAnimationMode = .none) {
+    open func start(flyover: Flyover, regionChangeAnimationMode: RegionChangeAnimationMode = .none) {
         // Set coordinate
         self.coordinate = flyover.coordinate
         // Stop current animation
@@ -132,7 +132,7 @@ public class FlyoverCamera {
     }
     
     /// Stop flyover
-    public func stop() {
+    open func stop() {
         // Clear coordinate
         self.coordinate = nil
         // Unwrap MapView Camera Heading and fractionComplete

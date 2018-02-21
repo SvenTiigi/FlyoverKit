@@ -26,6 +26,7 @@
 		3D8F94EF203D86BB006E7659 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94EE203D86BB006E7659 /* ViewController.swift */; };
 		3DB39A4D203D9C7E00E00B2D /* FlyoverMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A4C203D9C7E00E00B2D /* FlyoverMapView.swift */; };
 		3DB39A4F203DAA4A00E00B2D /* Flyover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A4E203DAA4A00E00B2D /* Flyover.swift */; };
+		3DB39A51203DBF9B00E00B2D /* FlyoverMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		3D8F94EE203D86BB006E7659 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3DB39A4C203D9C7E00E00B2D /* FlyoverMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverMapView.swift; sourceTree = "<group>"; };
 		3DB39A4E203DAA4A00E00B2D /* Flyover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flyover.swift; sourceTree = "<group>"; };
+		3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				3D8F94A7203D804F006E7659 /* FlyoverKit.h */,
 				3D8F94A8203D804F006E7659 /* Info.plist */,
 				3DB39A4C203D9C7E00E00B2D /* FlyoverMapView.swift */,
+				3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */,
 				3DB39A4E203DAA4A00E00B2D /* Flyover.swift */,
 				3D8F94BF203D80B1006E7659 /* FlyoverCamera.swift */,
 				3D8F94C1203D810A006E7659 /* FlyoverCamera+Configuration.swift */,
@@ -378,6 +381,7 @@
 				3D8F94C0203D80B1006E7659 /* FlyoverCamera.swift in Sources */,
 				3D8F94C4203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimationMode.swift in Sources */,
 				3D8F94C2203D810A006E7659 /* FlyoverCamera+Configuration.swift in Sources */,
+				3DB39A51203DBF9B00E00B2D /* FlyoverMapViewController.swift in Sources */,
 				3DB39A4D203D9C7E00E00B2D /* FlyoverMapView.swift in Sources */,
 				3DB39A4F203DAA4A00E00B2D /* Flyover.swift in Sources */,
 			);
