@@ -209,7 +209,7 @@ Contributions are very welcome 🙌 🤓
 ## License
 
 ```
-STLocationRequest
+FlyoverKit
 Copyright (c) 2018 Sven Tiigi <sven.tiigi@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
