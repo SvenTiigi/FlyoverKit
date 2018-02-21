@@ -92,8 +92,7 @@ open class FlyoverCamera {
     ///
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
-    ///   - regionChangeAnimationMode: he region change animation mode (Default: none)
-    open func start(flyover: Flyover, regionChangeAnimationMode: RegionChangeAnimationMode = .none) {
+    open func start(flyover: Flyover) {
         // Set coordinate
         self.coordinate = flyover.coordinate
         // Stop current animation
@@ -105,7 +104,7 @@ open class FlyoverCamera {
         if self.mapView?.camera.centerCoordinate ~~ self.coordinate {
             // Simply perform flyover as we still looking at the same coordinate
             self.performFlyover(flyover.coordinate)
-        } else if case .animated(let duration, let curve) = regionChangeAnimationMode, duration > 0 {
+        } else if case .animated(let duration, let curve) = self.configuration.regionChangeAnimation, duration > 0 {
             // Apply StartAnimationMode animated
             // Initialize start animatior
             let startAnimator = UIViewPropertyAnimator(

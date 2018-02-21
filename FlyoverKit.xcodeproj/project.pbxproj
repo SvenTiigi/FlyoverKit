@@ -12,7 +12,7 @@
 		3D8F94B5203D804F006E7659 /* FlyoverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D8F94A7203D804F006E7659 /* FlyoverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D8F94C0203D80B1006E7659 /* FlyoverCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94BF203D80B1006E7659 /* FlyoverCamera.swift */; };
 		3D8F94C2203D810A006E7659 /* FlyoverCamera+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94C1203D810A006E7659 /* FlyoverCamera+Configuration.swift */; };
-		3D8F94C4203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94C3203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimationMode.swift */; };
+		3D8F94C4203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94C3203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimation.swift */; };
 		3D8F94CC203D849D006E7659 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94CB203D849D006E7659 /* AppDelegate.swift */; };
 		3D8F94D3203D849D006E7659 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F94D2203D849D006E7659 /* Assets.xcassets */; };
 		3D8F94D6203D849D006E7659 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F94D4203D849D006E7659 /* LaunchScreen.storyboard */; };
@@ -70,7 +70,7 @@
 		3D8F94B4203D804F006E7659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D8F94BF203D80B1006E7659 /* FlyoverCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverCamera.swift; sourceTree = "<group>"; };
 		3D8F94C1203D810A006E7659 /* FlyoverCamera+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlyoverCamera+Configuration.swift"; sourceTree = "<group>"; };
-		3D8F94C3203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlyoverCamera+RegionChangeAnimationMode.swift"; sourceTree = "<group>"; };
+		3D8F94C3203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlyoverCamera+RegionChangeAnimation.swift"; sourceTree = "<group>"; };
 		3D8F94C9203D849D006E7659 /* FlyoverKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyoverKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8F94CB203D849D006E7659 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D8F94D2203D849D006E7659 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				3DB39A4E203DAA4A00E00B2D /* Flyover.swift */,
 				3D8F94BF203D80B1006E7659 /* FlyoverCamera.swift */,
 				3D8F94C1203D810A006E7659 /* FlyoverCamera+Configuration.swift */,
-				3D8F94C3203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimationMode.swift */,
+				3D8F94C3203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimation.swift */,
 				3DB39A4C203D9C7E00E00B2D /* FlyoverMapView.swift */,
 				3DB39A52203DC4A300E00B2D /* FlyoverMapView+MapType.swift */,
 				3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */,
@@ -382,7 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D8F94C0203D80B1006E7659 /* FlyoverCamera.swift in Sources */,
-				3D8F94C4203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimationMode.swift in Sources */,
+				3D8F94C4203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimation.swift in Sources */,
 				3DB39A53203DC4A300E00B2D /* FlyoverMapView+MapType.swift in Sources */,
 				3D8F94C2203D810A006E7659 /* FlyoverCamera+Configuration.swift in Sources */,
 				3DB39A51203DBF9B00E00B2D /* FlyoverMapViewController.swift in Sources */,

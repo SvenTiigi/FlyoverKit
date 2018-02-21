@@ -97,18 +97,16 @@ open class FlyoverMapView: MKMapView {
     ///
     /// - Parameters:
     ///   - annotation: The MKAnnotation
-    ///   - regionChangeAnimationMode: The region change animation mode (Default: none)
-    open func start(annotation: MKAnnotation, regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
-        self.start(flyover: annotation.coordinate, regionChangeAnimationMode: regionChangeAnimationMode)
+    open func start(annotation: MKAnnotation) {
+        self.start(flyover: annotation.coordinate)
     }
     
     /// Start flyover with FlyoverAble and the optional region change animation mode.
     ///
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
-    ///   - regionChangeAnimationMode: The region change animation mode (Default: none)
-    open func start(flyover: Flyover, regionChangeAnimationMode: FlyoverCamera.RegionChangeAnimationMode = .none) {
-        self.flyoverCamera.start(flyover: flyover, regionChangeAnimationMode: regionChangeAnimationMode)
+    open func start(flyover: Flyover) {
+        self.flyoverCamera.start(flyover: flyover)
     }
     
     /// Stop Flyover

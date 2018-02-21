@@ -27,6 +27,9 @@ public extension FlyoverCamera {
         /// The heading step
         public var headingStep: Double
         
+        /// The region change animation
+        public var regionChangeAnimation: RegionChangeAnimation
+        
         /// Default initializer
         ///
         /// - Parameters:
@@ -34,12 +37,14 @@ public extension FlyoverCamera {
         ///   - altitude: The altitude
         ///   - pitch: The pitch
         ///   - headingStep: The heading step
-        public init(duration: TimeInterval, altitude: CLLocationDistance,
-                    pitch: Double, headingStep: Double) {
+        ///   - regionChangeAnimation: The region change animation
+        public init(duration: TimeInterval, altitude: CLLocationDistance, pitch: Double,
+                    headingStep: Double, regionChangeAnimation: RegionChangeAnimation = .none) {
             self.duration = duration
             self.altitude = altitude
             self.pitch = pitch
             self.headingStep = headingStep
+            self.regionChangeAnimation = regionChangeAnimation
         }
     }
     

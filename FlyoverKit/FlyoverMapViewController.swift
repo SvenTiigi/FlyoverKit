@@ -21,6 +21,7 @@ open class FlyoverMapViewController: UIViewController {
     /// The flyover
     open var flyover: Flyover {
         didSet {
+            // Start Flyover
             self.flyoverMapView.start(flyover: flyover)
         }
     }
