@@ -10,6 +10,10 @@
 
 `FlyoverKit` enables you to present stunning 360° flyover views in your iOS App with zero effot and 100% configuration options
 
+<p align="center">
+   <img src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitPreview.gif" alt="Preview GIF" width="500">
+</p>
+
 ## FlyoverKit Example App
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitExampleApplication.png" alt="Example Application Screenshot" align="right" width="300">
 
