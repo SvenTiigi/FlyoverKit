@@ -40,21 +40,7 @@ github "SvenTiigi/FlyoverKit"
 Run `carthage update --platform iOS` to build the framework and drag the built `FlyoverKit.framework` into your Xcode project. 
 
 ## Usage
-`FlyoverKit` offers three ways to implement a flyover.
-
-### FlyoverMapView
-If you wish to show MapView which is already preconfigured to perform a flyover on a given location.
-
-```swift
-// Initialize the FlyoverMapView
-let flyoverMapView = FlyoverMapView()
-
-// Initialize a location
-let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
-
-// Start flyover
-flyoverMapView.start(flyover: eiffelTower)
-```
+`FlyoverKit` comes with three ways to implement a flyover. Simply choose the most suitable type for your implementation. Please see the `Advanced` section in order to configure the `FlyoverKit` to your needs.
 
 ### FlyoverCamera
 If you already have a `MKMapView` in your `Controller` and want to add a flyover to this MapView, use the `FlyoverCamera`.
@@ -71,6 +57,20 @@ let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
 
 // Start flyover
 flyoverCamera.start(flyover: eiffelTower)
+```
+
+### FlyoverMapView
+If you wish to show MapView which is already preconfigured to perform a flyover on a given location.
+
+```swift
+// Initialize the FlyoverMapView
+let flyoverMapView = FlyoverMapView()
+
+// Initialize a location
+let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+
+// Start flyover
+flyoverMapView.start(flyover: eiffelTower)
 ```
 
 ### FlyoverMapViewController
@@ -116,7 +116,9 @@ extension Address: Flyover {}
 ```
 
 ## FlyoverCamera
-The second layer the `FlyoverCamera` is responsible for manipulating the orginal `MKMapView` camera and performs a 360° flyover animation via the `UIViewPropertyAnimator`. In order to initialize a `FlyoverCamera` object you need to pass a `MKMapView` (which reference will be weakly stored) and a `FlyoverCamera.Configuration` object.
+The second layer the `FlyoverCamera` is responsible for manipulating the orginal `MKMapView` camera and performs a 360° flyover animation via the `UIViewPropertyAnimator` class. 
+
+In order to initialize a `FlyoverCamera` object you need to pass a `MKMapView` (which reference will be weakly stored) and a `FlyoverCamera.Configuration` object.
 
 ```swift
 // Initialize FlyoverCamera configuration
@@ -140,21 +142,26 @@ camera.start(flyover: location)
 ### Configuration
 The `FlyoverCamera.Configuration` struct holds all specific flyover configuration values such as
 
-* duration
-* altitude
-* pitch
-* headingStep
-* regionChangeAnimation
+| Configuration      | Description   |
+| ------------- | ------------- |
+| duration      | The flyover animation duration |
+| altitude      | The altitude above the ground, measured in meters      |
+| pitch | The viewing angle of the camera, measured in degrees      |
+| headingStep | The direction step in degrees that is added to the MapViewCamera heading in each flyover iteration |
+| regionChangeAnimation | The region change animation that should be applied if a flyover has been started and the MapCamera has to change the region. Default is always `.none` which immediately present the place. If you wish that the region change should be performed via an animation you can set `.animated(duration: 1.5, curve: .easeIn)`      |
+
 
 Set the properties to get the right look and feel of the flyover as you need it to be.
 
 ### Configuration Theme
 If you don't want to set the properties yourself your can use a preconfigured configuration theme. Currently there are four themes available 
 
-* `default`
-* `lowFlying`
-* `farAway`
-* `giddy`
+| Theme      | Description   |
+| ------------- | ------------- |
+| default      | Default flyover configuration with configuration for a default flyover usage |
+| lowFlying      | Flyover configuration with a low altitude and a high pitch. Simulates a low flying helicopter viewing angle |
+| farAway      | Configuration with a high altitude and a normal pitch which results in a far away viewing angle |
+| giddy      | A giddy configuration 🤢 which you shouldn't use in production. But it's fun 🤷‍♂️ 🤙|
 
 Furthermore, you can initialize a `FlyoverCamera` with a `Theme`.
 

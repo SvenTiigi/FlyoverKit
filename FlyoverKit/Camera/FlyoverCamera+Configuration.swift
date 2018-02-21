@@ -18,14 +18,14 @@ public extension FlyoverCamera {
         /// The duration
         public var duration: TimeInterval
         
-        /// The altitude above the ground, measured in meters.
+        /// The altitude above the ground, measured in meters
         public var altitude: CLLocationDistance
         
-        /// The viewing angle of the camera, measured in degrees.
+        /// The viewing angle of the camera, measured in degrees
         public var pitch: Double
         
         /// The heading step
-        public var headingStep: Double
+        public var headingStep: CLLocationDirection
         
         /// The region change animation
         public var regionChangeAnimation: RegionChangeAnimation
