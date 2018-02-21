@@ -140,12 +140,12 @@
 			children = (
 				3D8F94A7203D804F006E7659 /* FlyoverKit.h */,
 				3D8F94A8203D804F006E7659 /* Info.plist */,
-				3DB39A4C203D9C7E00E00B2D /* FlyoverMapView.swift */,
-				3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */,
 				3DB39A4E203DAA4A00E00B2D /* Flyover.swift */,
 				3D8F94BF203D80B1006E7659 /* FlyoverCamera.swift */,
 				3D8F94C1203D810A006E7659 /* FlyoverCamera+Configuration.swift */,
 				3D8F94C3203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimationMode.swift */,
+				3DB39A4C203D9C7E00E00B2D /* FlyoverMapView.swift */,
+				3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */,
 			);
 			path = FlyoverKit;
 			sourceTree = "<group>";
