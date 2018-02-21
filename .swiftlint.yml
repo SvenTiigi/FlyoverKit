@@ -1,0 +1,12 @@
+included:
+  - FlyoverKit
+  - FlyoverKitTests
+  - FlyoverKitExample
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Frameworks
+
+disabled_rules: # rule identifiers to exclude from running
+  - trailing_whitespace
+
+line_length: 150
