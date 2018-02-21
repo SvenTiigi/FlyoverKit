@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D8DB858203DD904008A079D /* FlyoverKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DB856203DD903008A079D /* FlyoverKit.podspec */; };
+		3D8DB859203DD904008A079D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DB857203DD903008A079D /* README.md */; };
 		3D8F94AE203D804F006E7659 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F94A4203D804F006E7659 /* FlyoverKit.framework */; };
 		3D8F94B3203D804F006E7659 /* FlyoverKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94B2203D804F006E7659 /* FlyoverKitTests.swift */; };
 		3D8F94B5203D804F006E7659 /* FlyoverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D8F94A7203D804F006E7659 /* FlyoverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -62,6 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D8DB856203DD903008A079D /* FlyoverKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlyoverKit.podspec; sourceTree = SOURCE_ROOT; };
+		3D8DB857203DD903008A079D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3D8F94A4203D804F006E7659 /* FlyoverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlyoverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8F94A7203D804F006E7659 /* FlyoverKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlyoverKit.h; sourceTree = "<group>"; };
 		3D8F94A8203D804F006E7659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D8DB855203DD8E4008A079D /* MetaData */ = {
+			isa = PBXGroup;
+			children = (
+				3D8DB856203DD903008A079D /* FlyoverKit.podspec */,
+				3D8DB857203DD903008A079D /* README.md */,
+			);
+			name = MetaData;
+			sourceTree = "<group>";
+		};
 		3D8F949A203D804F006E7659 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +178,7 @@
 				3D8F94EE203D86BB006E7659 /* ViewController.swift */,
 				3D8F94E5203D869A006E7659 /* Configuration */,
 				3D8F94DB203D853F006E7659 /* Supporting Files */,
+				3D8DB855203DD8E4008A079D /* MetaData */,
 			);
 			path = FlyoverKitExample;
 			sourceTree = "<group>";
@@ -354,6 +368,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D8F94D6203D849D006E7659 /* LaunchScreen.storyboard in Resources */,
+				3D8DB858203DD904008A079D /* FlyoverKit.podspec in Resources */,
+				3D8DB859203DD904008A079D /* README.md in Resources */,
 				3D8F94D3203D849D006E7659 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

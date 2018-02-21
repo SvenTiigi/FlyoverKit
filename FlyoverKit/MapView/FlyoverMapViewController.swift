@@ -66,6 +66,7 @@ open class FlyoverMapViewController: UIViewController {
     
     // MARK: ViewLifecycle
     
+    /// LoadView
     open override func loadView() {
         // Set FlyoverMapView as underlying view
         self.view = self.flyoverMapView

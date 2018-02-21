@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }()
     
     /// The example location (Paris, Eiffel Tower)
-    var location = CLLocationCoordinate2DMake(48.858370, 2.294481)
+    let location = CLLocationCoordinate2DMake(48.858370, 2.294481)
     
     /// Boolean if MapView is in Full-Screen Mode
     var isMapFullscreen = false
