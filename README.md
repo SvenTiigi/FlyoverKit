@@ -4,10 +4,22 @@
 [![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Version](https://img.shields.io/cocoapods/v/FlyoverKit.svg?style=flat)](http://cocoapods.org/pods/FlyoverKit)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![codebeat badge](https://codebeat.co/badges/c170aedf-d49e-4538-be5c-6c2819c8d7f4)](https://codebeat.co/projects/github-com-sventiigi-flyoverkit-master)
 [![Documentation](https://github.com/SvenTiigi/FlyoverKit/blob/gh-pages/badge.svg)](https://sventiigi.github.io/FlyoverKit)
 [![Twitter](https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat)](https://twitter.com/SvenTiigi/)
 
-A simple and small `Kit` to perform awesome 360° flyovers on your MKMapView.
+`FlyoverKit` enables you to present stunning 360° flyover views in your iOS App with zero effot and 100% configuration options
+
+## Example Application
+Try out the `FlyoverKitExample` application to see `FlyoverKit` in action and get a brief look of configuration options.
+
+In order to run the example Application you have to first generate the Frameworks via `Carthage`.
+
+```bash
+$ carthage update --platform iOS
+$ open FlyoverKit.xcodeproj
+```
+
 
 ## Installation
 
@@ -43,7 +55,7 @@ Run `carthage update --platform iOS` to build the framework and drag the built `
 `FlyoverKit` comes with three ways to implement a flyover. Simply choose the most suitable type for your implementation. Please see the `Advanced` section in order to configure the `FlyoverKit` to your needs.
 
 ### FlyoverCamera
-If you already have a `MKMapView` in your `Controller` and want to add a flyover to this MapView, use the `FlyoverCamera`.
+If you already have a `MKMapView` in your `Controller` and you want to add a flyover to this MapView, simply use the `FlyoverCamera`.
 
 ```swift
 // Initialize the FlyoverCamera with a MKMapView
@@ -140,7 +152,7 @@ camera.start(flyover: location)
 ```
 
 ### Configuration
-The `FlyoverCamera.Configuration` struct holds all specific flyover configuration values such as
+The `FlyoverCamera.Configuration` struct holds all specific flyover configuration values. Set the properties to get the right look and feel of the flyover as you need it to be.
 
 | Configuration      | Description   |
 | ------------- | ------------- |
@@ -150,8 +162,9 @@ The `FlyoverCamera.Configuration` struct holds all specific flyover configuratio
 | headingStep | The direction step in degrees that is added to the MapViewCamera heading in each flyover iteration |
 | regionChangeAnimation | The region change animation that should be applied if a flyover has been started and the MapCamera has to change the region. Default is always `.none` which immediately present the place. If you wish that the region change should be performed via an animation you can set `.animated(duration: 1.5, curve: .easeIn)`      |
 
+An excellent visualization of an `MKMapCamera` from [TechTopia](http://www.techotopia.com/index.php/An_iOS_9_MapKit_Flyover_Tutorial)
 
-Set the properties to get the right look and feel of the flyover as you need it to be.
+![](http://www.techotopia.com/images/5/5b/Ios_9_flyover_camera_diagram.png)
 
 ### Configuration Theme
 If you don't want to set the properties yourself your can use a preconfigured configuration theme. Currently there are four themes available 
@@ -163,7 +176,9 @@ If you don't want to set the properties yourself your can use a preconfigured co
 | farAway      | Configuration with a high altitude and a normal pitch which results in a far away viewing angle |
 | giddy      | A giddy configuration 🤢 which you shouldn't use in production. But it's fun 🤷‍♂️ 🤙|
 
-Furthermore, you can initialize a `FlyoverCamera` with a `Theme`.
+More themes coming soon... 👨‍💻
+
+Furthermore, you can initialize a `FlyoverCamera` with a given `Theme`.
 
 ```swift
 // Initialize FlyoverCamera
@@ -181,14 +196,6 @@ let camera = FlyoverCamera(
 
 ## Contributing
 Contributions are very welcome 🙌 🤓
-
-## Example Application
-In order to run the example Application you have to first generate the Frameworks via `Carthage`.
-
-```bash
-$ carthage update --platform iOS
-$ open FlyoverKit.xcodeproj
-```
 
 ## License
 

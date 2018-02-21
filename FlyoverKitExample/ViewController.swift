@@ -84,7 +84,7 @@ class ViewController: UIViewController {
     
     /// Add navigation items
     private func addNavigationItems() {
-        self.title = "FlyoverCameraKit"
+        self.title = "FlyoverKit"
         let fullscreenBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .plain, target: self, action: #selector(fullscreenBarButtonItemTouched(_:)))
         let githubBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "github"), style: .plain, target: self, action: #selector(githubBarButtonItemTouched(_:)))
         self.navigationItem.leftBarButtonItem = fullscreenBarButtonItem
