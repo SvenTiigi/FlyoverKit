@@ -17,7 +17,7 @@ open class FlyoverMapView: MKMapView {
     
     /// The FlyoverCamera
     open lazy var flyoverCamera: FlyoverCamera = {
-        return FlyoverCamera(mapView: self, configurationTheme: .default)
+        return FlyoverCamera(mapView: self)
     }()
     
     /// The FlyoverMapView MapType
@@ -76,7 +76,7 @@ open class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - configurationTheme: The flyover configuration theme
     ///   - mapType: The map type
-    public convenience init(configurationTheme: FlyoverCamera.Configuration.Theme, mapType: MapType = .standard) {
+    public convenience init(configurationTheme: FlyoverCamera.Configuration.Theme = .default, mapType: MapType = .standard) {
         self.init(configuration: configurationTheme.rawValue, mapType: mapType)
     }
     

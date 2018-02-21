@@ -75,7 +75,7 @@ open class FlyoverCamera {
     /// - Parameters:
     ///   - mapView: The MapView
     ///   - configurationTheme: The configuration theme
-    public convenience init(mapView: MKMapView, configurationTheme: Configuration.Theme) {
+    public convenience init(mapView: MKMapView, configurationTheme: Configuration.Theme = .default) {
         // Init with mapView and configurationTheme rawValue
         self.init(mapView: mapView, configuration: configurationTheme.rawValue)
     }
