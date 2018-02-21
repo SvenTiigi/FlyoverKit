@@ -20,14 +20,6 @@ public class FlyoverMapView: MKMapView {
         return FlyoverCamera(mapView: self, configurationTheme: .default)
     }()
     
-    /// The default MKMapType with overriden filter handler to only allow FlyoverMapView.MapType's
-    public override var mapType: MKMapType {
-        didSet {
-            // Set the MKMapType via constructing an MapType and retrieve rawValue otherwise set standard
-            self.mapType = MapType(rawValue: self.mapType)?.rawValue ?? .standard
-        }
-    }
-    
     /// The FlyoverMapView MapType
     public var flyoverMapType: MapType {
         set {
