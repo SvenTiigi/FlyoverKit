@@ -168,7 +168,11 @@ The `FlyoverCamera.Configuration` struct holds all specific flyover configuratio
 
 An excellent visualization of an `MKMapCamera` from [TechTopia](http://www.techotopia.com/index.php/An_iOS_9_MapKit_Flyover_Tutorial)
 
-![](http://www.techotopia.com/images/5/5b/Ios_9_flyover_camera_diagram.png)
+<p align="center">
+    <a href="http://www.techotopia.com/index.php/An_iOS_9_MapKit_Flyover_Tutorial">
+        <img src="http://www.techotopia.com/images/5/5b/Ios_9_flyover_camera_diagram.png" alt="Flyover Camera Diagram">
+    </a>
+</p>
 
 ### Configuration Theme
 If you don't want to set the properties yourself your can use a preconfigured configuration theme. Currently there are four themes available 
