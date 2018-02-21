@@ -88,10 +88,11 @@ public class FlyoverCamera {
     
     // MARK: Public API
     
-    /// Start flyover with corrdinate and optional start animation mode
+    /// Start flyover with FlyoverAble object and optional region change animation mode
     ///
-    /// - Parameter at: A FlyoverAble type e.g. CLLocationCoordinate2D
-    /// - Parameter switchToCoordinateAnimationMode: The start animation mode none which is default or animated
+    /// - Parameters:
+    ///   - flyoverAble: The FlyoverAble Type (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
+    ///   - regionChangeAnimationMode: he region change animation mode (Default: none)
     public func start(_ flyoverAble: FlyoverAble, regionChangeAnimationMode: RegionChangeAnimationMode = .none) {
         // Set coordinate
         self.coordinate = flyoverAble.coordinate

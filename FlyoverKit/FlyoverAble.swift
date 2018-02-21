@@ -15,7 +15,7 @@ public protocol FlyoverAble {
     var coordinate: CLLocationCoordinate2D { get }
 }
 
-// MARK: - CoreLocation Framework FlyoverAble Extension
+// MARK: - CoreLocation Framework FlyoverAble Extensions
 
 extension CLLocationCoordinate2D: FlyoverAble {
     /// The coordinate
@@ -32,8 +32,20 @@ extension CLCircularRegion: FlyoverAble {
 extension CLLocation: FlyoverAble { }
 extension CLVisit: FlyoverAble { }
 
-// MARK: - MapKit Framework FlyoverAble Extension
+// MARK: - MapKit Framework FlyoverAble Extensions
 
+extension MKMapItem: FlyoverAble {
+    /// The coordinate
+    public var coordinate: CLLocationCoordinate2D {
+        return self.placemark.coordinate
+    }
+}
+extension MKMapView: FlyoverAble {
+    /// The coordinate
+    public var coordinate: CLLocationCoordinate2D {
+        return self.centerCoordinate
+    }
+}
 extension MKMapPoint: FlyoverAble {
     /// The coordinate
     public var coordinate: CLLocationCoordinate2D {
