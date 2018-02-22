@@ -26,7 +26,7 @@
    </a>
 </p>
 
-`FlyoverKit` enables you to present stunning 360° flyover views in your iOS App with zero effot and 100% configuration options
+`FlyoverKit` enables you to present stunning 360° flyover views on a `MKMapView` with zero effort while maintaining full configuration possibilities.
 
 <p align="center">
    <img src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitPreview.gif" alt="Preview GIF" width="500">
