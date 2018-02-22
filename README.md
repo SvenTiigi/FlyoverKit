@@ -42,6 +42,13 @@ $ carthage update --platform iOS
 $ open FlyoverKit.xcodeproj
 ```
 
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
 ## Installation
 
 ### CocoaPods
@@ -56,13 +63,6 @@ pod 'FlyoverKit'
 ### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
 
 To integrate STLocationRequest into your Xcode project using Carthage, specify it in your `Cartfile`:
 
