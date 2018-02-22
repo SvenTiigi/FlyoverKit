@@ -10,6 +10,8 @@ import CoreLocation
 
 // MARK: - FlyoverAwesomePlace
 
+/// Awesome 360° locations and landmarks like
+/// NewYorkStatueOfLiberty, GooglePlex, SydneyOperaHouse and many more.
 public enum FlyoverAwesomePlace {
     // MARK: USA
     /// New York Statue of Liberty
