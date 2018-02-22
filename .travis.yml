@@ -21,3 +21,6 @@ script:
   - carthage build --no-skip-current
   - fastlane test
   - pod lib lint
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
