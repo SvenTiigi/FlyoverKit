@@ -10,6 +10,7 @@ import MapKit
 
 // MARK: - Flyover Protocol
 
+/// The Flyover Protocol
 public protocol Flyover {
     /// The flyover coordinate
     var coordinate: CLLocationCoordinate2D { get }
