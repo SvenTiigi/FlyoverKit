@@ -27,9 +27,9 @@
 </p>
 <br/>
 
-`FlyoverKit` enables you to present stunning 360° flyover views on a `MKMapView` with zero effort while maintaining full configuration possibilities.
+`FlyoverKit` enables you to present stunning 360° flyover views on your `MKMapView` with zero effort while maintaining full configuration possibilities. `FlyoverKit` builds the core of [STLocationRequest] which enables you a way to request the user location services via a 3D 360° flyover MapView.
 
-## FlyoverKitExample
+## Example
 
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitExampleApplication.gif" alt="Example Application Screenshot" align="right" width="307">
 
