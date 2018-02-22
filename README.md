@@ -27,7 +27,7 @@
 </p>
 <br/>
 
-`FlyoverKit` enables you to present stunning 360° flyover views on your `MKMapView` with zero effort while maintaining full configuration possibilities. `FlyoverKit` builds the core of [STLocationRequest] which enables you a way to request the user location services via a 3D 360° flyover MapView.
+`FlyoverKit` enables you to present stunning 360° flyover views on your `MKMapView` with zero effort while maintaining full configuration possibilities. `FlyoverKit` builds the core of [STLocationRequest](https://github.com/SvenTiigi/STLocationRequest) which enables you a way to request the user location services via a 3D 360° flyover MapView.
 
 ## Example
 
@@ -123,8 +123,10 @@ self.present(controller, animated: true)
 ## Advanced
 The `FlyoverKit` consists of three main components. The `Flyover` protocol, `FlyoverCamera` and `FlyoverMapView`. 
 
+<br>
 <p align="center">
    <img src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitArchitecture.png" alt="Architecture" width="600">
+   <br/>
 </p>
 
 ## Flyover Protocol
@@ -215,7 +217,7 @@ let camera = FlyoverCamera(
 ## FlyoverMapView
 `Coming soon`
 
-## FlyoverMapViewController
+### FlyoverMapViewController
 `Coming soon`
 
 ## Contributing
