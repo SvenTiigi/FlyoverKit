@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="350" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitHeader.png" alt="FlyoverKit Header Logo">
+   <img width="350" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitLogoHeader.png" alt="FlyoverKit Header Logo">
 </p>
 
 <p align="center">
