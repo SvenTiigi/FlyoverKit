@@ -29,8 +29,9 @@ class ViewController: UIViewController {
         return ConfigurationTableView(configurationDelegate: self)
     }()
     
-    /// The example location (Paris, Eiffel Tower)
-    let location = CLLocationCoordinate2DMake(48.858370, 2.294481)
+    /// The example location
+    // Change the enum case to explore different locations 🤙
+    let location = FlyoverAwesomePlace.parisEiffelTower
     
     /// Boolean if MapView is in Full-Screen Mode
     var isMapFullscreen = false

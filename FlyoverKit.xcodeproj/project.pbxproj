@@ -30,6 +30,7 @@
 		3DB39A4F203DAA4A00E00B2D /* Flyover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A4E203DAA4A00E00B2D /* Flyover.swift */; };
 		3DB39A51203DBF9B00E00B2D /* FlyoverMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */; };
 		3DB39A53203DC4A300E00B2D /* FlyoverMapView+MapType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A52203DC4A300E00B2D /* FlyoverMapView+MapType.swift */; };
+		3DF31A8F203EFCFF0016027A /* FlyoverAwesomePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF31A8E203EFCFF0016027A /* FlyoverAwesomePlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		3DB39A4E203DAA4A00E00B2D /* Flyover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flyover.swift; sourceTree = "<group>"; };
 		3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverMapViewController.swift; sourceTree = "<group>"; };
 		3DB39A52203DC4A300E00B2D /* FlyoverMapView+MapType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlyoverMapView+MapType.swift"; sourceTree = "<group>"; };
+		3DF31A8E203EFCFF0016027A /* FlyoverAwesomePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverAwesomePlace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				3DB39A4E203DAA4A00E00B2D /* Flyover.swift */,
 				3DB39A55203DCADD00E00B2D /* Camera */,
 				3DB39A54203DCADD00E00B2D /* MapView */,
+				3DF31A90203EFE1C0016027A /* AwesomePlace */,
 			);
 			path = FlyoverKit;
 			sourceTree = "<group>";
@@ -230,6 +233,14 @@
 				3D8F94C3203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimation.swift */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		3DF31A90203EFE1C0016027A /* AwesomePlace */ = {
+			isa = PBXGroup;
+			children = (
+				3DF31A8E203EFCFF0016027A /* FlyoverAwesomePlace.swift */,
+			);
+			path = AwesomePlace;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +428,7 @@
 				3D8F94C4203D81C5006E7659 /* FlyoverCamera+RegionChangeAnimation.swift in Sources */,
 				3DB39A53203DC4A300E00B2D /* FlyoverMapView+MapType.swift in Sources */,
 				3D8F94C2203D810A006E7659 /* FlyoverCamera+Configuration.swift in Sources */,
+				3DF31A8F203EFCFF0016027A /* FlyoverAwesomePlace.swift in Sources */,
 				3DB39A51203DBF9B00E00B2D /* FlyoverMapViewController.swift in Sources */,
 				3DB39A4D203D9C7E00E00B2D /* FlyoverMapView.swift in Sources */,
 				3DB39A4F203DAA4A00E00B2D /* Flyover.swift in Sources */,
