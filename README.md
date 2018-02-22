@@ -25,10 +25,11 @@
       <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
    </a>
 </p>
+<br/>
 
 `FlyoverKit` enables you to present stunning 360° flyover views on a `MKMapView` with zero effort while maintaining full configuration possibilities.
 
-<br/>
+## FlyoverKitExample
 
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitExampleApplication.gif" alt="Example Application Screenshot" align="right" width="307">
 
