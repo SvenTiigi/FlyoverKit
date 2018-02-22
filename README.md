@@ -35,7 +35,7 @@
 
 The `FlyoverKitExample` Application is an excellent way to see `FlyoverKit` in action. You can get a brief look of configuration options and how they change the flyover behaviour. Please keep in mind that the `SatelliteFlyover` and `HybridFlyover` will only work on a real iOS device.
 
-In order to run the example Application you have to first generate the Frameworks via `Carthage`
+In order to run the example Application you have to first generate the Frameworks via [Carthage](https://github.com/Carthage/Carthage)
 
 ```bash
 $ carthage update --platform iOS
@@ -71,6 +71,8 @@ github "SvenTiigi/FlyoverKit"
 ```
 
 Run `carthage update --platform iOS` to build the framework and drag the built `FlyoverKit.framework` into your Xcode project. 
+
+On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md)
 
 ## Usage
 `FlyoverKit` comes with three ways to implement a flyover. Simply choose the most suitable type for your implementation. Please see the `Advanced` section in order to configure the `FlyoverKit` to your needs.
