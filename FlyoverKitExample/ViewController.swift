@@ -76,7 +76,8 @@ class ViewController: UIViewController {
         }
         self.configurationTableView.snp.makeConstraints { (make) in
             make.top.equalTo(self.flyoverMapView.snp.bottom)
-            make.left.right.bottom.equalTo(self.view)
+            make.left.right.equalTo(self.view)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
     
