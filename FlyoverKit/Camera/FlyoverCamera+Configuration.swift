@@ -50,6 +50,20 @@ public extension FlyoverCamera {
     
 }
 
+// MARK: - Configuration Equatable Extension
+
+extension FlyoverCamera.Configuration: Equatable {
+    
+    /// Returns a Boolean value indicating whether two Configurations are equal.
+    public static func ==(lhs: FlyoverCamera.Configuration, rhs: FlyoverCamera.Configuration) -> Bool {
+        return lhs.duration == rhs.duration
+            && lhs.altitude == rhs.altitude
+            && lhs.pitch == rhs.pitch
+            && lhs.headingStep == rhs.headingStep
+    }
+    
+}
+
 // MARK: - Configuration Theme
 
 public extension FlyoverCamera.Configuration {
