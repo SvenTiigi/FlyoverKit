@@ -28,6 +28,8 @@
 
 `FlyoverKit` enables you to present stunning 360° flyover views on a `MKMapView` with zero effort while maintaining full configuration possibilities.
 
+<br/>
+
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitExampleApplication.gif" alt="Example Application Screenshot" align="right" width="307">
 
 The `FlyoverKitExample` Application is an excellent way to see `FlyoverKit` in action. You can get a brief look of configuration options and how they change the flyover behaviour. Please keep in mind that the `SatelliteFlyover` and `HybridFlyover` will only work on a real iOS device.
