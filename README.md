@@ -218,11 +218,63 @@ let camera = FlyoverCamera(
 ```
 
 ## FlyoverMapView
-`Coming soon`
+The `FlyoverMapView` is a preconfigured `MKMapView` with an embedded `FlyoverCamera`. The `FlyoverMapView` offers various convenience functions for example starting a flyover with a `MKAnnotation` object or setting a supported Flyover `MapType`.
 
+```swift
+// Initialize with default configuration theme and standard MapType
+let flyoverMapView = FlyoverMapView()
+
+// Or initialize by setting a different theme and the satelliteFlyover MapType
+let flyoverMapView = FlyoverMapView(configurationTheme: .farAway, mapType: .satelliteFlyover)
+```
+
+### MapType
+The `FlyoverMapView.MapType` specifies the three supported `MKMapType`'s.
+
+| MapType      | Description   |
+| ------------- | ------------- |
+| standard      | A street map that shows the position of all roads and shows 3D buildings |
+| satelliteFlyover      | A satellite image of the area with road and road name information layered on top |
+| hybridFlyover      | A hybrid satellite image with flyover data where available |
 
 ### FlyoverMapViewController
-`Coming soon`
+The `FlyoverMapViewController` is an easy and simple way to just present a `UIViewController` with an embedded `FlyoverMapView`. You can use it if you just want to present a 360° flyover on a given `Flyover` type.
+
+```swift
+// Initialize a location
+let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+
+// Initialize the FlyoverMapViewController with a Flyover object
+let controller = FlyoverMapViewController(flyover: eiffelTower)
+
+// Present controller
+self.present(controller, animated: true)
+```
+
+Additionally you can initialize the `FlyoverMapViewController` with your own `Configuration` or `Configuration.Theme` and a `MapType`
+
+```swift
+// Initialize a location
+let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+
+// Initialize a Configuration
+let configuration = FlyoverCamera.Configuration(
+    duration: 4.0,
+    altitude: 600.0,
+    pitch: 45.0,
+    headingStep: 20.0
+)
+
+// Initialize the FlyoverMapViewController
+let controller = FlyoverMapViewController(
+    flyover: eiffelTower, 
+    configuration: configuration, 
+    mapType: .satelliteFlyover
+)
+
+// Present controller
+self.present(controller, animated: true)
+```
 
 ## Contributing
 Contributions are very welcome 🙌 🤓
