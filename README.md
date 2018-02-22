@@ -25,6 +25,7 @@
       <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
    </a>
 </p>
+
 <br/>
 
 `FlyoverKit` enables you to present stunning 360° flyover views on your `MKMapView` with zero effort while maintaining full configuration possibilities. `FlyoverKit` builds the core of [STLocationRequest](https://github.com/SvenTiigi/STLocationRequest) which enables you a way to request the user location services via a 3D 360° flyover MapView.
@@ -132,7 +133,7 @@ The `FlyoverKit` consists of three main components. The `Flyover` protocol, `Fly
 </p>
 
 ## Flyover Protocol
-The `flyover` protocol represents the base layer of the `FlyoverKit`. The protocol is used to perform a flyover on the given coordinate.
+The `flyover` protocol specifies a type with a `CLLocationCoordinat2D` property. It is used to perform a flyover on the given coordinate.
 
 ```swift
 public protocol Flyover {
@@ -152,7 +153,7 @@ extension Address: Flyover {}
 ```
 
 ## FlyoverCamera
-The second layer the `FlyoverCamera` is responsible for manipulating the orginal `MKMapView` camera and performs a 360° flyover animation via the `UIViewPropertyAnimator` class. 
+The `FlyoverCamera` is responsible for manipulating the orginal `MKMapView` camera and performs a 360° flyover animation via [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator). 
 
 In order to initialize a `FlyoverCamera` object you need to pass a `MKMapView` (which reference will be weakly stored) and a `FlyoverCamera.Configuration` object.
 
@@ -218,6 +219,7 @@ let camera = FlyoverCamera(
 
 ## FlyoverMapView
 `Coming soon`
+
 
 ### FlyoverMapViewController
 `Coming soon`
