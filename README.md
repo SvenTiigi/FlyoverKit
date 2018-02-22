@@ -152,6 +152,9 @@ struct Address {
 extension Address: Flyover {}
 ```
 
+### FlyoverAwesomePlace
+The `FlyoverAwesomePlace` is `Flyover` protocol compliant Enumeration with awesome 360° locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://github.com/SvenTiigi/FlyoverKit/blob/master/FlyoverKit/AwesomePlace/FlyoverAwesomePlace.swift). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
+
 ## FlyoverCamera
 The `FlyoverCamera` is responsible for manipulating the orginal `MKMapView` camera and performs a 360° flyover animation via [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator). 
 
