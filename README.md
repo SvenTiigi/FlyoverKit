@@ -121,14 +121,13 @@ self.present(controller, animated: true)
 ```
 
 ## Advanced
-The `FlyoverKit` is based on a 4-layer architecture:
+The `FlyoverKit` consists of three main components. The `Flyover` protocol, `FlyoverCamera` and `FlyoverMapView`. 
 
-* Flyover
-* FlyoverCamera
-* FlyoverMapView
-* FlyoverMapViewController
+<p align="center">
+   <img src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitArchitecture.png" alt="Architecture" width="600">
+</p>
 
-## Flyover
+## Flyover Protocol
 The `flyover` protocol represents the base layer of the `FlyoverKit`. The protocol is used to perform a flyover on the given coordinate.
 
 ```swift
