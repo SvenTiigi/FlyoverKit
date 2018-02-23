@@ -68,7 +68,7 @@ pod 'FlyoverKit'
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
-To integrate STLocationRequest into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate FlyoverKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "SvenTiigi/FlyoverKit"
