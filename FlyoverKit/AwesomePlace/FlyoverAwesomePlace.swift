@@ -129,3 +129,24 @@ extension FlyoverAwesomePlace: Flyover {
     }
     
 }
+
+// MARK: - FlyoverAwesomePlace iterate
+
+public extension FlyoverAwesomePlace {
+    
+    /// Iterate through all FlyoverAwesomePlace cases
+    ///
+    /// - Returns: Iterator of the enumeration
+    static func iterate() -> AnyIterator<FlyoverAwesomePlace> {
+        var counter = 0
+        return AnyIterator {
+            let next = withUnsafePointer(to: &counter) {
+                $0.withMemoryRebound(to: self, capacity: 1) { $0.pointee }
+            }
+            if next.hashValue != counter { return nil }
+            counter += 1
+            return next
+        }
+    }
+    
+}
