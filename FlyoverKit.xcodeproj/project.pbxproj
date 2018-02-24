@@ -15,7 +15,6 @@
 		3D8DB858203DD904008A079D /* FlyoverKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DB856203DD903008A079D /* FlyoverKit.podspec */; };
 		3D8DB859203DD904008A079D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DB857203DD903008A079D /* README.md */; };
 		3D8F94AE203D804F006E7659 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F94A4203D804F006E7659 /* FlyoverKit.framework */; };
-		3D8F94B3203D804F006E7659 /* FlyoverKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94B2203D804F006E7659 /* FlyoverKitTests.swift */; };
 		3D8F94B5203D804F006E7659 /* FlyoverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D8F94A7203D804F006E7659 /* FlyoverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D8F94C0203D80B1006E7659 /* FlyoverCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94BF203D80B1006E7659 /* FlyoverCamera.swift */; };
 		3D8F94C2203D810A006E7659 /* FlyoverCamera+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94C1203D810A006E7659 /* FlyoverCamera+Configuration.swift */; };
@@ -35,6 +34,10 @@
 		3DB39A4F203DAA4A00E00B2D /* Flyover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A4E203DAA4A00E00B2D /* Flyover.swift */; };
 		3DB39A51203DBF9B00E00B2D /* FlyoverMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */; };
 		3DB39A53203DC4A300E00B2D /* FlyoverMapView+MapType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A52203DC4A300E00B2D /* FlyoverMapView+MapType.swift */; };
+		3DCF58D2204180FD0049753A /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF58D1204180FD0049753A /* BaseTests.swift */; };
+		3DCF58D4204184440049753A /* FlyoverProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF58D3204184440049753A /* FlyoverProtocolTests.swift */; };
+		3DCF58D6204185A80049753A /* FlyoverCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF58D5204185A80049753A /* FlyoverCameraTests.swift */; };
+		3DCF58D8204185E60049753A /* FlyoverMapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF58D7204185E60049753A /* FlyoverMapViewTests.swift */; };
 		3DF31A8F203EFCFF0016027A /* FlyoverAwesomePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF31A8E203EFCFF0016027A /* FlyoverAwesomePlace.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +84,6 @@
 		3D8F94A7203D804F006E7659 /* FlyoverKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlyoverKit.h; sourceTree = "<group>"; };
 		3D8F94A8203D804F006E7659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D8F94AD203D804F006E7659 /* FlyoverKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlyoverKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D8F94B2203D804F006E7659 /* FlyoverKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverKitTests.swift; sourceTree = "<group>"; };
 		3D8F94B4203D804F006E7659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D8F94BF203D80B1006E7659 /* FlyoverCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverCamera.swift; sourceTree = "<group>"; };
 		3D8F94C1203D810A006E7659 /* FlyoverCamera+Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlyoverCamera+Configuration.swift"; sourceTree = "<group>"; };
@@ -101,6 +103,10 @@
 		3DB39A4E203DAA4A00E00B2D /* Flyover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flyover.swift; sourceTree = "<group>"; };
 		3DB39A50203DBF9B00E00B2D /* FlyoverMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverMapViewController.swift; sourceTree = "<group>"; };
 		3DB39A52203DC4A300E00B2D /* FlyoverMapView+MapType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlyoverMapView+MapType.swift"; sourceTree = "<group>"; };
+		3DCF58D1204180FD0049753A /* BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
+		3DCF58D3204184440049753A /* FlyoverProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverProtocolTests.swift; sourceTree = "<group>"; };
+		3DCF58D5204185A80049753A /* FlyoverCameraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverCameraTests.swift; sourceTree = "<group>"; };
+		3DCF58D7204185E60049753A /* FlyoverMapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverMapViewTests.swift; sourceTree = "<group>"; };
 		3DF31A8E203EFCFF0016027A /* FlyoverAwesomePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverAwesomePlace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,7 +189,10 @@
 		3D8F94B1203D804F006E7659 /* FlyoverKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				3D8F94B2203D804F006E7659 /* FlyoverKitTests.swift */,
+				3DCF58D1204180FD0049753A /* BaseTests.swift */,
+				3DCF58D3204184440049753A /* FlyoverProtocolTests.swift */,
+				3DCF58D5204185A80049753A /* FlyoverCameraTests.swift */,
+				3DCF58D7204185E60049753A /* FlyoverMapViewTests.swift */,
 				3D8F94B4203D804F006E7659 /* Info.plist */,
 			);
 			path = FlyoverKitTests;
@@ -459,7 +468,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D8F94B3203D804F006E7659 /* FlyoverKitTests.swift in Sources */,
+				3DCF58D2204180FD0049753A /* BaseTests.swift in Sources */,
+				3DCF58D4204184440049753A /* FlyoverProtocolTests.swift in Sources */,
+				3DCF58D8204185E60049753A /* FlyoverMapViewTests.swift in Sources */,
+				3DCF58D6204185A80049753A /* FlyoverCameraTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
