@@ -12,6 +12,8 @@ import MapKit
 
 class FlyoverMapViewTests: BaseTests {
     
+    // MARK: FlyoverMapView
+    
     func testFlyoverMapViewDefaultInitializer() {
         let mapView = FlyoverMapView()
         XCTAssertEqual(mapView.configuration, FlyoverCamera.Configuration.Theme.default.rawValue)
@@ -59,6 +61,19 @@ class FlyoverMapViewTests: BaseTests {
         XCTAssertNil(mapView.flyoverMapType)
     }
     
+    func testFlyoverMapViewConfigurationUpdate() {
+        let flyoverMapView = FlyoverMapView()
+        let configuration = FlyoverCamera.Configuration.Theme.farAway.rawValue
+        flyoverMapView.configuration = configuration
+        XCTAssertEqual(configuration, flyoverMapView.configuration)
+    }
+    
+    func testFlyoverMapViewUnsupportedInitializer() {
+        XCTAssertNil(FlyoverMapView(coder: NSCoder()))
+    }
+    
+    // MARK: FlyoverMapViewController
+    
     func testFlyoverMapViewController() {
         var flyover = FlyoverAwesomePlace.appleHeadquarter
         let controller = FlyoverMapViewController(flyover: flyover)
@@ -79,6 +94,10 @@ class FlyoverMapViewTests: BaseTests {
         XCTAssertFlyover(flyover, controller.flyover)
         XCTAssertEqual(controller.flyoverMapView.configuration, FlyoverCamera.Configuration.Theme.farAway.rawValue)
         XCTAssertEqual(controller.flyoverMapView.flyoverMapType, .satelliteFlyover)
+    }
+    
+    func testFlyoverMapViewControllerUnsupportedInitializer() {
+        XCTAssertNil(FlyoverMapViewController(coder: NSCoder()))
     }
     
 }

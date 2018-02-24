@@ -45,6 +45,12 @@ class FlyoverProtocolTests: BaseTests {
         XCTAssertFlyover(coordinate, span)
     }
     
+    func testFlyoverMapView() {
+        let mapView = MKMapView()
+        let coordinate = mapView.centerCoordinate
+        XCTAssertFlyover(coordinate, mapView)
+    }
+    
     func testFlyoverMKMapRect() {
         let mockValue = (x: self.randomDouble, y: self.randomDouble)
         let mapPoint = MKMapPoint(x: mockValue.x, y: mockValue.y)
