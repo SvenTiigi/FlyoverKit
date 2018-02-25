@@ -16,11 +16,15 @@ language: swift
 before_install:
   - pod repo update
   - carthage update
+  - npm install -g danger
+  - brew install danger/tap/danger-swift
+  - brew install swiftlint
 
 script: 
   - carthage build --no-skip-current
   - fastlane test
   - pod lib lint
+  - danger process danger-swift
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
