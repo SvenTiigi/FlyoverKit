@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D5B672A20431DD500D0D6C0 /* .codebeatignore in Resources */ = {isa = PBXBuildFile; fileRef = 3D5B672920431DD500D0D6C0 /* .codebeatignore */; };
 		3D5D662A203F45A800A45E6C /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3D5D6629203F45A800A45E6C /* .travis.yml */; };
 		3D5D662D203F45BA00A45E6C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3D5D662B203F45BA00A45E6C /* .swiftlint.yml */; };
 		3D5D662E203F45BA00A45E6C /* .jazzy.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 3D5D662C203F45BA00A45E6C /* .jazzy.yaml */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D5B672920431DD500D0D6C0 /* .codebeatignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .codebeatignore; sourceTree = SOURCE_ROOT; };
 		3D5D6629203F45A800A45E6C /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		3D5D662B203F45BA00A45E6C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		3D5D662C203F45BA00A45E6C /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .jazzy.yaml; sourceTree = SOURCE_ROOT; };
@@ -141,6 +143,7 @@
 		3D8DB855203DD8E4008A079D /* MetaData */ = {
 			isa = PBXGroup;
 			children = (
+				3D5B672920431DD500D0D6C0 /* .codebeatignore */,
 				3D5D662F203F45D000A45E6C /* .swift-version */,
 				3D5D6630203F45D000A45E6C /* Cartfile.private */,
 				3D5D662C203F45BA00A45E6C /* .jazzy.yaml */,
@@ -402,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5B672A20431DD500D0D6C0 /* .codebeatignore in Resources */,
 				3D5D662D203F45BA00A45E6C /* .swiftlint.yml in Resources */,
 				3D5D662A203F45A800A45E6C /* .travis.yml in Resources */,
 				3D8F94D6203D849D006E7659 /* LaunchScreen.storyboard in Resources */,
