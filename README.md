@@ -85,14 +85,13 @@ On your application targets’ “Build Phases” settings tab, click the “+�
 If you already have a `MKMapView` in your `Controller` and you want to add a flyover to this MapView, simply use the `FlyoverCamera`.
 
 ```swift
-// Initialize the FlyoverCamera with a MKMapView
-let flyoverCamera = FlyoverCamera(
-    mapView: mapView,
-    configuration: configuration
-)
+import FlyoverKit
 
-// Initialize a location
-let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+// Initialize the FlyoverCamera with an already existing MKMapView
+let flyoverCamera = FlyoverCamera(mapView: self.mapView)
+
+// Initialize a location via CLLocationCoordinate2D
+let eiffelTower = CLLocationCoordinate2D(latitude: 48.858370, longitude: 2.294481)
 
 // Start flyover
 flyoverCamera.start(flyover: eiffelTower)
@@ -102,11 +101,13 @@ flyoverCamera.start(flyover: eiffelTower)
 If you wish to show a MapView which is already preconfigured to perform a flyover on a given location.
 
 ```swift
+import FlyoverKit
+
 // Initialize the FlyoverMapView
 let flyoverMapView = FlyoverMapView()
 
-// Initialize a location
-let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+// Initialize a location via CLLocation
+let eiffelTower = CLLocation(latitude: 48.858370, longitude: 2.294481)
 
 // Start flyover
 flyoverMapView.start(flyover: eiffelTower)
@@ -116,8 +117,10 @@ flyoverMapView.start(flyover: eiffelTower)
 If you wish to present a `UIViewController` with an embedded `FlyoverMapView` to perform a flyover on a given location.
 
 ```swift
-// Initialize a location
-let eiffelTower = CLLocationCoordinate2DMake(48.858370, 2.294481)
+import FlyoverKit
+
+// Initialize a location via FlyoverAwesomePlace
+let eiffelTower = FlyoverAwesomePlace.parisEiffelTower
 
 // Initialize the FlyoverMapViewController with a Flyover object
 let controller = FlyoverMapViewController(flyover: eiffelTower)
@@ -143,7 +146,7 @@ public protocol Flyover {
     var coordinate: CLLocationCoordinate2D { get }
 }
 ```
-The `FlyoverKit` already implemented this protocol to various MapKit and CoreLocation types like `CLLocationCoordinate2D`, `CLLocation`, `MKMapPoint`, `MKMapItem`, `MKCoordinateRegion` and many more.
+The `FlyoverKit` already implemented this protocol to various MapKit and CoreLocation types like `CLLocationCoordinate2D`, `CLLocation`, `MKMapPoint`, `MKMapItem`, `MKCoordinateRegion` and many [more](https://sventiigi.github.io/FlyoverKit/Extensions.html).
 
 You can apply the `Flyover` protocol to your own models to use them for a flyover.
 
