@@ -85,6 +85,8 @@ On your application targets’ “Build Phases” settings tab, click the “+�
 If you already have a `MKMapView` in your `Controller` and you want to add a flyover to this MapView, simply use the `FlyoverCamera`.
 
 ```swift
+import FlyoverKit
+
 // Initialize the FlyoverCamera with an already existing MKMapView
 let flyoverCamera = FlyoverCamera(mapView: self.mapView)
 
@@ -99,6 +101,8 @@ flyoverCamera.start(flyover: eiffelTower)
 If you wish to show a MapView which is already preconfigured to perform a flyover on a given location.
 
 ```swift
+import FlyoverKit
+
 // Initialize the FlyoverMapView
 let flyoverMapView = FlyoverMapView()
 
@@ -113,6 +117,8 @@ flyoverMapView.start(flyover: eiffelTower)
 If you wish to present a `UIViewController` with an embedded `FlyoverMapView` to perform a flyover on a given location.
 
 ```swift
+import FlyoverKit
+
 // Initialize a location via CLLocation
 let eiffelTower = CLLocation(latitude: 48.858370, longitude: 2.294481)
 
