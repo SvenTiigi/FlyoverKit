@@ -90,8 +90,8 @@ import FlyoverKit
 // Initialize the FlyoverCamera with an already existing MKMapView
 let flyoverCamera = FlyoverCamera(mapView: self.mapView)
 
-// Initialize a location via FlyoverAwesomePlace
-let eiffelTower = FlyoverAwesomePlace.parisEiffelTower.rawValue
+// Initialize a location via CLLocationCoordinate2D
+let eiffelTower = CLLocationCoordinate2D(latitude: 48.858370, longitude: 2.294481)
 
 // Start flyover
 flyoverCamera.start(flyover: eiffelTower)
@@ -106,8 +106,8 @@ import FlyoverKit
 // Initialize the FlyoverMapView
 let flyoverMapView = FlyoverMapView()
 
-// Initialize a location via CLLocationCoordinate2D
-let eiffelTower = CLLocationCoordinate2D(latitude: 48.858370, longitude: 2.294481)
+// Initialize a location via CLLocation
+let eiffelTower = CLLocation(latitude: 48.858370, longitude: 2.294481)
 
 // Start flyover
 flyoverMapView.start(flyover: eiffelTower)
@@ -119,8 +119,8 @@ If you wish to present a `UIViewController` with an embedded `FlyoverMapView` to
 ```swift
 import FlyoverKit
 
-// Initialize a location via CLLocation
-let eiffelTower = CLLocation(latitude: 48.858370, longitude: 2.294481)
+// Initialize a location via FlyoverAwesomePlace
+let eiffelTower = FlyoverAwesomePlace.parisEiffelTower
 
 // Initialize the FlyoverMapViewController with a Flyover object
 let controller = FlyoverMapViewController(flyover: eiffelTower)
