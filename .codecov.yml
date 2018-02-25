@@ -1,0 +1,9 @@
+coverage:
+  ignore:
+   - "FlyoverKitTests/*"
+   - "FlyoverKitExample/*"
+   - "Carthage/*"
+comment:
+  layout: "reach, diff"
+  behavior: once
+  require_changes: true
