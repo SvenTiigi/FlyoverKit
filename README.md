@@ -146,7 +146,7 @@ public protocol Flyover {
     var coordinate: CLLocationCoordinate2D { get }
 }
 ```
-The `FlyoverKit` already implemented this protocol to various MapKit and CoreLocation types like `CLLocationCoordinate2D`, `CLLocation`, `MKMapPoint`, `MKMapItem`, `MKCoordinateRegion` and many more.
+The `FlyoverKit` already implemented this protocol to various MapKit and CoreLocation types like `CLLocationCoordinate2D`, `CLLocation`, `MKMapPoint`, `MKMapItem`, `MKCoordinateRegion` and many [more](https://sventiigi.github.io/FlyoverKit/Extensions.html).
 
 You can apply the `Flyover` protocol to your own models to use them for a flyover.
 
