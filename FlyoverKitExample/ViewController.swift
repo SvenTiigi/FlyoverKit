@@ -20,12 +20,18 @@ class ViewController: UIViewController {
     // MARK: Propertirs
 
     /// The FlyoverMapView
-    lazy private var flyoverMapView: FlyoverMapView = {
+    private lazy var flyoverMapView: FlyoverMapView = {
         return FlyoverMapView(configurationTheme: .default)
     }()
 
+    private lazy var seperatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .main
+        return view
+    }()
+    
     /// The ConfigurationTableView
-    lazy private var configurationTableView: ConfigurationTableView = {
+    private lazy var configurationTableView: ConfigurationTableView = {
         return ConfigurationTableView(configurationDelegate: self)
     }()
     
@@ -46,8 +52,10 @@ class ViewController: UIViewController {
         // Add Navigation Items
         self.addNavigationItems()
         // Add Subviews
-        self.view.addSubview(self.flyoverMapView)
-        self.view.addSubview(self.configurationTableView)
+        [self.flyoverMapView,
+         self.seperatorView,
+         self.configurationTableView
+        ].forEach(self.view.addSubview)
         // Layout SubViews
         self.layoutSubViews()
     }
@@ -75,8 +83,13 @@ class ViewController: UIViewController {
             make.left.right.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.45)
         }
-        self.configurationTableView.snp.makeConstraints { (make) in
+        self.seperatorView.snp.makeConstraints { (make) in
             make.top.equalTo(self.flyoverMapView.snp.bottom)
+            make.left.right.equalTo(self.view)
+            make.height.equalTo(1)
+        }
+        self.configurationTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.seperatorView.snp.bottom)
             make.left.right.equalTo(self.view)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
