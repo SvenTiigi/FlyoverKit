@@ -6,9 +6,9 @@
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
 //
 
-import XCTest
 @testable import FlyoverKit
 import MapKit
+import XCTest
 
 class FlyoverCameraTests: BaseTests {
     

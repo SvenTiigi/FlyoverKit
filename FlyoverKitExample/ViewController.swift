@@ -6,11 +6,11 @@
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
 //
 
-import UIKit
-import MapKit
-import SnapKit
-import SafariServices
 import FlyoverKit
+import MapKit
+import SafariServices
+import SnapKit
+import UIKit
 
 // MARK: - ViewController
 
@@ -87,8 +87,18 @@ class ViewController: UIViewController {
     /// Add navigation items
     private func addNavigationItems() {
         self.title = "FlyoverKit"
-        let fullscreenBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .plain, target: self, action: #selector(fullscreenBarButtonItemTouched(_:)))
-        let githubBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "github"), style: .plain, target: self, action: #selector(githubBarButtonItemTouched(_:)))
+        let fullscreenBarButtonItem = UIBarButtonItem(
+            title: "Fullscreen",
+            style: .plain,
+            target: self,
+            action: #selector(fullscreenBarButtonItemTouched(_:))
+        )
+        let githubBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "github"),
+            style: .plain,
+            target: self,
+            action: #selector(githubBarButtonItemTouched(_:))
+        )
         self.navigationItem.leftBarButtonItem = fullscreenBarButtonItem
         self.navigationItem.rightBarButtonItem = githubBarButtonItem
     }
