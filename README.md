@@ -79,7 +79,7 @@ Run `carthage update --platform iOS` to build the framework and drag the built `
 On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md)
 
 ## Usage
-`FlyoverKit` can be implemented in three different ways. Simply choose the most suitable type for your implementation. Please see the `Advanced` section in order to configure the `FlyoverKit` to your needs.
+`FlyoverKit` can be implemented in three different ways. Simply choose the most suitable type for your implementation. Please see the [Advanced](https://github.com/SvenTiigi/FlyoverKit#advanced) section in order to configure the `FlyoverKit` to your needs.
 
 ### FlyoverCamera
 If you already have a `MKMapView` in your `Controller` and you want to add a flyover to this MapView, simply use the `FlyoverCamera`.
