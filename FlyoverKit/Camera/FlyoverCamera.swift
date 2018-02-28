@@ -226,8 +226,14 @@ open class FlyoverCamera {
 
     /// UIApplicationWillResignActive notification handler
     @objc private func applicationWillResignActive() {
-        // Stop flyover as application is no longer active
-        self.stop()
+        // Check if current state is not stopped
+        if self.state != .stopped {
+            // Stop flyover as application is no longer active
+            self.stop()
+        } else {
+            // Clear Flyover to prevent start on didBecomeActive
+            self.flyover = nil
+        }
     }
     
     /// UIApplicationDidBecomeActive notification handler
