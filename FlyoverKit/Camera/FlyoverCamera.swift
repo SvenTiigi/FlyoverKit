@@ -31,10 +31,8 @@ open class FlyoverCamera {
         }
     }
     
-    /// Retrieve boolean if flyover has been started and is active
-    open var isStarted: Bool {
-        return self.flyover.active != nil
-    }
+    /// Retrieve FlyoverCamera State
+    open var state: State
     
     /// The animation curve
     open let curve: UIViewAnimationCurve = .linear
@@ -79,6 +77,8 @@ open class FlyoverCamera {
         self.configuration = configuration
         // Initialize Flyover Tupel with nil
         self.flyover = (nil, nil)
+        // Initialize state
+        self.state = .stopped
         // Add application will resign active observer
         NotificationCenter.default.addObserver(
             self,
@@ -127,7 +127,9 @@ open class FlyoverCamera {
             // Return out of function
             return
         }
-        // Set coordinate
+        // Change state
+        self.state = .started
+        // Set flyover
         self.flyover.active = flyover
         // Stop current animation
         self.animator?.forceStopAnimation()
@@ -166,8 +168,8 @@ open class FlyoverCamera {
     
     /// Stop flyover
     open func stop() {
-        // Clear flyover
-        self.flyover.active = nil
+        // Change state
+        self.state = .stopped
         // Unwrap MapView Camera Heading and fractionComplete
         guard var heading = self.mapView?.camera.heading,
             let fractionComplete = self.animator?.fractionComplete else {

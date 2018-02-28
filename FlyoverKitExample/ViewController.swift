@@ -42,6 +42,9 @@ class ViewController: UIViewController {
     /// Boolean if MapView is in Full-Screen Mode
     var isMapFullscreen = false
     
+    /// Boolean holding Flyover start/stop state
+    var flyoverWasStarted = true
+    
     // MARK: ViewLifeCycle
     
     /// ViewDidLoad
@@ -63,13 +66,18 @@ class ViewController: UIViewController {
     /// viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // Start
-        self.flyoverMapView.start(flyover: self.location)
+        // Check if flyover was started before starting
+        if self.flyoverWasStarted {
+            // Start
+            self.flyoverMapView.start(flyover: self.location)
+        }
     }
     
     /// viewDidDisappear
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        // Store state
+        self.flyoverWasStarted = self.flyoverMapView.state == .started
         // Stop
         self.flyoverMapView.stop()
     }

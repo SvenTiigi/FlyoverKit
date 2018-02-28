@@ -44,10 +44,10 @@ open class FlyoverMapView: MKMapView {
         }
     }
     
-    /// Retrieve boolean if the FlyoverCamera is started
-    open var isStarted: Bool {
-        // Return FlyoverCamera isStarted property
-        return self.flyoverCamera.isStarted
+    /// Retrieve FlyoverCamera state
+    open var state: FlyoverCamera.State {
+        // Return FlyoverCamera state property
+        return self.flyoverCamera.state
     }
     
     // MARK: Initializer
