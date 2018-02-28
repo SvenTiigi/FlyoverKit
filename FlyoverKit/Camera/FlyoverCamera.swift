@@ -26,15 +26,24 @@ open class FlyoverCamera {
             self.mapCamera.altitude = self.configuration.altitude
             // Set MapCamera pitch
             self.mapCamera.pitch = CGFloat(self.configuration.pitch)
-            // Restart flyover with current coordinate
-            self.performFlyover(self.coordinate)
+            // Restart flyover with current flyover
+            self.performFlyover(self.flyover)
         }
     }
     
     /// Retrieve boolean if flyover has been started and is active
     open var isStarted: Bool {
-        return self.coordinate != nil
+        return self.flyover != nil
     }
+    
+    /// The animation curve
+    open let curve: UIViewAnimationCurve = .linear
+    
+    /// The current Flyover
+    open private(set) var flyover: Flyover?
+    
+    /// The flyover that is been stored when application state is background
+    open private(set) var flyoverStoredInBackground: Flyover?
     
     // MARK: Private properties
     
@@ -49,12 +58,6 @@ open class FlyoverCamera {
         return camera
     }()
     
-    /// The animation curve
-    open let curve: UIViewAnimationCurve = .linear
-    
-    /// The current coordinate
-    open private(set) var coordinate: CLLocationCoordinate2D?
-    
     /// The UIViewPropertyAnimator
     private var animator: UIViewPropertyAnimator?
     
@@ -68,6 +71,20 @@ open class FlyoverCamera {
     public init(mapView: MKMapView, configuration: Configuration) {
         self.mapView = mapView
         self.configuration = configuration
+        // Add application will resign active observer
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(applicationWillResignActive),
+            name: .UIApplicationWillResignActive,
+            object: nil
+        )
+        // Add application did become active observer
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(applicationDidBecomeActive),
+            name: .UIApplicationDidBecomeActive,
+            object: nil
+        )
     }
     
     /// Initialize with a predefined configuration theme
@@ -82,8 +99,10 @@ open class FlyoverCamera {
     
     /// Deinit
     deinit {
-        /// Stop
+        // Stop
         self.stop()
+        // Remove observer
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: Public API
@@ -93,17 +112,24 @@ open class FlyoverCamera {
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
     open func start(flyover: Flyover) {
+        // Check if applicationState is not active
+        if UIApplication.shared.applicationState != .active {
+            // Store flyover as application is in background
+            self.flyoverStoredInBackground = flyover
+            // Return out of function
+            return
+        }
         // Set coordinate
-        self.coordinate = flyover.coordinate
+        self.flyover = flyover
         // Stop current animation
         self.animator?.forceStopAnimation()
         // Set center coordinate
         self.mapCamera.centerCoordinate = flyover.coordinate
         // Check if duration is zero or the current mapView camera center coordinates
         // equals nearly the same to the current coordinate
-        if self.mapView?.camera.centerCoordinate ~~ self.coordinate {
+        if self.mapView?.camera.centerCoordinate ~~ self.flyover?.coordinate {
             // Simply perform flyover as we still looking at the same coordinate
-            self.performFlyover(flyover.coordinate)
+            self.performFlyover(flyover)
         } else if case .animated(let duration, let curve) = self.configuration.regionChangeAnimation, duration > 0 {
             // Apply StartAnimationMode animated
             // Initialize start animatior
@@ -117,7 +143,7 @@ open class FlyoverCamera {
             // Add completion
             startAnimator.setCompletion {
                 // Start rotation
-                self.performFlyover(flyover.coordinate)
+                self.performFlyover(flyover)
             }
             // Start animation
             startAnimator.startAnimation()
@@ -126,14 +152,14 @@ open class FlyoverCamera {
             // Set MapView Camera to look at the coordinate
             self.mapView?.camera = self.mapCamera
             // Perform flyover
-            self.performFlyover(flyover.coordinate)
+            self.performFlyover(flyover)
         }
     }
     
     /// Stop flyover
     open func stop() {
-        // Clear coordinate
-        self.coordinate = nil
+        // Clear flyover
+        self.flyover = nil
         // Unwrap MapView Camera Heading and fractionComplete
         guard var heading = self.mapView?.camera.heading,
             let fractionComplete = self.animator?.fractionComplete else {
@@ -168,12 +194,12 @@ open class FlyoverCamera {
     
     // MARK: Private API
     
-    /// Perform flyover at the given coordinate
+    /// Perform flyover at the given Flyover coordinate
     ///
-    /// - Parameter coordinate: The coordinate
-    private func performFlyover(_ coordinate: CLLocationCoordinate2D?) {
+    /// - Parameter flyover: The Flyover object
+    private func performFlyover(_ flyover: Flyover?) {
         // Unwrap coordinate
-        guard let coordinate = coordinate else {
+        guard let coordinate = flyover?.coordinate else {
             // Coordinate unavailable return out of function
             return
         }
@@ -190,7 +216,7 @@ open class FlyoverCamera {
         // Add completion
         self.animator?.setCompletion {
             // Check if coordinates are equal
-            if self.coordinate ~~ coordinate {
+            if self.flyover?.coordinate ~~ coordinate {
                 // Invoke recursion
                 self.performFlyover(coordinate)
             }
@@ -199,6 +225,20 @@ open class FlyoverCamera {
         self.animator?.startAnimation()
     }
 
+    /// UIApplicationWillResignActive notification handler
+    @objc private func applicationWillResignActive() {
+        // Stop
+        self.stop()
+    }
+    
+    /// UIApplicationDidBecomeActive notification handler
+    @objc private func applicationDidBecomeActive() {
+        // Setup flyover either a flyover that is stored in background or the current FlyoverCamera coordinate
+        let flyover = self.flyoverStoredInBackground != nil ? self.flyoverStoredInBackground : self.flyover
+        // Start if flyover is available
+        flyover.flatMap(self.start)
+    }
+    
 }
 
 // MARK: - UIViewPropertyAnimator Extension
