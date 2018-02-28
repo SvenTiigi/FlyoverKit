@@ -61,7 +61,7 @@ FlyoverKit is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```bash
-pod 'FlyoverKit'
+pod 'FlyoverKit', '~> 1.0.0'
 ```
 
 ### Carthage
@@ -71,7 +71,7 @@ pod 'FlyoverKit'
 To integrate FlyoverKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "SvenTiigi/FlyoverKit"
+github "SvenTiigi/FlyoverKit" ~> 1.0.0
 ```
 
 Run `carthage update --platform iOS` to build the framework and drag the built `FlyoverKit.framework` into your Xcode project. 
