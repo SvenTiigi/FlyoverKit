@@ -13,6 +13,24 @@ import XCTest
 
 class FlyoverProtocolTests: BaseTests {
     
+    func testFlyoverOperator() {
+        let flyover1: Flyover = self.randomCoordinate
+        let flyover2: Flyover? = flyover1
+        let flyover3: Flyover = self.randomCoordinate
+        let flyover4: Flyover? = nil
+        let flyover5: Flyover? = flyover3
+        XCTAssertTrue(flyover1 == flyover2)
+        XCTAssertTrue(flyover1 ~~ flyover2)
+        XCTAssertFalse(flyover1 == flyover4)
+        XCTAssertFalse(flyover2 ~~ flyover4)
+        XCTAssertFalse(flyover1 == flyover3)
+        XCTAssertFalse(flyover2 ~~ flyover3)
+        XCTAssertFalse(flyover3 == flyover4)
+        XCTAssertFalse(flyover3 ~~ flyover4)
+        XCTAssertTrue(flyover3 == flyover5)
+        XCTAssertTrue(flyover3 ~~ flyover5)
+    }
+    
     func testFlyoverCLLocationCoordinate2D() {
         let coordinate = self.randomCoordinate
         XCTAssertFlyover(coordinate, coordinate.coordinate)

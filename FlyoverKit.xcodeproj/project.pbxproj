@@ -40,6 +40,7 @@
 		3DCF58D6204185A80049753A /* FlyoverCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF58D5204185A80049753A /* FlyoverCameraTests.swift */; };
 		3DCF58D8204185E60049753A /* FlyoverMapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF58D7204185E60049753A /* FlyoverMapViewTests.swift */; };
 		3DD5AF872046B2BB003F8492 /* FlyoverCamera+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5AF862046B2BB003F8492 /* FlyoverCamera+State.swift */; };
+		3DD5AF892046BDD8003F8492 /* Flyover+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5AF882046BDD8003F8492 /* Flyover+Operators.swift */; };
 		3DF31A8F203EFCFF0016027A /* FlyoverAwesomePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF31A8E203EFCFF0016027A /* FlyoverAwesomePlace.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 		3DCF58D5204185A80049753A /* FlyoverCameraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverCameraTests.swift; sourceTree = "<group>"; };
 		3DCF58D7204185E60049753A /* FlyoverMapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverMapViewTests.swift; sourceTree = "<group>"; };
 		3DD5AF862046B2BB003F8492 /* FlyoverCamera+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlyoverCamera+State.swift"; sourceTree = "<group>"; };
+		3DD5AF882046BDD8003F8492 /* Flyover+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flyover+Operators.swift"; sourceTree = "<group>"; };
 		3DF31A8E203EFCFF0016027A /* FlyoverAwesomePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverAwesomePlace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 				3D8F94A7203D804F006E7659 /* FlyoverKit.h */,
 				3D8F94A8203D804F006E7659 /* Info.plist */,
 				3DB39A4E203DAA4A00E00B2D /* Flyover.swift */,
+				3DD5AF882046BDD8003F8492 /* Flyover+Operators.swift */,
 				3DB39A55203DCADD00E00B2D /* Camera */,
 				3DB39A54203DCADD00E00B2D /* MapView */,
 				3DF31A90203EFE1C0016027A /* AwesomePlace */,
@@ -469,6 +472,7 @@
 				3DB39A4D203D9C7E00E00B2D /* FlyoverMapView.swift in Sources */,
 				3DB39A4F203DAA4A00E00B2D /* Flyover.swift in Sources */,
 				3DD5AF872046B2BB003F8492 /* FlyoverCamera+State.swift in Sources */,
+				3DD5AF892046BDD8003F8492 /* Flyover+Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
