@@ -53,7 +53,7 @@ open class FlyoverCamera {
     open let curve: UIViewAnimationCurve = .linear
     
     /// The current coordinate
-    private var coordinate: CLLocationCoordinate2D?
+    open private(set) var coordinate: CLLocationCoordinate2D?
     
     /// The UIViewPropertyAnimator
     private var animator: UIViewPropertyAnimator?
