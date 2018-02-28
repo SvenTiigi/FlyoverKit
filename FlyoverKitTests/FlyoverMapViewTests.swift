@@ -6,9 +6,9 @@
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
 //
 
-import XCTest
 @testable import FlyoverKit
 import MapKit
+import XCTest
 
 class FlyoverMapViewTests: BaseTests {
     
@@ -30,17 +30,17 @@ class FlyoverMapViewTests: BaseTests {
     
     func testFlyoverMapViewStartStop() {
         let mapView = FlyoverMapView()
-        XCTAssertFalse(mapView.isStarted)
+        XCTAssertFalse(mapView.state == .started)
         mapView.start(flyover: FlyoverAwesomePlace.appleHeadquarter)
-        XCTAssertTrue(mapView.isStarted)
+        XCTAssertTrue(mapView.state == .started)
         mapView.stop()
-        XCTAssertFalse(mapView.isStarted)
+        XCTAssertFalse(mapView.state == .started)
         let annotation = MKPointAnnotation()
         annotation.coordinate = self.randomCoordinate
         mapView.start(annotation: annotation)
-        XCTAssertTrue(mapView.isStarted)
+        XCTAssertTrue(mapView.state == .started)
         mapView.stop()
-        XCTAssertFalse(mapView.isStarted)
+        XCTAssertFalse(mapView.state == .started)
     }
     
     func testFlyoverMapViewMapType() {
@@ -50,7 +50,11 @@ class FlyoverMapViewTests: BaseTests {
         XCTAssertEqual(MKMapType.standard, standard.rawValue)
         XCTAssertEqual(MKMapType.satelliteFlyover, satelliteFlyover.rawValue)
         XCTAssertEqual(MKMapType.hybridFlyover, hybridFlyover.rawValue)
-        XCTAssertEqual([MKMapType.standard, MKMapType.satelliteFlyover, MKMapType.hybridFlyover].map(FlyoverMapView.MapType.init).count, 3)
+        XCTAssertEqual([
+            MKMapType.standard,
+            MKMapType.satelliteFlyover,
+            MKMapType.hybridFlyover
+            ].map(FlyoverMapView.MapType.init).count, 3)
         XCTAssertNil(FlyoverMapView.MapType.init(rawValue: .satellite))
         let mapView = FlyoverMapView()
         mapView.flyoverMapType = satelliteFlyover
@@ -79,18 +83,21 @@ class FlyoverMapViewTests: BaseTests {
         let controller = FlyoverMapViewController(flyover: flyover)
         XCTAssertFlyover(flyover, controller.flyover)
         XCTAssertEqual(controller.view, controller.flyoverMapView)
-        XCTAssertTrue(controller.flyoverMapView.isStarted)
+        XCTAssertTrue(controller.flyoverMapView.state == .started)
         XCTAssertEqual(controller.flyoverMapView.configuration, FlyoverCamera.Configuration.Theme.default.rawValue)
         XCTAssertEqual(controller.flyoverMapView.flyoverMapType, .standard)
         flyover = FlyoverAwesomePlace.googlePlex
         controller.flyover = flyover
         XCTAssertFlyover(flyover, controller.flyover)
-        XCTAssertTrue(controller.flyoverMapView.isStarted)
+        XCTAssertTrue(controller.flyoverMapView.state == .started)
     }
     
     func testFlyoverMapViewControllerThemeInitializer() {
         let flyover = FlyoverAwesomePlace.googlePlex
-        let controller = FlyoverMapViewController(flyover: flyover, configurationTheme: .farAway, mapType: .satelliteFlyover)
+        let controller = FlyoverMapViewController(
+            flyover: flyover,
+            configurationTheme: .farAway, mapType: .satelliteFlyover
+        )
         XCTAssertFlyover(flyover, controller.flyover)
         XCTAssertEqual(controller.flyoverMapView.configuration, FlyoverCamera.Configuration.Theme.farAway.rawValue)
         XCTAssertEqual(controller.flyoverMapView.flyoverMapType, .satelliteFlyover)

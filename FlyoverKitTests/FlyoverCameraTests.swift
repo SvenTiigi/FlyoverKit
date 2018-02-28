@@ -6,9 +6,9 @@
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
 //
 
-import XCTest
 @testable import FlyoverKit
 import MapKit
+import XCTest
 
 class FlyoverCameraTests: BaseTests {
     
@@ -65,21 +65,21 @@ class FlyoverCameraTests: BaseTests {
     func testFlyoverCameraStartStop() {
         let mapView = MKMapView()
         let flyoverCamera = FlyoverCamera(mapView: mapView)
-        XCTAssertFalse(flyoverCamera.isStarted)
+        XCTAssertFalse(flyoverCamera.state == .started)
         flyoverCamera.start(flyover: FlyoverAwesomePlace.parisEiffelTower)
-        XCTAssertTrue(flyoverCamera.isStarted)
+        XCTAssertTrue(flyoverCamera.state == .started)
         flyoverCamera.stop()
-        XCTAssertFalse(flyoverCamera.isStarted)
+        XCTAssertFalse(flyoverCamera.state == .started)
         flyoverCamera.configuration.regionChangeAnimation = .animated(duration: 0.1, curve: .linear)
         flyoverCamera.configuration.duration = 0.1
         flyoverCamera.start(flyover: FlyoverAwesomePlace.appleHeadquarter)
         self.performTest(#function) { (expectation) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                XCTAssertTrue(flyoverCamera.isStarted)
+                XCTAssertTrue(flyoverCamera.state == .started)
                 flyoverCamera.start(flyover: FlyoverAwesomePlace.googlePlex)
-                XCTAssertTrue(flyoverCamera.isStarted)
+                XCTAssertTrue(flyoverCamera.state == .started)
                 flyoverCamera.stop()
-                XCTAssertFalse(flyoverCamera.isStarted)
+                XCTAssertFalse(flyoverCamera.state == .started)
                 expectation.fulfill()
             })
         }

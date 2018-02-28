@@ -6,11 +6,11 @@
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
 //
 
-import UIKit
-import MapKit
-import SnapKit
-import SafariServices
 import FlyoverKit
+import MapKit
+import SafariServices
+import SnapKit
+import UIKit
 
 // MARK: - ViewController
 
@@ -20,12 +20,18 @@ class ViewController: UIViewController {
     // MARK: Propertirs
 
     /// The FlyoverMapView
-    lazy private var flyoverMapView: FlyoverMapView = {
+    private lazy var flyoverMapView: FlyoverMapView = {
         return FlyoverMapView(configurationTheme: .default)
     }()
 
+    private lazy var seperatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .main
+        return view
+    }()
+    
     /// The ConfigurationTableView
-    lazy private var configurationTableView: ConfigurationTableView = {
+    private lazy var configurationTableView: ConfigurationTableView = {
         return ConfigurationTableView(configurationDelegate: self)
     }()
     
@@ -35,6 +41,9 @@ class ViewController: UIViewController {
     
     /// Boolean if MapView is in Full-Screen Mode
     var isMapFullscreen = false
+    
+    /// Boolean holding Flyover start/stop state
+    var flyoverWasStarted = true
     
     // MARK: ViewLifeCycle
     
@@ -46,8 +55,10 @@ class ViewController: UIViewController {
         // Add Navigation Items
         self.addNavigationItems()
         // Add Subviews
-        self.view.addSubview(self.flyoverMapView)
-        self.view.addSubview(self.configurationTableView)
+        [self.flyoverMapView,
+         self.seperatorView,
+         self.configurationTableView
+        ].forEach(self.view.addSubview)
         // Layout SubViews
         self.layoutSubViews()
     }
@@ -55,13 +66,18 @@ class ViewController: UIViewController {
     /// viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // Start
-        self.flyoverMapView.start(flyover: self.location)
+        // Check if flyover was started before starting
+        if self.flyoverWasStarted {
+            // Start
+            self.flyoverMapView.start(flyover: self.location)
+        }
     }
     
     /// viewDidDisappear
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        // Store state
+        self.flyoverWasStarted = self.flyoverMapView.state == .started
         // Stop
         self.flyoverMapView.stop()
     }
@@ -75,8 +91,13 @@ class ViewController: UIViewController {
             make.left.right.equalTo(self.view)
             make.height.equalTo(self.view).multipliedBy(0.45)
         }
-        self.configurationTableView.snp.makeConstraints { (make) in
+        self.seperatorView.snp.makeConstraints { (make) in
             make.top.equalTo(self.flyoverMapView.snp.bottom)
+            make.left.right.equalTo(self.view)
+            make.height.equalTo(1)
+        }
+        self.configurationTableView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.seperatorView.snp.bottom)
             make.left.right.equalTo(self.view)
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
@@ -87,8 +108,18 @@ class ViewController: UIViewController {
     /// Add navigation items
     private func addNavigationItems() {
         self.title = "FlyoverKit"
-        let fullscreenBarButtonItem = UIBarButtonItem(title: "Fullscreen", style: .plain, target: self, action: #selector(fullscreenBarButtonItemTouched(_:)))
-        let githubBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "github"), style: .plain, target: self, action: #selector(githubBarButtonItemTouched(_:)))
+        let fullscreenBarButtonItem = UIBarButtonItem(
+            title: "Fullscreen",
+            style: .plain,
+            target: self,
+            action: #selector(fullscreenBarButtonItemTouched(_:))
+        )
+        let githubBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "github"),
+            style: .plain,
+            target: self,
+            action: #selector(githubBarButtonItemTouched(_:))
+        )
         self.navigationItem.leftBarButtonItem = fullscreenBarButtonItem
         self.navigationItem.rightBarButtonItem = githubBarButtonItem
     }

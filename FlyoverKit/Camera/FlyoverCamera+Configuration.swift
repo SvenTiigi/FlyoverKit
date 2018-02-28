@@ -78,6 +78,8 @@ public extension FlyoverCamera.Configuration {
         case farAway
         /// Spinning around (do not use in production)
         case giddy
+        /// The view of an astronaut
+        case astronautView
     }
     
 }
@@ -130,7 +132,15 @@ extension FlyoverCamera.Configuration.Theme: RawRepresentable {
                 pitch: 80,
                 headingStep: 50
             )
+        case .astronautView:
+            return RawValue(
+                duration: 20.0,
+                altitude: 2000.0,
+                pitch: 100.0,
+                headingStep: 35.0
+            )
         }
+        
     }
     
 }

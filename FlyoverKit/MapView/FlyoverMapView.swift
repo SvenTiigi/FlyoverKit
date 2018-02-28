@@ -44,10 +44,10 @@ open class FlyoverMapView: MKMapView {
         }
     }
     
-    /// Retrieve boolean if the FlyoverCamera is started
-    open var isStarted: Bool {
-        // Return FlyoverCamera isStarted property
-        return self.flyoverCamera.isStarted
+    /// Retrieve FlyoverCamera state
+    open var state: FlyoverCamera.State {
+        // Return FlyoverCamera state property
+        return self.flyoverCamera.state
     }
     
     // MARK: Initializer
@@ -74,7 +74,8 @@ open class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - configurationTheme: The flyover configuration theme
     ///   - mapType: The map type
-    public convenience init(configurationTheme: FlyoverCamera.Configuration.Theme = .default, mapType: MapType = .standard) {
+    public convenience init(configurationTheme: FlyoverCamera.Configuration.Theme = .default,
+                            mapType: MapType = .standard) {
         self.init(configuration: configurationTheme.rawValue, mapType: mapType)
     }
     

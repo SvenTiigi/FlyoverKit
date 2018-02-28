@@ -6,8 +6,8 @@
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
 //
 
-import UIKit
 import MapKit
+import UIKit
 
 // MARK: - ConfigurationTableViewCell
 

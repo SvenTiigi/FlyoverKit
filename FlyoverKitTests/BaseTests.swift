@@ -6,9 +6,9 @@
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
 //
 
-import XCTest
 import CoreLocation
 @testable import FlyoverKit
+import XCTest
 
 // MARK: - BaseTests
 
@@ -41,7 +41,8 @@ class BaseTests: XCTestCase {
     /// - Parameters:
     ///   - name: The expectation name
     ///   - execution: The test execution
-    func performTest(_ expectationName: String, _ timeout: TimeInterval? = nil, _ execution: (XCTestExpectation) -> Void) {
+    func performTest(_ expectationName: String, _ timeout: TimeInterval? = nil,
+                     _ execution: (XCTestExpectation) -> Void) {
         // Create expectation with function name
         let expectation = self.expectation(description: expectationName)
         // Perform test execution with expectation

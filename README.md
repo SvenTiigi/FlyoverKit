@@ -61,7 +61,7 @@ FlyoverKit is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```bash
-pod 'FlyoverKit'
+pod 'FlyoverKit', '~> 1.0.0'
 ```
 
 ### Carthage
@@ -71,7 +71,7 @@ pod 'FlyoverKit'
 To integrate FlyoverKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "SvenTiigi/FlyoverKit"
+github "SvenTiigi/FlyoverKit" ~> 1.0.0
 ```
 
 Run `carthage update --platform iOS` to build the framework and drag the built `FlyoverKit.framework` into your Xcode project. 
@@ -157,6 +157,21 @@ struct Address {
 }
 extension Address: Flyover {}
 ```
+
+### Operators
+In order to compare two `Flyover` types you can use the following two operators.
+
+```swift
+// Equatable operator (==)
+self.flyover1 == self.flyover2
+```
+This checks if the two given `Flyover` types are exactly the same via comparison of latitude and longitude.
+
+```swift
+// Rounded Equatable operator (~~)
+self.flyover1 ~~ self.flyover2
+```
+This checks if the two given `Flyover` types are nearly the same via comparison of rounded latitude and longitude.
 
 ### FlyoverAwesomePlace
 The `FlyoverAwesomePlace` is a `Flyover` protocol compliant Enumeration with awesome locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://github.com/SvenTiigi/FlyoverKit/blob/master/FlyoverKit/AwesomePlace/FlyoverAwesomePlace.swift). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
