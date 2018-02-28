@@ -31,13 +31,13 @@
 
 <br/>
 
-`FlyoverKit` enables you to present stunning 360° flyover views on your `MKMapView` with zero effort while maintaining full configuration possibilities. `FlyoverKit` builds the core of [STLocationRequest](https://github.com/SvenTiigi/STLocationRequest) which enables you a way to request the user location services via a 3D 360° flyover MapView.
+`FlyoverKit` enables you to present stunning 360° flyover views on an `MKMapView` with zero effort while maintaining full configuration possibilities. `FlyoverKit` builds the core of [STLocationRequest](https://github.com/SvenTiigi/STLocationRequest) which enables you a way to request the user location services via a 3D 360° flyover MapView.
 
 ## Example
 
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitExampleApplication.gif" alt="Example Application Screenshot" align="right" width="307">
 
-The `FlyoverKitExample` Application is an excellent way to see `FlyoverKit` in action. You can get a brief look of configuration options and how they change the flyover behaviour. Please keep in mind that the `SatelliteFlyover` and `HybridFlyover` will only work on a real iOS device.
+The `FlyoverKitExample` Application is an excellent way to see `FlyoverKit` in action. You get a brief look of the available configuration options and how they affect the flyover behaviour. Please keep in mind that the `SatelliteFlyover` and `HybridFlyover` will only work on a real iOS device.
 
 In order to run the example Application you have to first generate the Frameworks via [Carthage](https://github.com/Carthage/Carthage)
 
@@ -79,7 +79,7 @@ Run `carthage update --platform iOS` to build the framework and drag the built `
 On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md)
 
 ## Usage
-`FlyoverKit` comes with three ways to implement a flyover. Simply choose the most suitable type for your implementation. Please see the `Advanced` section in order to configure the `FlyoverKit` to your needs.
+`FlyoverKit` can be implemented in three different ways. Simply choose the most suitable type for your implementation. Please see the [Advanced](https://github.com/SvenTiigi/FlyoverKit#advanced) section in order to configure the `FlyoverKit` to your needs.
 
 ### FlyoverCamera
 If you already have a `MKMapView` in your `Controller` and you want to add a flyover to this MapView, simply use the `FlyoverCamera`.
@@ -98,7 +98,7 @@ flyoverCamera.start(flyover: eiffelTower)
 ```
 
 ### FlyoverMapView
-If you wish to show a MapView which is already preconfigured to perform a flyover on a given location.
+If you wish to show a MapView which is already preconfigured to perform a flyover on a given location, you should use the `FlyoverMapView`.
 
 ```swift
 import FlyoverKit
@@ -114,7 +114,7 @@ flyoverMapView.start(flyover: eiffelTower)
 ```
 
 ### FlyoverMapViewController
-If you wish to present a `UIViewController` with an embedded `FlyoverMapView` to perform a flyover on a given location.
+If you wish to present a `UIViewController` with an embedded `FlyoverMapView` to perform a flyover on a given location, `FlyoverMapViewController` is at your service.
 
 ```swift
 import FlyoverKit
@@ -174,10 +174,10 @@ self.flyover1 ~~ self.flyover2
 This checks if the two given `Flyover` types are nearly the same via comparison of rounded latitude and longitude.
 
 ### FlyoverAwesomePlace
-The `FlyoverAwesomePlace` is `Flyover` protocol compliant Enumeration with awesome 360° locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://github.com/SvenTiigi/FlyoverKit/blob/master/FlyoverKit/AwesomePlace/FlyoverAwesomePlace.swift). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
+The `FlyoverAwesomePlace` is a `Flyover` protocol compliant Enumeration with awesome locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://github.com/SvenTiigi/FlyoverKit/blob/master/FlyoverKit/AwesomePlace/FlyoverAwesomePlace.swift). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
 
 ## FlyoverCamera
-The `FlyoverCamera` is responsible for manipulating the original `MKMapView` camera and performs a 360° flyover animation via [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator). 
+The `FlyoverCamera` is responsible for manipulating the `MKMapView` camera and performs a 360° flyover animation via [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator). 
 
 In order to initialize a `FlyoverCamera` object you need to pass a `MKMapView` (which reference will be weakly stored) and a `FlyoverCamera.Configuration` object.
 
@@ -220,14 +220,15 @@ An excellent visualization of an `MKMapCamera` from [TechTopia](http://www.techo
 </p>
 
 ### Configuration Theme
-If you don't want to set the properties yourself your can use a preconfigured configuration theme. Currently there are four themes available 
+If you don't want to set the properties yourself you can use a preconfigured configuration theme. Currently there are four themes available 
 
 | Theme      | Description   |
 | ------------- | ------------- |
-| default      | Default flyover configuration with configuration for a default flyover usage |
-| lowFlying      | Flyover configuration with a low altitude and a high pitch. Simulates a low flying helicopter viewing angle |
-| farAway      | Configuration with a high altitude and a normal pitch which results in a far away viewing angle |
-| giddy      | A giddy configuration 🤢 which you shouldn't use in production. But it's fun 🤷‍♂️ 🤙|
+| default | Default flyover configuration with configuration for a default flyover usage |
+| lowFlying | Flyover configuration with a low altitude and a high pitch. Simulates a low flying helicopter viewing angle |
+| farAway | Configuration with a high altitude and a normal pitch which results in a far away viewing angle |
+| giddy | A giddy configuration 🤢 which you shouldn't use in production. But it's fun 🤷‍♂️ 🤙|
+| astronautView | The view of an astronaut 🌎 |
 
 More themes coming soon... 👨‍💻
 
@@ -242,7 +243,7 @@ let camera = FlyoverCamera(
 ```
 
 ## FlyoverMapView
-The `FlyoverMapView` is a preconfigured `MKMapView` with an embedded `FlyoverCamera`. The `FlyoverMapView` offers various convenience functions for example starting a flyover with a `MKAnnotation` object or setting a supported Flyover `MapType`.
+The `FlyoverMapView` is a preconfigured `MKMapView` with an embedded `FlyoverCamera`. The `FlyoverMapView` offers various convenience functions for example starting a flyover with a `MKAnnotation` object or setting a supported flyover `MapType`.
 
 ```swift
 // Initialize with default configuration theme and standard MapType
@@ -262,7 +263,7 @@ The `FlyoverMapView.MapType` specifies the three supported `MKMapType`'s.
 | hybridFlyover      | A hybrid satellite image with flyover data where available |
 
 ### FlyoverMapViewController
-The `FlyoverMapViewController` is an easy and simple way to just present a `UIViewController` with an embedded `FlyoverMapView`. You can use it if you just want to present a 360° flyover on a given `Flyover` type.
+The `FlyoverMapViewController` is an easy and simple way to present a `UIViewController` with an embedded `FlyoverMapView`. You can use it if you just want to present a 360° flyover on a given `Flyover` type.
 
 ```swift
 // Initialize a location
