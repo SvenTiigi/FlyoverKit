@@ -245,6 +245,8 @@ open class FlyoverCamera {
         let flyover = self.flyover.storedInBackground != nil ? self.flyover.storedInBackground : self.flyover.active
         // Start if flyover is available
         flyover.flatMap(self.start)
+        // Clear storedInBackground flyover
+        self.flyover.storedInBackground = nil
     }
     
 }
