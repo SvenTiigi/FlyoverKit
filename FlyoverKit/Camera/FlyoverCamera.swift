@@ -227,13 +227,13 @@ open class FlyoverCamera {
 
     /// UIApplicationWillResignActive notification handler
     @objc private func applicationWillResignActive() {
-        // Stop
+        // Stop flyover as application is no longer active
         self.stop()
     }
     
     /// UIApplicationDidBecomeActive notification handler
     @objc private func applicationDidBecomeActive() {
-        // Setup flyover either a flyover that is stored in background or the current FlyoverCamera coordinate
+        // Setup flyover either a flyover that is stored in background or the current flyover object
         let flyover = self.flyoverStoredInBackground != nil ? self.flyoverStoredInBackground : self.flyover
         // Start if flyover is available
         flyover.flatMap(self.start)
