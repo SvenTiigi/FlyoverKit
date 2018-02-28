@@ -224,11 +224,11 @@ If you don't want to set the properties yourself you can use a preconfigured con
 
 | Theme      | Description   |
 | ------------- | ------------- |
-| default      | Default flyover configuration with configuration for a default flyover usage |
-| lowFlying      | Flyover configuration with a low altitude and a high pitch. Simulates a low flying helicopter viewing angle |
-| farAway      | Configuration with a high altitude and a normal pitch which results in a far away viewing angle |
-| giddy      | A giddy configuration 🤢 which you shouldn't use in production. But it's fun 🤷‍♂️ 🤙|
-| astronautView      | The view of an astronaut 🌎 |
+| default | Default flyover configuration with configuration for a default flyover usage |
+| lowFlying | Flyover configuration with a low altitude and a high pitch. Simulates a low flying helicopter viewing angle |
+| farAway | Configuration with a high altitude and a normal pitch which results in a far away viewing angle |
+| giddy | A giddy configuration 🤢 which you shouldn't use in production. But it's fun 🤷‍♂️ 🤙|
+| astronautView | The view of an astronaut 🌎 |
 
 More themes coming soon... 👨‍💻
 
