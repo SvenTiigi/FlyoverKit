@@ -27,23 +27,17 @@ open class FlyoverCamera {
             // Set MapCamera pitch
             self.mapCamera.pitch = CGFloat(self.configuration.pitch)
             // Restart flyover with current flyover
-            self.performFlyover(self.flyover)
+            self.performFlyover(self.flyover.active)
         }
     }
     
     /// Retrieve boolean if flyover has been started and is active
     open var isStarted: Bool {
-        return self.flyover != nil
+        return self.flyover.active != nil
     }
     
     /// The animation curve
     open let curve: UIViewAnimationCurve = .linear
-    
-    /// The current Flyover
-    open private(set) var flyover: Flyover?
-    
-    /// The flyover that is been stored when application state is background
-    open private(set) var flyoverStoredInBackground: Flyover?
     
     // MARK: Private properties
     
@@ -58,6 +52,16 @@ open class FlyoverCamera {
         return camera
     }()
     
+    /// The flyover tupel property for active flyover and
+    /// Flyover that is been stored while application is in
+    /// background state
+    private var flyover: (
+        /// Active Flyover
+        active: Flyover?,
+        /// Flyover stored in background state
+        storedInBackground: Flyover?
+    )
+    
     /// The UIViewPropertyAnimator
     private var animator: UIViewPropertyAnimator?
     
@@ -69,8 +73,12 @@ open class FlyoverCamera {
     ///   - mapView: The MapView reference
     ///   - configuration: The Configuration
     public init(mapView: MKMapView, configuration: Configuration) {
+        // Set MapView
         self.mapView = mapView
+        // Set Configuration
         self.configuration = configuration
+        // Initialize Flyover Tupel with nil
+        self.flyover = (nil, nil)
         // Add application will resign active observer
         NotificationCenter.default.addObserver(
             self,
@@ -115,19 +123,19 @@ open class FlyoverCamera {
         // Check if applicationState is not active
         if UIApplication.shared.applicationState != .active {
             // Store flyover as application is in background
-            self.flyoverStoredInBackground = flyover
+            self.flyover.storedInBackground = flyover
             // Return out of function
             return
         }
         // Set coordinate
-        self.flyover = flyover
+        self.flyover.active = flyover
         // Stop current animation
         self.animator?.forceStopAnimation()
         // Set center coordinate
         self.mapCamera.centerCoordinate = flyover.coordinate
         // Check if duration is zero or the current mapView camera center coordinates
         // equals nearly the same to the current coordinate
-        if self.mapView?.camera.centerCoordinate ~~ self.flyover?.coordinate {
+        if self.mapView?.camera.centerCoordinate ~~ self.flyover.active?.coordinate {
             // Simply perform flyover as we still looking at the same coordinate
             self.performFlyover(flyover)
         } else if case .animated(let duration, let curve) = self.configuration.regionChangeAnimation, duration > 0 {
@@ -159,7 +167,7 @@ open class FlyoverCamera {
     /// Stop flyover
     open func stop() {
         // Clear flyover
-        self.flyover = nil
+        self.flyover.active = nil
         // Unwrap MapView Camera Heading and fractionComplete
         guard var heading = self.mapView?.camera.heading,
             let fractionComplete = self.animator?.fractionComplete else {
@@ -216,7 +224,7 @@ open class FlyoverCamera {
         // Add completion
         self.animator?.setCompletion {
             // Check if coordinates are equal
-            if self.flyover?.coordinate ~~ coordinate {
+            if self.flyover.active?.coordinate ~~ coordinate {
                 // Invoke recursion
                 self.performFlyover(coordinate)
             }
@@ -234,7 +242,7 @@ open class FlyoverCamera {
     /// UIApplicationDidBecomeActive notification handler
     @objc private func applicationDidBecomeActive() {
         // Setup flyover either a flyover that is stored in background or the current flyover object
-        let flyover = self.flyoverStoredInBackground != nil ? self.flyoverStoredInBackground : self.flyover
+        let flyover = self.flyover.storedInBackground != nil ? self.flyover.storedInBackground : self.flyover.active
         // Start if flyover is available
         flyover.flatMap(self.start)
     }
