@@ -63,10 +63,8 @@ extension XCTestCase {
     ///   - flyover1: The first Flyover object
     ///   - flyover2: The second Flyover object
     func XCTAssertFlyover(_ flyover1: Flyover, _ flyover2: Flyover) {
-        // Assert latitude
-        XCTAssertEqual(flyover1.coordinate.latitude, flyover2.coordinate.latitude)
-        // Assert longitude
-        XCTAssertEqual(flyover1.coordinate.longitude, flyover2.coordinate.longitude)
+        // Assert Flyover
+        XCTAssertTrue(flyover1 == flyover2)
     }
     
 }

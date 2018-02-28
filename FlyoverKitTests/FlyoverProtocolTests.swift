@@ -77,6 +77,13 @@ class FlyoverProtocolTests: BaseTests {
         XCTAssertFlyover(coordinate, rect)
     }
     
+    func testFlyoverMKMapCamera() {
+        let coordinate = self.randomCoordinate
+        let camera = MKMapCamera()
+        camera.centerCoordinate = coordinate
+        XCTAssertFlyover(coordinate, camera)
+    }
+    
     func testFlyoverAwesomePlaceCases() {
         for place in FlyoverAwesomePlace.iterate() {
             XCTAssertFlyover(place, place.coordinate)

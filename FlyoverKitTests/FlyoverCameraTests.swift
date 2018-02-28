@@ -54,7 +54,8 @@ class FlyoverCameraTests: BaseTests {
             .default,
             .lowFlying,
             .farAway,
-            .giddy
+            .giddy,
+            .astronautView
         ]
         configurationThemes.forEach { (theme) in
             let flyoverCamera = FlyoverCamera(mapView: mapView, configurationTheme: theme)
