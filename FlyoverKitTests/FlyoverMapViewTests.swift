@@ -30,17 +30,17 @@ class FlyoverMapViewTests: BaseTests {
     
     func testFlyoverMapViewStartStop() {
         let mapView = FlyoverMapView()
-        XCTAssertFalse(mapView.isStarted)
+        XCTAssertFalse(mapView.state == .started)
         mapView.start(flyover: FlyoverAwesomePlace.appleHeadquarter)
-        XCTAssertTrue(mapView.isStarted)
+        XCTAssertTrue(mapView.state == .started)
         mapView.stop()
-        XCTAssertFalse(mapView.isStarted)
+        XCTAssertFalse(mapView.state == .started)
         let annotation = MKPointAnnotation()
         annotation.coordinate = self.randomCoordinate
         mapView.start(annotation: annotation)
-        XCTAssertTrue(mapView.isStarted)
+        XCTAssertTrue(mapView.state == .started)
         mapView.stop()
-        XCTAssertFalse(mapView.isStarted)
+        XCTAssertFalse(mapView.state == .started)
     }
     
     func testFlyoverMapViewMapType() {
@@ -83,13 +83,13 @@ class FlyoverMapViewTests: BaseTests {
         let controller = FlyoverMapViewController(flyover: flyover)
         XCTAssertFlyover(flyover, controller.flyover)
         XCTAssertEqual(controller.view, controller.flyoverMapView)
-        XCTAssertTrue(controller.flyoverMapView.isStarted)
+        XCTAssertTrue(controller.flyoverMapView.state == .started)
         XCTAssertEqual(controller.flyoverMapView.configuration, FlyoverCamera.Configuration.Theme.default.rawValue)
         XCTAssertEqual(controller.flyoverMapView.flyoverMapType, .standard)
         flyover = FlyoverAwesomePlace.googlePlex
         controller.flyover = flyover
         XCTAssertFlyover(flyover, controller.flyover)
-        XCTAssertTrue(controller.flyoverMapView.isStarted)
+        XCTAssertTrue(controller.flyoverMapView.state == .started)
     }
     
     func testFlyoverMapViewControllerThemeInitializer() {
