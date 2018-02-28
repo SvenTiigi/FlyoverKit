@@ -71,5 +71,11 @@ extension MKCoordinateSpan: Flyover {
         return CLLocationCoordinate2D(latitude: self.latitudeDelta, longitude: self.longitudeDelta)
     }
 }
+extension MKMapCamera: Flyover {
+    /// /// The flyover coordinate
+    public var coordinate: CLLocationCoordinate2D {
+        return self.centerCoordinate
+    }
+}
 extension MKShape: Flyover { }
 extension MKPlacemark: Flyover { }
