@@ -161,16 +161,14 @@ extension Address: Flyover {}
 ### Operators
 In order to compare two `Flyover` types you can use the following two operators.
 
-> Equatable operator (==)
-
 ```swift
+// Equatable operator (==)
 self.flyover1 == self.flyover2
 ```
 This checks if the two given `Flyover` types are exactly the same via comparison of latitude and longitude.
 
-> Rounded Equatable operator (~~)
-
 ```swift
+// Rounded Equatable operator (~~)
 self.flyover1 ~~ self.flyover2
 ```
 This checks if the two given `Flyover` types are nearly the same via comparison of rounded latitude and longitude.
