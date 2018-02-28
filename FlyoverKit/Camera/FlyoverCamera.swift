@@ -124,9 +124,9 @@ open class FlyoverCamera {
         self.animator?.forceStopAnimation()
         // Set center coordinate
         self.mapCamera.centerCoordinate = flyover.coordinate
-        // Check if duration is zero or the current mapView camera center coordinates
-        // equals nearly the same to the current coordinate
-        if self.mapView?.camera.centerCoordinate ~~ self.flyover?.coordinate {
+        // Check if duration is zero or the current mapView camera
+        // equals nearly the same to the current flyover
+        if self.mapView?.camera ~~ self.flyover {
             // Simply perform flyover as we still looking at the same coordinate
             self.performFlyover(flyover)
         } else if case .animated(let duration, let curve) = self.configuration.regionChangeAnimation, duration > 0 {
@@ -197,9 +197,9 @@ open class FlyoverCamera {
     ///
     /// - Parameter flyover: The Flyover object
     private func performFlyover(_ flyover: Flyover?) {
-        // Unwrap coordinate
-        guard let coordinate = flyover?.coordinate else {
-            // Coordinate unavailable return out of function
+        // Unwrap Flyover
+        guard let flyover = flyover else {
+            // Flyover unavailable return out of function
             return
         }
         // Increase heading by heading step for mapCamera
@@ -214,10 +214,10 @@ open class FlyoverCamera {
         })
         // Add completion
         self.animator?.setCompletion {
-            // Check if coordinates are equal
-            if self.flyover?.coordinate ~~ coordinate {
+            // Check if flyovers are nearly equal
+            if self.flyover ~~ flyover {
                 // Invoke recursion
-                self.performFlyover(coordinate)
+                self.performFlyover(flyover)
             }
         }
         // Start Animation
@@ -263,31 +263,6 @@ fileprivate extension UIViewPropertyAnimator {
             // Invoke closure
             completion()
         }
-    }
-    
-}
-
-// MARK: - CLLocationCoordinate2D Comparison Extension
-
-/// Nearly the same infix operator
-infix operator ~~
-
-fileprivate extension Optional where Wrapped == CLLocationCoordinate2D {
-    
-    /// Check if two given coordinates via infix operator are nearly the same
-    /// via rounding the latitude and longitude to avoid float comparison
-    ///
-    /// - Parameters:
-    ///   - lhs: The left hand side
-    ///   - rhs: The right hand side
-    /// - Returns: Boolean if the two coordinates are nearly the same
-    static func ~~ (lhs: CLLocationCoordinate2D?, rhs: CLLocationCoordinate2D?) -> Bool {
-        guard let lhs = lhs, let rhs = rhs else {
-            return false
-        }
-        let factor = 1000.0
-        return round(lhs.latitude * factor) == round(rhs.latitude * factor)
-            && round(lhs.longitude * factor) == round(rhs.longitude * factor)
     }
     
 }

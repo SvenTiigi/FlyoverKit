@@ -8,6 +8,8 @@
 
 import Foundation
 
+infix operator ~~
+
 public extension Optional where Wrapped == Flyover {
 
     /// Compare two given Flyover types
