@@ -174,7 +174,7 @@ self.flyover1 ~~ self.flyover2
 This checks if the two given `Flyover` types are nearly the same via comparison of rounded latitude and longitude.
 
 ### FlyoverAwesomePlace
-The `FlyoverAwesomePlace` is a `Flyover` protocol compliant Enumeration with awesome locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://github.com/SvenTiigi/FlyoverKit/blob/master/FlyoverKit/AwesomePlace/FlyoverAwesomePlace.swift). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
+The `FlyoverAwesomePlace` is a `Flyover` protocol compliant Enumeration with awesome locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://sventiigi.github.io/FlyoverKit/Enums/FlyoverAwesomePlace.html). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
 
 ## FlyoverCamera
 The `FlyoverCamera` is responsible for manipulating the `MKMapView` camera and performs a 360° flyover animation via [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator). 
