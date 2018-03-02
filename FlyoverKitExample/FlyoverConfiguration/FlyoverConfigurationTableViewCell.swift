@@ -1,5 +1,5 @@
 //
-//  ConfigurationTableViewCell.swift
+//  FlyoverConfigurationTableViewCell.swift
 //  FlyoverKitExample
 //
 //  Created by Sven Tiigi on 21.02.18.
@@ -9,17 +9,17 @@
 import MapKit
 import UIKit
 
-// MARK: - ConfigurationTableViewCell
+// MARK: - FlyoverConfigurationTableViewCell
 
-class ConfigurationTableViewCell: UITableViewCell {
+class FlyoverConfigurationTableViewCell: UITableViewCell {
     
     // MARK: Properties
     
     /// The Configuration
-    var configuration: Configuration
+    var configuration: FlyoverConfiguration
     
-    /// The ConfigurationTableViewDelegate
-    weak var delegate: ConfigurationTableViewDelegate?
+    /// The FlyoverConfigurationTableViewDelegate
+    weak var delegate: FlyoverConfigurationTableViewDelegate?
     
     /// The title label
     lazy var titleLabel: UILabel = {
@@ -68,7 +68,7 @@ class ConfigurationTableViewCell: UITableViewCell {
     /// - Parameters:
     ///   - configuration: The Configuration
     ///   - delegate: The Delegate
-    init(_ configuration: Configuration, _ delegate: ConfigurationTableViewDelegate?) {
+    init(_ configuration: FlyoverConfiguration, _ delegate: FlyoverConfigurationTableViewDelegate?) {
         // Set configuration
         self.configuration = configuration
         // Set delegate
@@ -187,7 +187,7 @@ class ConfigurationTableViewCell: UITableViewCell {
         // Initialize value of Double slider value type
         let value = Double(self.slider.value)
         // Declare updated configuration
-        let updatedConfiguration: Configuration?
+        let updatedConfiguration: FlyoverConfiguration?
         // Switch on configuration
         switch self.configuration {
         case .duration:

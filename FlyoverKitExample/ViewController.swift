@@ -15,7 +15,7 @@ import UIKit
 // MARK: - ViewController
 
 /// The Example View Controller
-class ViewController: UIViewController {
+class ViewController: SplitScreenViewController {
     
     // MARK: Propertirs
 
@@ -24,15 +24,9 @@ class ViewController: UIViewController {
         return FlyoverMapView(configurationTheme: .default)
     }()
 
-    private lazy var seperatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .main
-        return view
-    }()
-    
     /// The ConfigurationTableView
-    private lazy var configurationTableView: ConfigurationTableView = {
-        return ConfigurationTableView(configurationDelegate: self)
+    private lazy var configurationTableView: FlyoverConfigurationTableView = {
+        return FlyoverConfigurationTableView(configurationDelegate: self)
     }()
     
     /// The example location
@@ -45,6 +39,27 @@ class ViewController: UIViewController {
     /// Boolean holding Flyover start/stop state
     var flyoverWasStarted = true
     
+    // MARK: Initializer
+    
+    /// Default initializer
+    init() {
+        // Initialize SplitScreenViewController Configuration
+        var configuration = Configuration()
+        // Set main backgroundcolor
+        configuration.dragView.backgroundColor = .main
+        // Add y padding
+        configuration.dragView.startYPadding = 20
+        // Set white inner drag view background color
+        configuration.dragInnerView.backgroundColor = .white
+        // Super init
+        super.init(topView: self.flyoverMapView, bottomView: self.configurationTableView, configuration: configuration)
+    }
+    
+    /// Initializer with NSCoder always return nil
+    required init?(coder aDecoder: NSCoder) {
+        return nil
+    }
+    
     // MARK: ViewLifeCycle
     
     /// ViewDidLoad
@@ -54,13 +69,6 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .white
         // Add Navigation Items
         self.addNavigationItems()
-        // Add Subviews
-        [self.flyoverMapView,
-         self.seperatorView,
-         self.configurationTableView
-        ].forEach(self.view.addSubview)
-        // Layout SubViews
-        self.layoutSubViews()
     }
     
     /// viewDidAppear
@@ -81,65 +89,23 @@ class ViewController: UIViewController {
         // Stop
         self.flyoverMapView.stop()
     }
-    
-    // MARK: Layout
-    
-    /// Layout subviews
-    private func layoutSubViews() {
-        self.flyoverMapView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.safeAreaLayoutGuide)
-            make.left.right.equalTo(self.view)
-            make.height.equalTo(self.view).multipliedBy(0.45)
-        }
-        self.seperatorView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.flyoverMapView.snp.bottom)
-            make.left.right.equalTo(self.view)
-            make.height.equalTo(1)
-        }
-        self.configurationTableView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.seperatorView.snp.bottom)
-            make.left.right.equalTo(self.view)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
-        }
-    }
-    
+
     // MARK: Custom Functions
     
     /// Add navigation items
     private func addNavigationItems() {
         self.title = "FlyoverKit"
-        let fullscreenBarButtonItem = UIBarButtonItem(
-            title: "Fullscreen",
-            style: .plain,
-            target: self,
-            action: #selector(fullscreenBarButtonItemTouched(_:))
-        )
         let githubBarButtonItem = UIBarButtonItem(
             image: #imageLiteral(resourceName: "github"),
             style: .plain,
             target: self,
             action: #selector(githubBarButtonItemTouched(_:))
         )
-        self.navigationItem.leftBarButtonItem = fullscreenBarButtonItem
         self.navigationItem.rightBarButtonItem = githubBarButtonItem
     }
     
-    /// Handle double tap
-    @objc func fullscreenBarButtonItemTouched(_ sender: UIBarButtonItem) {
-        self.flyoverMapView.snp.removeConstraints()
-        self.configurationTableView.snp.removeConstraints()
-        if self.isMapFullscreen {
-            self.layoutSubViews()
-        } else {
-            self.flyoverMapView.snp.makeConstraints({ (make) in
-                make.edges.equalTo(self.view.safeAreaLayoutGuide)
-            })
-        }
-        self.isMapFullscreen = !self.isMapFullscreen
-    }
-    
     /// Github BarButtonItem touched handler
-    @objc func githubBarButtonItemTouched(_ sender: UIBarButtonItem) {
+    @objc private func githubBarButtonItemTouched(_ sender: UIBarButtonItem) {
         guard let url = URL(string: "https://github.com/SvenTiigi/FlyoverKit/blob/master/README.md") else {
             print("Unable to construct Github Repo URL")
             return
@@ -153,12 +119,12 @@ class ViewController: UIViewController {
 
 // MARK: - ConfigurationTableViewDelegate
 
-extension ViewController: ConfigurationTableViewDelegate {
+extension ViewController: FlyoverConfigurationTableViewDelegate {
     
     /// On Configuration Change
     ///
     /// - Parameter configuration: The updated configuration
-    func onChange(_ configuration: Configuration) {
+    func onChange(_ configuration: FlyoverConfiguration) {
         // Switch on configuration
         switch configuration {
         case .flyover(let started):

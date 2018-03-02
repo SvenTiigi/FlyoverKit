@@ -11,8 +11,8 @@ import MapKit
 
 // MARK: - Configuration
 
-/// The Configuration Enumeration
-enum Configuration {
+/// The FlyoverConfiguration Enumeration
+enum FlyoverConfiguration {
     
     /// Flyover start/stop boolean
     case flyover(Bool)
@@ -76,7 +76,7 @@ enum Configuration {
 
 // MARK: - RawRepresentable
 
-extension Configuration: RawRepresentable {
+extension FlyoverConfiguration: RawRepresentable {
     
     /// Associated type RawValue as String
     typealias RawValue = String
