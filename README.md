@@ -161,17 +161,19 @@ extension Address: Flyover {}
 ### Operators
 In order to compare two `Flyover` types you can use the following two operators.
 
-```swift
-// Equatable operator (==)
-self.flyover1 == self.flyover2
-```
-This checks if the two given `Flyover` types are exactly the same via comparison of latitude and longitude.
+#### Equatable operator (==)
 
 ```swift
-// Rounded Equatable operator (~~)
+self.flyover1 == self.flyover2
+```
+> Checks if the two given Flyover types are exactly the same via comparison of latitude and longitude.
+
+#### Rounded Equatable operator (~~)
+
+```swift
 self.flyover1 ~~ self.flyover2
 ```
-This checks if the two given `Flyover` types are nearly the same via comparison of rounded latitude and longitude.
+> Checks if the two given Flyover types are nearly the same via comparison of rounded latitude and longitude.
 
 ### FlyoverAwesomePlace
 The `FlyoverAwesomePlace` is a `Flyover` protocol compliant Enumeration with awesome locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://sventiigi.github.io/FlyoverKit/Enums/FlyoverAwesomePlace.html). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
