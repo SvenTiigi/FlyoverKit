@@ -232,8 +232,6 @@ If you don't want to set the properties yourself you can use a preconfigured con
 | giddy | A giddy configuration 🤢 which you shouldn't use in production. But it's fun 🤷‍♂️ 🤙|
 | astronautView | The view of an astronaut 🌎 |
 
-More themes coming soon... 👨‍💻
-
 Furthermore, you can initialize a `FlyoverCamera` with a given `Theme`.
 
 ```swift
@@ -243,6 +241,8 @@ let camera = FlyoverCamera(
     configurationTheme: .default
 )
 ```
+
+More themes coming soon... 👨‍💻
 
 ## FlyoverMapView
 The `FlyoverMapView` is a preconfigured `MKMapView` with an embedded `FlyoverCamera`. The `FlyoverMapView` offers various convenience functions for example starting a flyover with a `MKAnnotation` object or setting a supported flyover `MapType`.
