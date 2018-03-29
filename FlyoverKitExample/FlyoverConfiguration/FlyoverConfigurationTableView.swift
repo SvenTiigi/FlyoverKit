@@ -43,12 +43,8 @@ class FlyoverConfigurationTableView: UITableView {
     
     // MARK: Initializer
     
-    /// Default initializer with FlyoverConfigurationTableViewDelegate
-    ///
-    /// - Parameter configurationDelegate: The delegate
-    init(configurationDelegate: FlyoverConfigurationTableViewDelegate) {
-        // Set configuration delegate
-        self.configurationDelegate = configurationDelegate
+    /// Default initializer
+    init() {
         // Super init
         super.init(frame: .zero, style: .plain)
         // Set delegate to self

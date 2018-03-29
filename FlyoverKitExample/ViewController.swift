@@ -20,14 +20,10 @@ class ViewController: SplitScreenViewController {
     // MARK: Propertirs
 
     /// The FlyoverMapView
-    private lazy var flyoverMapView: FlyoverMapView = {
-        return FlyoverMapView(configurationTheme: .default)
-    }()
+    private var flyoverMapView: FlyoverMapView
 
     /// The ConfigurationTableView
-    private lazy var configurationTableView: FlyoverConfigurationTableView = {
-        return FlyoverConfigurationTableView(configurationDelegate: self)
-    }()
+    private var configurationTableView: FlyoverConfigurationTableView
     
     /// The example location
     // Change the enum case to explore different locations 🤙
@@ -51,8 +47,14 @@ class ViewController: SplitScreenViewController {
         configuration.dragView.startYPadding = 20
         // Set white inner drag view background color
         configuration.dragInnerView.backgroundColor = .white
+        // Initialize FlyoverMapView
+        self.flyoverMapView = FlyoverMapView(configurationTheme: .default)
+        // Initialize ConfigurationTableView
+        self.configurationTableView = FlyoverConfigurationTableView()
         // Super init
         super.init(topView: self.flyoverMapView, bottomView: self.configurationTableView, configuration: configuration)
+        // Set ConfigurationDelegate
+        self.configurationTableView.configurationDelegate = self
     }
     
     /// Initializer with NSCoder always return nil
