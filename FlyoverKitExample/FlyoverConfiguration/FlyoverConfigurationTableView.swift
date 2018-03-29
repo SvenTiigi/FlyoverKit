@@ -1,5 +1,5 @@
 //
-//  ConfigurationTableView.swift
+//  FlyoverConfigurationTableView.swift
 //  FlyoverKitExample
 //
 //  Created by Sven Tiigi on 21.02.18.
@@ -8,29 +8,29 @@
 
 import UIKit
 
-// MARK: - ConfigurationTableViewDelegate
+// MARK: - FlyoverConfigurationTableViewDelegate
 
-/// The ConfigurationTableViewDelegate
-protocol ConfigurationTableViewDelegate: class {
+/// The FlyoverConfigurationTableViewDelegate
+protocol FlyoverConfigurationTableViewDelegate: class {
     /// On Configuration Change
     ///
     /// - Parameter configuration: The updated configuration
-    func onChange(_ configuration: Configuration)
+    func onChange(_ configuration: FlyoverConfiguration)
 }
 
-// MARK: - ConfigurationTableView
+// MARK: - FlyoverConfigurationTableView
 
-class ConfigurationTableView: UITableView {
+class FlyoverConfigurationTableView: UITableView {
     
     // MARK: Properties
     
-    /// The ConfigurationDelegate
-    weak var configurationDelegate: ConfigurationTableViewDelegate?
+    /// The FlyoverConfigurationTableViewDelegate
+    weak var configurationDelegate: FlyoverConfigurationTableViewDelegate?
     
     /// The cells constructed with default configuration and delegate
-    lazy private var cells: [ConfigurationTableViewCell] = {
+    lazy private var cells: [FlyoverConfigurationTableViewCell] = {
         // Initialize default configurations
-        let defaultConfigurations: [Configuration] = [
+        let defaultConfigurations: [FlyoverConfiguration] = [
             .flyover(true),
             .mapType(.standard),
             .altitude(600.0),
@@ -38,17 +38,13 @@ class ConfigurationTableView: UITableView {
             .headingStep(20.0),
             .duration(4.0)
         ]
-        return defaultConfigurations.map { ConfigurationTableViewCell($0, self.configurationDelegate) }
+        return defaultConfigurations.map { FlyoverConfigurationTableViewCell($0, self.configurationDelegate) }
     }()
     
     // MARK: Initializer
     
-    /// Default initializer with ConfigurationTableViewDelegate
-    ///
-    /// - Parameter configurationDelegate: The delegate
-    init(configurationDelegate: ConfigurationTableViewDelegate) {
-        // Set configuration delegate
-        self.configurationDelegate = configurationDelegate
+    /// Default initializer
+    init() {
         // Super init
         super.init(frame: .zero, style: .plain)
         // Set delegate to self
@@ -70,7 +66,7 @@ class ConfigurationTableView: UITableView {
 
 // MARK: - UITableViewDataSource
 
-extension ConfigurationTableView: UITableViewDataSource {
+extension FlyoverConfigurationTableView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // Return 1 section
@@ -91,7 +87,7 @@ extension ConfigurationTableView: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension ConfigurationTableView: UITableViewDelegate {
+extension FlyoverConfigurationTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // First two rows smaller then the rest

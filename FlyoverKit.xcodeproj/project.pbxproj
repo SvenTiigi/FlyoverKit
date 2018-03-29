@@ -13,6 +13,7 @@
 		3D5D662E203F45BA00A45E6C /* .jazzy.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 3D5D662C203F45BA00A45E6C /* .jazzy.yaml */; };
 		3D5D6631203F45D100A45E6C /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 3D5D662F203F45D000A45E6C /* .swift-version */; };
 		3D5D6632203F45D100A45E6C /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = 3D5D6630203F45D000A45E6C /* Cartfile.private */; };
+		3D76D7BE2048BC1D003BCD41 /* SplitScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D76D7BD2048BC1D003BCD41 /* SplitScreenViewController.swift */; };
 		3D8DB858203DD904008A079D /* FlyoverKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DB856203DD903008A079D /* FlyoverKit.podspec */; };
 		3D8DB859203DD904008A079D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D8DB857203DD903008A079D /* README.md */; };
 		3D8F94AE203D804F006E7659 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F94A4203D804F006E7659 /* FlyoverKit.framework */; };
@@ -26,9 +27,9 @@
 		3D8F94DC203D85FE006E7659 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F94A4203D804F006E7659 /* FlyoverKit.framework */; };
 		3D8F94DD203D85FE006E7659 /* FlyoverKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F94A4203D804F006E7659 /* FlyoverKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D8F94E3203D8612006E7659 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8F94E2203D8612006E7659 /* SnapKit.framework */; };
-		3D8F94E9203D86A8006E7659 /* ConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94E6203D86A8006E7659 /* ConfigurationTableViewCell.swift */; };
-		3D8F94EA203D86A8006E7659 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94E7203D86A8006E7659 /* Configuration.swift */; };
-		3D8F94EB203D86A8006E7659 /* ConfigurationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94E8203D86A8006E7659 /* ConfigurationTableView.swift */; };
+		3D8F94E9203D86A8006E7659 /* FlyoverConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94E6203D86A8006E7659 /* FlyoverConfigurationTableViewCell.swift */; };
+		3D8F94EA203D86A8006E7659 /* FlyoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94E7203D86A8006E7659 /* FlyoverConfiguration.swift */; };
+		3D8F94EB203D86A8006E7659 /* FlyoverConfigurationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94E8203D86A8006E7659 /* FlyoverConfigurationTableView.swift */; };
 		3D8F94ED203D86B2006E7659 /* UIColor+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94EC203D86B2006E7659 /* UIColor+Main.swift */; };
 		3D8F94EF203D86BB006E7659 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F94EE203D86BB006E7659 /* ViewController.swift */; };
 		3DB39A4D203D9C7E00E00B2D /* FlyoverMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB39A4C203D9C7E00E00B2D /* FlyoverMapView.swift */; };
@@ -82,6 +83,7 @@
 		3D5D662C203F45BA00A45E6C /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .jazzy.yaml; sourceTree = SOURCE_ROOT; };
 		3D5D662F203F45D000A45E6C /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = SOURCE_ROOT; };
 		3D5D6630203F45D000A45E6C /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = SOURCE_ROOT; };
+		3D76D7BD2048BC1D003BCD41 /* SplitScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScreenViewController.swift; sourceTree = "<group>"; };
 		3D8DB856203DD903008A079D /* FlyoverKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FlyoverKit.podspec; sourceTree = SOURCE_ROOT; };
 		3D8DB857203DD903008A079D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3D8F94A4203D804F006E7659 /* FlyoverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlyoverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,9 +100,9 @@
 		3D8F94D5203D849D006E7659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D8F94D7203D849D006E7659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D8F94E2203D8612006E7659 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		3D8F94E6203D86A8006E7659 /* ConfigurationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTableViewCell.swift; sourceTree = "<group>"; };
-		3D8F94E7203D86A8006E7659 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		3D8F94E8203D86A8006E7659 /* ConfigurationTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTableView.swift; sourceTree = "<group>"; };
+		3D8F94E6203D86A8006E7659 /* FlyoverConfigurationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyoverConfigurationTableViewCell.swift; sourceTree = "<group>"; };
+		3D8F94E7203D86A8006E7659 /* FlyoverConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyoverConfiguration.swift; sourceTree = "<group>"; };
+		3D8F94E8203D86A8006E7659 /* FlyoverConfigurationTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlyoverConfigurationTableView.swift; sourceTree = "<group>"; };
 		3D8F94EC203D86B2006E7659 /* UIColor+Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Main.swift"; sourceTree = "<group>"; };
 		3D8F94EE203D86BB006E7659 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3DB39A4C203D9C7E00E00B2D /* FlyoverMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlyoverMapView.swift; sourceTree = "<group>"; };
@@ -211,7 +213,7 @@
 			children = (
 				3D8F94CB203D849D006E7659 /* AppDelegate.swift */,
 				3D8F94EE203D86BB006E7659 /* ViewController.swift */,
-				3D8F94E5203D869A006E7659 /* Configuration */,
+				3D8F94E5203D869A006E7659 /* FlyoverConfiguration */,
 				3D8F94DB203D853F006E7659 /* Supporting Files */,
 				3D8DB855203DD8E4008A079D /* MetaData */,
 			);
@@ -221,6 +223,7 @@
 		3D8F94DB203D853F006E7659 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D76D7BD2048BC1D003BCD41 /* SplitScreenViewController.swift */,
 				3D8F94EC203D86B2006E7659 /* UIColor+Main.swift */,
 				3D8F94D4203D849D006E7659 /* LaunchScreen.storyboard */,
 				3D8F94D2203D849D006E7659 /* Assets.xcassets */,
@@ -237,14 +240,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3D8F94E5203D869A006E7659 /* Configuration */ = {
+		3D8F94E5203D869A006E7659 /* FlyoverConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				3D8F94E7203D86A8006E7659 /* Configuration.swift */,
-				3D8F94E8203D86A8006E7659 /* ConfigurationTableView.swift */,
-				3D8F94E6203D86A8006E7659 /* ConfigurationTableViewCell.swift */,
+				3D8F94E7203D86A8006E7659 /* FlyoverConfiguration.swift */,
+				3D8F94E8203D86A8006E7659 /* FlyoverConfigurationTableView.swift */,
+				3D8F94E6203D86A8006E7659 /* FlyoverConfigurationTableViewCell.swift */,
 			);
-			path = Configuration;
+			path = FlyoverConfiguration;
 			sourceTree = "<group>";
 		};
 		3DB39A54203DCADD00E00B2D /* MapView */ = {
@@ -354,7 +357,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Sven Tiigi";
 				TargetAttributes = {
 					3D8F94A3203D804F006E7659 = {
@@ -492,11 +495,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D8F94ED203D86B2006E7659 /* UIColor+Main.swift in Sources */,
+				3D76D7BE2048BC1D003BCD41 /* SplitScreenViewController.swift in Sources */,
 				3D8F94EF203D86BB006E7659 /* ViewController.swift in Sources */,
 				3D8F94CC203D849D006E7659 /* AppDelegate.swift in Sources */,
-				3D8F94EB203D86A8006E7659 /* ConfigurationTableView.swift in Sources */,
-				3D8F94EA203D86A8006E7659 /* Configuration.swift in Sources */,
-				3D8F94E9203D86A8006E7659 /* ConfigurationTableViewCell.swift in Sources */,
+				3D8F94EB203D86A8006E7659 /* FlyoverConfigurationTableView.swift in Sources */,
+				3D8F94EA203D86A8006E7659 /* FlyoverConfiguration.swift in Sources */,
+				3D8F94E9203D86A8006E7659 /* FlyoverConfigurationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +545,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -548,6 +553,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -601,6 +607,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -608,6 +615,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
