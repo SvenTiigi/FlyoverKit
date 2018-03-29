@@ -161,20 +161,22 @@ extension Address: Flyover {}
 ### Operators
 In order to compare two `Flyover` types you can use the following two operators.
 
+#### Equatable operator (==)
+
 ```swift
-// Equatable operator (==)
 self.flyover1 == self.flyover2
 ```
-This checks if the two given `Flyover` types are exactly the same via comparison of latitude and longitude.
+> Checks if the two given Flyover types are exactly the same via comparison of latitude and longitude.
+
+#### Rounded Equatable operator (~~)
 
 ```swift
-// Rounded Equatable operator (~~)
 self.flyover1 ~~ self.flyover2
 ```
-This checks if the two given `Flyover` types are nearly the same via comparison of rounded latitude and longitude.
+> Checks if the two given Flyover types are nearly the same via comparison of rounded latitude and longitude.
 
 ### FlyoverAwesomePlace
-The `FlyoverAwesomePlace` is a `Flyover` protocol compliant Enumeration with awesome locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://github.com/SvenTiigi/FlyoverKit/blob/master/FlyoverKit/AwesomePlace/FlyoverAwesomePlace.swift). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
+The `FlyoverAwesomePlace` is a `Flyover` protocol compliant Enumeration with awesome locations and landmarks like `NewYorkStatueOfLiberty`, `GooglePlex`, `SydneyOperaHouse` and many [more](https://sventiigi.github.io/FlyoverKit/Enums/FlyoverAwesomePlace.html). You can use them in your own implementation or to explore different locations in the `FlyoverKitExample` Application.
 
 ## FlyoverCamera
 The `FlyoverCamera` is responsible for manipulating the `MKMapView` camera and performs a 360° flyover animation via [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator). 
@@ -230,8 +232,6 @@ If you don't want to set the properties yourself you can use a preconfigured con
 | giddy | A giddy configuration 🤢 which you shouldn't use in production. But it's fun 🤷‍♂️ 🤙|
 | astronautView | The view of an astronaut 🌎 |
 
-More themes coming soon... 👨‍💻
-
 Furthermore, you can initialize a `FlyoverCamera` with a given `Theme`.
 
 ```swift
@@ -241,6 +241,8 @@ let camera = FlyoverCamera(
     configurationTheme: .default
 )
 ```
+
+More themes coming soon... 👨‍💻
 
 ## FlyoverMapView
 The `FlyoverMapView` is a preconfigured `MKMapView` with an embedded `FlyoverCamera`. The `FlyoverMapView` offers various convenience functions for example starting a flyover with a `MKAnnotation` object or setting a supported flyover `MapType`.
