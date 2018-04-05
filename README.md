@@ -238,7 +238,7 @@ Furthermore, you can initialize a `FlyoverCamera` with a given `Theme`.
 // Initialize FlyoverCamera
 let camera = FlyoverCamera(
     mapView: mapView,
-    configurationTheme: .default
+    configuration: .default
 )
 ```
 
@@ -252,7 +252,7 @@ The `FlyoverMapView` is a preconfigured `MKMapView` with an embedded `FlyoverCam
 let flyoverMapView = FlyoverMapView()
 
 // Or initialize by setting a different theme and the satelliteFlyover MapType
-let flyoverMapView = FlyoverMapView(configurationTheme: .farAway, mapType: .satelliteFlyover)
+let flyoverMapView = FlyoverMapView(configuration: .farAway, mapType: .satelliteFlyover)
 ```
 
 ### MapType
