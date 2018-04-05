@@ -61,9 +61,9 @@ open class FlyoverCamera {
     /// Default Initializer
     ///
     /// - Parameters:
-    ///   - mapView: The MapView reference
-    ///   - configuration: The Configuration
-    public init(mapView: MKMapView, configuration: Configuration) {
+    ///   - mapView: The MapView
+    ///   - configuration: The Configuration. Default value: `.default` theme
+    public init(mapView: MKMapView, configuration: Configuration = .default) {
         // Set MapView
         self.mapView = mapView
         // Set Configuration
@@ -84,16 +84,6 @@ open class FlyoverCamera {
             name: .UIApplicationDidBecomeActive,
             object: nil
         )
-    }
-    
-    /// Initialize with a predefined configuration theme
-    ///
-    /// - Parameters:
-    ///   - mapView: The MapView
-    ///   - configurationTheme: The configuration theme
-    public convenience init(mapView: MKMapView, configurationTheme: Configuration.Theme = .default) {
-        // Init with mapView and configurationTheme rawValue
-        self.init(mapView: mapView, configuration: configurationTheme.rawValue)
     }
     
     /// Deinit

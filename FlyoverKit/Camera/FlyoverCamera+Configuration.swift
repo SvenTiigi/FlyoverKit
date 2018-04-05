@@ -68,79 +68,44 @@ extension FlyoverCamera.Configuration: Equatable {
 
 public extension FlyoverCamera.Configuration {
     
-    /// The FlyoverCamera.Configuration Theme
-    enum Theme {
-        /// Default theme
-        case `default`
-        /// Low fyling theme
-        case lowFlying
-        /// Far away
-        case farAway
-        /// Spinning around (do not use in production)
-        case giddy
-        /// The view of an astronaut
-        case astronautView
-    }
+    /// Default configuration
+    static let `default` = FlyoverCamera.Configuration(
+        duration: 4.0,
+        altitude: 600,
+        pitch: 45.0,
+        headingStep: 20.0
+    )
     
-}
-
-// MARK: Configuration Theme RawRepresentable
-
-extension FlyoverCamera.Configuration.Theme: RawRepresentable {
+    /// Low flying configuration
+    static let lowFlying = FlyoverCamera.Configuration(
+        duration: 4.0,
+        altitude: 65,
+        pitch: 80,
+        headingStep: 20
+    )
     
-    /// Associated type RawValue as Flyover.Configuration
-    public typealias RawValue = FlyoverCamera.Configuration
+    /// Far away configuration
+    static let farAway = FlyoverCamera.Configuration(
+        duration: 4.0,
+        altitude: 1330,
+        pitch: 55,
+        headingStep: 20
+    )
     
-    /// RawRepresentable initializer. Which always returns nil
-    ///
-    /// - Parameters:
-    ///   - rawValue: The rawValue
-    public init?(rawValue: RawValue) {
-        // Returning nil to avoid constructing enum via Configuration
-        return nil
-    }
+    //// Giddy configuration
+    static let giddy = FlyoverCamera.Configuration(
+        duration: 0.0,
+        altitude: 250,
+        pitch: 80,
+        headingStep: 50
+    )
     
-    /// The preconfigured Configuration Struct
-    public var rawValue: RawValue {
-        // Switch on self
-        switch self {
-        case .default:
-            return RawValue(
-                duration: 4.0,
-                altitude: 600,
-                pitch: 45.0,
-                headingStep: 20.0
-            )
-        case .lowFlying:
-            return RawValue(
-                duration: 4.0,
-                altitude: 65,
-                pitch: 80,
-                headingStep: 20
-            )
-        case .farAway:
-            return RawValue(
-                duration: 4.0,
-                altitude: 1330,
-                pitch: 55,
-                headingStep: 20
-            )
-        case .giddy:
-            return RawValue(
-                duration: 0.0,
-                altitude: 250,
-                pitch: 80,
-                headingStep: 50
-            )
-        case .astronautView:
-            return RawValue(
-                duration: 20.0,
-                altitude: 2000.0,
-                pitch: 100.0,
-                headingStep: 35.0
-            )
-        }
-        
-    }
+    /// Astronaut view configuration
+    static let astronautView = FlyoverCamera.Configuration(
+        duration: 20.0,
+        altitude: 2000.0,
+        pitch: 100.0,
+        headingStep: 35.0
+    )
     
 }

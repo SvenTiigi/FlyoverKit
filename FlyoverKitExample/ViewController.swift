@@ -48,7 +48,7 @@ class ViewController: SplitScreenViewController {
         // Set white inner drag view background color
         configuration.dragInnerView.backgroundColor = .white
         // Initialize FlyoverMapView
-        self.flyoverMapView = FlyoverMapView(configurationTheme: .default)
+        self.flyoverMapView = FlyoverMapView()
         // Initialize ConfigurationTableView
         self.configurationTableView = FlyoverConfigurationTableView()
         // Super init
