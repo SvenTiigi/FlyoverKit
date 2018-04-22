@@ -63,7 +63,7 @@ class FlyoverCameraTests: BaseTests {
         XCTAssertFalse(flyoverCamera.state == .started)
         flyoverCamera.configuration.regionChangeAnimation = .animated(duration: 0.1, curve: .linear)
         flyoverCamera.configuration.duration = 0.1
-        flyoverCamera.start(flyover: FlyoverAwesomePlace.appleHeadquarter)
+        flyoverCamera.start(flyover: FlyoverAwesomePlace.parisEiffelTower)
         self.performTest(#function) { (expectation) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 XCTAssertTrue(flyoverCamera.state == .started)
