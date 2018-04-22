@@ -31,7 +31,6 @@ extension CLCircularRegion: Flyover {
     }
 }
 extension CLLocation: Flyover { }
-extension CLVisit: Flyover { }
 
 // MARK: - MapKit Framework Flyover Extensions
 

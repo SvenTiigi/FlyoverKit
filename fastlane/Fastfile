@@ -9,6 +9,7 @@ platform :ios do
     ensure_git_status_clean
     ensure_git_branch(branch: 'master')
     test
+    pod_lib_lint(verbose: true)
     version = version_bump_podspec(path: "FlyoverKit.podspec", version_number: options[:version])
     git_commit(
       path: ["FlyoverKit.podspec"],
@@ -24,7 +25,11 @@ platform :ios do
   lane :test do
     scan(
       project: "FlyoverKit.xcodeproj",
-      scheme: "FlyoverKit"
+      scheme: "FlyoverKit-iOS"
+    )
+    scan(
+      project: "FlyoverKit.xcodeproj",
+      scheme: "FlyoverKit-tvOS"
     )
   end
   

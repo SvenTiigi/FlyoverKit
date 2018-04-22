@@ -1,15 +1,14 @@
 //
 //  ViewController.swift
-//  FlyoverKitExample
+//  FlyoverKit-Example
 //
-//  Created by Sven Tiigi on 21.02.18.
-//  Copyright © 2018 Sven Tiigi. All rights reserved.
+//  Created by Sven Tiigi on 22.04.18.
+//  Copyright © 2018 FlyoverKit. All rights reserved.
 //
 
 import FlyoverKit
 import MapKit
 import SafariServices
-import SnapKit
 import UIKit
 
 // MARK: - ViewController
@@ -18,10 +17,10 @@ import UIKit
 class ViewController: SplitScreenViewController {
     
     // MARK: Propertirs
-
+    
     /// The FlyoverMapView
     private var flyoverMapView: FlyoverMapView
-
+    
     /// The ConfigurationTableView
     private var configurationTableView: FlyoverConfigurationTableView
     
@@ -91,7 +90,7 @@ class ViewController: SplitScreenViewController {
         // Stop
         self.flyoverMapView.stop()
     }
-
+    
     // MARK: Custom Functions
     
     /// Add navigation items

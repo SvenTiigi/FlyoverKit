@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = "FlyoverKit"
     s.version          = "1.1.2"
-    s.summary          = "Flyover Camera for iOS MapView"
+    s.summary          = "FlyoverKit"
     s.homepage         = "https://github.com/SvenTiigi/FlyoverKit"
     s.social_media_url = 'http://twitter.com/SvenTiigi'
     s.license          = 'MIT'
@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
     s.source           = { :git => "https://github.com/SvenTiigi/FlyoverKit.git", :tag => s.version.to_s }
     s.platform         = :ios, '10.0'
     s.requires_arc     = true
-    s.source_files     = 'FlyoverKit/**/*'
+    s.source_files     = 'Sources/**/*'
     s.frameworks       = 'UIKit', 'MapKit'
 end

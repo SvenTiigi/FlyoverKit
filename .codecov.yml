@@ -1,8 +1,7 @@
 coverage:
   ignore:
-   - "FlyoverKitTests/*"
-   - "FlyoverKitExample/*"
-   - "Carthage/*"
+   - "Tests/*"
+   - "Example/*"
 comment:
   layout: "reach, diff"
   behavior: once
