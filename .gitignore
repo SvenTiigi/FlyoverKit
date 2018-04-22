@@ -85,6 +85,7 @@ xcuserdata/
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
 # fastlane specific
+/fastlane/README.md
 fastlane/report.xml
 
 # deliver temporary files
