@@ -1,6 +1,6 @@
 //
 //  FlyoverConfigurationTableViewCell.swift
-//  FlyoverKitExample
+//  FlyoverKit-Example
 //
 //  Created by Sven Tiigi on 21.02.18.
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
@@ -32,6 +32,7 @@ class FlyoverConfigurationTableViewCell: UITableViewCell {
     lazy var valueLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
+        label.textAlignment = .right
         return label
     }()
     
@@ -98,8 +99,6 @@ class FlyoverConfigurationTableViewCell: UITableViewCell {
         case .headingStep(let headingStep):
             self.addSliderConfigurationViews(value: headingStep)
         }
-        // Layout Views
-        self.layoutViews()
     }
 
     /// Initializer with decoder returns nil
@@ -107,39 +106,52 @@ class FlyoverConfigurationTableViewCell: UITableViewCell {
         return nil
     }
     
-    // MARK: Layout
+    // MARK: View-Lifecycle
     
-    /// Layout Subviews
-    private func layoutViews() {
+    /// LayoutSubviews
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let height = self.contentView.frame.size.height
+        let width = self.contentView.frame.size.width
         if case .flyover = self.configuration {
-            self.switchFlyover.snp.makeConstraints({ (make) in
-                make.right.equalTo(self.contentView).offset(-15)
-                make.centerY.equalTo(self.contentView)
-            })
-            self.titleLabel.snp.makeConstraints({ (make) in
-                make.left.equalTo(self.contentView).offset(15)
-                make.top.bottom.equalTo(self.contentView)
-            })
+            self.switchFlyover.frame = CGRect(
+                x: width - self.switchFlyover.frame.size.width - 15,
+                y: height/2 - self.switchFlyover.frame.size.height / 2,
+                width: self.switchFlyover.frame.size.width,
+                height: self.switchFlyover.frame.size.height
+            )
+            self.titleLabel.frame = CGRect(
+                x: 15,
+                y: 0,
+                width: self.switchFlyover.frame.origin.x,
+                height: height
+            )
         } else if case .mapType = self.configuration {
-            self.segmentedControl.snp.makeConstraints({ (make) in
-                make.centerX.centerY.equalTo(self.contentView)
-            })
+            self.segmentedControl.frame = CGRect(
+                x: 18,
+                y: (height / 2) - (height - 18 * 2) / 2,
+                width: width - 18 * 2,
+                height: height - 18 * 2
+            )
         } else {
-            self.slider.snp.makeConstraints { (make) in
-                make.left.equalTo(self.contentView).offset(15)
-                make.right.equalTo(self.contentView).offset(-15)
-                make.bottom.equalTo(self.contentView).offset(-10)
-            }
-            self.titleLabel.snp.makeConstraints { (make) in
-                make.left.equalTo(self.contentView).offset(15)
-                make.top.equalTo(self.contentView)
-                make.bottom.equalTo(self.slider.snp.top)
-            }
-            self.valueLabel.snp.makeConstraints { (make) in
-                make.right.equalTo(self.contentView).offset(-15)
-                make.top.equalTo(self.contentView)
-                make.bottom.equalTo(self.slider.snp.top)
-            }
+            self.valueLabel.frame = CGRect(
+                x: width / 2,
+                y: 0, width:
+                width / 2 - 15,
+                height: height / 2
+            )
+            self.titleLabel.frame = CGRect(
+                x: 15,
+                y: 0,
+                width: self.valueLabel.frame.origin.x,
+                height: height / 2
+            )
+            self.slider.frame = CGRect(
+                x: 15,
+                y: height / 2,
+                width: width - 15 * 2,
+                height: height / 2
+            )
         }
     }
     

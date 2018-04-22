@@ -16,15 +16,15 @@ class FlyoverMapViewTests: BaseTests {
     
     func testFlyoverMapViewDefaultInitializer() {
         let mapView = FlyoverMapView()
-        XCTAssertEqual(mapView.configuration, FlyoverCamera.Configuration.Theme.default.rawValue)
+        XCTAssertEqual(mapView.configuration, .default)
         XCTAssertEqual(mapView.flyoverMapType, .standard)
     }
     
     func testFlyoverMapViewConvenienceInitializer() {
-        let theme = FlyoverCamera.Configuration.Theme.farAway
+        let theme: FlyoverCamera.Configuration = .farAway
         let mapType: FlyoverMapView.MapType = .satelliteFlyover
-        let mapView = FlyoverMapView(configurationTheme: theme, mapType: mapType)
-        XCTAssertEqual(mapView.configuration, theme.rawValue)
+        let mapView = FlyoverMapView(configuration: theme, mapType: mapType)
+        XCTAssertEqual(mapView.configuration, theme)
         XCTAssertEqual(mapView.flyoverMapType, mapType)
     }
     
@@ -67,7 +67,7 @@ class FlyoverMapViewTests: BaseTests {
     
     func testFlyoverMapViewConfigurationUpdate() {
         let flyoverMapView = FlyoverMapView()
-        let configuration = FlyoverCamera.Configuration.Theme.farAway.rawValue
+        let configuration: FlyoverCamera.Configuration  = .farAway
         flyoverMapView.configuration = configuration
         XCTAssertEqual(configuration, flyoverMapView.configuration)
     }
@@ -84,7 +84,7 @@ class FlyoverMapViewTests: BaseTests {
         XCTAssertFlyover(flyover, controller.flyover)
         XCTAssertEqual(controller.view, controller.flyoverMapView)
         XCTAssertTrue(controller.flyoverMapView.state == .started)
-        XCTAssertEqual(controller.flyoverMapView.configuration, FlyoverCamera.Configuration.Theme.default.rawValue)
+        XCTAssertEqual(controller.flyoverMapView.configuration, .default)
         XCTAssertEqual(controller.flyoverMapView.flyoverMapType, .standard)
         flyover = FlyoverAwesomePlace.googlePlex
         controller.flyover = flyover
@@ -96,10 +96,10 @@ class FlyoverMapViewTests: BaseTests {
         let flyover = FlyoverAwesomePlace.googlePlex
         let controller = FlyoverMapViewController(
             flyover: flyover,
-            configurationTheme: .farAway, mapType: .satelliteFlyover
+            configuration: .farAway, mapType: .satelliteFlyover
         )
         XCTAssertFlyover(flyover, controller.flyover)
-        XCTAssertEqual(controller.flyoverMapView.configuration, FlyoverCamera.Configuration.Theme.farAway.rawValue)
+        XCTAssertEqual(controller.flyoverMapView.configuration, .farAway)
         XCTAssertEqual(controller.flyoverMapView.flyoverMapType, .satelliteFlyover)
     }
     

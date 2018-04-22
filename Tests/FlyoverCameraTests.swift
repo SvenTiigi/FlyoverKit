@@ -35,22 +35,12 @@ class FlyoverCameraTests: BaseTests {
     func testFlyoverCameraDefaultInitializerConfiguration() {
         let mapView = MKMapView()
         let flyoverCamera = FlyoverCamera(mapView: mapView)
-        XCTAssertEqual(flyoverCamera.configuration, FlyoverCamera.Configuration.Theme.default.rawValue)
-    }
-    
-    func testFlyoverConfigurationThemeInitializer() {
-        let configuration = FlyoverCamera.Configuration(
-            duration: 1.0,
-            altitude: 2.0,
-            pitch: 3.0,
-            headingStep: 4.0
-        )
-        XCTAssertNil(FlyoverCamera.Configuration.Theme(rawValue: configuration))
+        XCTAssertEqual(flyoverCamera.configuration, .default)
     }
     
     func testFlyoverCameraConfigurationTheme() {
         let mapView = MKMapView()
-        let configurationThemes: [FlyoverCamera.Configuration.Theme] = [
+        let configurationThemes: [FlyoverCamera.Configuration] = [
             .default,
             .lowFlying,
             .farAway,
@@ -58,8 +48,8 @@ class FlyoverCameraTests: BaseTests {
             .astronautView
         ]
         configurationThemes.forEach { (theme) in
-            let flyoverCamera = FlyoverCamera(mapView: mapView, configurationTheme: theme)
-            XCTAssertEqual(flyoverCamera.configuration, theme.rawValue)
+            let flyoverCamera = FlyoverCamera(mapView: mapView, configuration: theme)
+            XCTAssertEqual(flyoverCamera.configuration, theme)
         }
     }
     
@@ -73,7 +63,7 @@ class FlyoverCameraTests: BaseTests {
         XCTAssertFalse(flyoverCamera.state == .started)
         flyoverCamera.configuration.regionChangeAnimation = .animated(duration: 0.1, curve: .linear)
         flyoverCamera.configuration.duration = 0.1
-        flyoverCamera.start(flyover: FlyoverAwesomePlace.appleHeadquarter)
+        flyoverCamera.start(flyover: FlyoverAwesomePlace.parisEiffelTower)
         self.performTest(#function) { (expectation) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                 XCTAssertTrue(flyoverCamera.state == .started)

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D8F94A3203D804F006E7659"
+               BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
                BuildableName = "FlyoverKit.framework"
-               BlueprintName = "FlyoverKit"
+               BlueprintName = "FlyoverKit-iOS"
                ReferencedContainer = "container:FlyoverKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D8F94AC203D804F006E7659"
-               BuildableName = "FlyoverKitTests.xctest"
-               BlueprintName = "FlyoverKitTests"
+               BlueprintIdentifier = "52D6D9851BEFF229002C0205"
+               BuildableName = "FlyoverKit-iOS Tests.xctest"
+               BlueprintName = "FlyoverKit-iOS Tests"
                ReferencedContainer = "container:FlyoverKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3D8F94A3203D804F006E7659"
+            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit"
+            BlueprintName = "FlyoverKit-iOS"
             ReferencedContainer = "container:FlyoverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3D8F94A3203D804F006E7659"
+            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit"
+            BlueprintName = "FlyoverKit-iOS"
             ReferencedContainer = "container:FlyoverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +83,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3D8F94A3203D804F006E7659"
+            BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit"
+            BlueprintName = "FlyoverKit-iOS"
             ReferencedContainer = "container:FlyoverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

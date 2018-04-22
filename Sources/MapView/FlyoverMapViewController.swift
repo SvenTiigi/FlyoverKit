@@ -31,28 +31,18 @@ open class FlyoverMapViewController: UIViewController {
     /// Default initializer with flyover configuration and map type
     ///
     /// - Parameters:
-    ///   - configuration: The flyover configuration
-    ///   - mapType: The map type
+    ///   - flyover: The flyover object
+    ///   - configuration: The flyover configuration. Default value: `.default` theme
+    ///   - mapType: The map type. Default value `.standard` type
     public init(flyover: Flyover,
-                configuration: FlyoverCamera.Configuration = FlyoverCamera.Configuration.Theme.default.rawValue,
+                configuration: FlyoverCamera.Configuration = .default,
                 mapType: FlyoverMapView.MapType = .standard) {
         self.flyoverMapView = FlyoverMapView(configuration: configuration, mapType: mapType)
         self.flyover = flyover
         super.init(nibName: nil, bundle: nil)
         self.flyoverMapView.start(flyover: flyover)
     }
-    
-    /// Convenience initializer with flyover configuration theme and map type
-    ///
-    /// - Parameters:
-    ///   - configurationTheme: The flyover configuration theme
-    ///   - mapType: The map type
-    public convenience init(flyover: Flyover,
-                            configurationTheme: FlyoverCamera.Configuration.Theme,
-                            mapType: FlyoverMapView.MapType = .standard) {
-        self.init(flyover: flyover, configuration: configurationTheme.rawValue, mapType: mapType)
-    }
-    
+
     /// Initializer with NSCoder. Returns nil
     required public init?(coder aDecoder: NSCoder) {
         return nil

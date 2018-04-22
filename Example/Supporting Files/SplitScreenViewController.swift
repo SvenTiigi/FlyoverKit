@@ -1,6 +1,6 @@
 //
 //  SplitScreenViewController.swift
-//  FlyoverKitExample
+//  FlyoverKit-Example
 //
 //  Created by Sven Tiigi on 01.03.18.
 //  Copyright © 2018 Sven Tiigi. All rights reserved.

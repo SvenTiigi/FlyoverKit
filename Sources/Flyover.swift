@@ -8,7 +8,7 @@
 
 import MapKit
 
-// MARK: - Flyover Protocol
+// MARK: - Flyover-Protocol
 
 /// The Flyover Protocol
 public protocol Flyover {
@@ -31,7 +31,6 @@ extension CLCircularRegion: Flyover {
     }
 }
 extension CLLocation: Flyover { }
-extension CLVisit: Flyover { }
 
 // MARK: - MapKit Framework Flyover Extensions
 

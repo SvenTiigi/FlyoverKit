@@ -55,28 +55,21 @@ open class FlyoverMapView: MKMapView {
     /// Default initializer with flyover configuration and map type
     ///
     /// - Parameters:
-    ///   - configuration: The flyover configuration
-    ///   - mapType: The map type
-    public init(configuration: FlyoverCamera.Configuration, mapType: MapType = .standard) {
+    ///   - configuration: The flyover configuration. Default value: `.default` theme
+    ///   - mapType: The map type. Default value: `.standard` type
+    public init(configuration: FlyoverCamera.Configuration = .default,
+                mapType: MapType = .standard) {
         super.init(frame: .zero)
         // Set the configuration
         self.flyoverCamera.configuration = configuration
         // Set flyover map type
         self.flyoverMapType = mapType
-        // Hide compass
-        self.showsCompass = false
+        // Hide compass on iOS
+        #if os(iOS)
+            self.showsCompass = false
+        #endif
         // Show buildings
         self.showsBuildings = true
-    }
-    
-    /// Convenience initializer with flyover configuration theme and map type
-    ///
-    /// - Parameters:
-    ///   - configurationTheme: The flyover configuration theme
-    ///   - mapType: The map type
-    public convenience init(configurationTheme: FlyoverCamera.Configuration.Theme = .default,
-                            mapType: MapType = .standard) {
-        self.init(configuration: configurationTheme.rawValue, mapType: mapType)
     }
     
     /// Initializer with NSCoder (not supported) returns nil

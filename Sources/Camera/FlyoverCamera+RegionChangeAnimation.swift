@@ -6,7 +6,7 @@
 //  Copyright © 2018 Sven Tiigi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension FlyoverCamera {
     

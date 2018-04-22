@@ -15,7 +15,6 @@ language: swift
 
 before_install:
   - pod repo update
-  - carthage update
 
 script: 
   - carthage build --no-skip-current
