@@ -15,6 +15,9 @@
    <a href="https://github.com/Carthage/Carthage">
       <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
    </a>
+   <a href="http://cocoapods.org/pods/FlyoverKit">
+      <img src="https://img.shields.io/cocoapods/p/FlyoverKit.svg?style=flat" alt="Platform">
+   </a>
    <a href="https://codebeat.co/projects/github-com-sventiigi-flyoverkit-master">
       <img src="https://codebeat.co/badges/c170aedf-d49e-4538-be5c-6c2819c8d7f4" alt="Codebeat">
    </a>
@@ -63,6 +66,10 @@ github "SvenTiigi/FlyoverKit" ~> 1.0.0
 Run `carthage update --platform iOS` to build the framework and drag the built `FlyoverKit.framework` into your Xcode project. 
 
 On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md)
+
+### Manually
+
+If you prefer not to use any of the aforementioned dependency managers, you can integrate FlyoverKit into your project manually. Simply drag the `Sources` Folder into your Xcode project.
 
 ## Usage
 `FlyoverKit` can be implemented in three different ways. Simply choose the most suitable type for your implementation. Please see the [Advanced](https://github.com/SvenTiigi/FlyoverKit#advanced) section in order to configure the `FlyoverKit` to your needs.
