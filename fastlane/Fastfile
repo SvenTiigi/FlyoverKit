@@ -4,7 +4,7 @@ default_platform :ios
 
 platform :ios do
 
-  desc "Release a new version"
+  desc "Release a new version of FlyoverKit"
   lane :release do |options|
     ensure_git_status_clean
     ensure_git_branch(branch: 'master')

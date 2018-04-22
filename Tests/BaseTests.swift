@@ -12,6 +12,7 @@ import XCTest
 
 // MARK: - BaseTests
 
+/// The BaseTests
 class BaseTests: XCTestCase {
     
     /// The timeout value while waiting
