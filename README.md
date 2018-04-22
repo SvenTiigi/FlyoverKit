@@ -37,21 +37,7 @@
 
 <img style="float: right" src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/FlyoverKitExampleApplication.gif" alt="Example Application Screenshot" align="right" width="307">
 
-The `FlyoverKitExample` Application is an excellent way to see `FlyoverKit` in action. You get a brief look of the available configuration options and how they affect the flyover behaviour. Please keep in mind that the `SatelliteFlyover` and `HybridFlyover` will only work on a real iOS device.
-
-In order to run the example Application you have to first generate the Frameworks via [Carthage](https://github.com/Carthage/Carthage)
-
-```bash
-$ carthage update --platform iOS
-$ open FlyoverKit.xcodeproj
-```
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
+The example Application is an excellent way to see `FlyoverKit` in action. You get a brief look of the available configuration options and how they affect the flyover behaviour. Simply open the `FlyoverKit.xcodeproj` and run the `FlyoverKit-Example` scheme. Please keep in mind that the `SatelliteFlyover` and `HybridFlyover` will only work on a real iOS device.
 
 ## Installation
 
