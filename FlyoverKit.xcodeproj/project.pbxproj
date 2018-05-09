@@ -44,11 +44,20 @@
 		3D83F7CA208C831200B3FF60 /* FlyoverConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F7C7208C831200B3FF60 /* FlyoverConfiguration.swift */; };
 		3D83F7CB208C831200B3FF60 /* FlyoverConfigurationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F7C8208C831200B3FF60 /* FlyoverConfigurationTableView.swift */; };
 		3D83F7CC208C831200B3FF60 /* FlyoverConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F7C9208C831200B3FF60 /* FlyoverConfigurationTableViewCell.swift */; };
+		3DC2AF4120A39B5B00690DFF /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FlyoverKit.framework */; };
+		3DC2AF4220A39B5B00690DFF /* FlyoverKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FlyoverKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52D6D9871BEFF229002C0205 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FlyoverKit.framework */; };
 		DD7502921C690C7A006590AF /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* FlyoverKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3DC2AF4320A39B5B00690DFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
+			remoteInfo = "FlyoverKit-iOS";
+		};
 		52D6D9881BEFF229002C0205 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
@@ -64,6 +73,20 @@
 			remoteInfo = "FlyoverKit-tvOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3DC2AF4520A39B5B00690DFF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3DC2AF4220A39B5B00690DFF /* FlyoverKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3D83F774208C7E1900B3FF60 /* FlyoverKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlyoverKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC2AF4120A39B5B00690DFF /* FlyoverKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,10 +324,12 @@
 				3D83F770208C7E1900B3FF60 /* Sources */,
 				3D83F771208C7E1900B3FF60 /* Frameworks */,
 				3D83F772208C7E1900B3FF60 /* Resources */,
+				3DC2AF4520A39B5B00690DFF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3DC2AF4420A39B5B00690DFF /* PBXTargetDependency */,
 			);
 			name = "FlyoverKit-Example";
 			productName = Example;
@@ -401,6 +427,7 @@
 					};
 					52D6D97B1BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 9PL44RX378;
 						LastSwiftMigration = 0930;
 					};
 					52D6D9851BEFF229002C0205 = {
@@ -584,6 +611,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3DC2AF4420A39B5B00690DFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D6D97B1BEFF229002C0205 /* FlyoverKit-iOS */;
+			targetProxy = 3DC2AF4320A39B5B00690DFF /* PBXContainerItemProxy */;
+		};
 		52D6D9891BEFF229002C0205 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52D6D97B1BEFF229002C0205 /* FlyoverKit-iOS */;
@@ -611,6 +643,7 @@
 		3D83F783208C7E1B00B3FF60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -638,6 +671,7 @@
 		3D83F784208C7E1B00B3FF60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -778,8 +812,10 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9PL44RX378;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -801,8 +837,10 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9PL44RX378;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
