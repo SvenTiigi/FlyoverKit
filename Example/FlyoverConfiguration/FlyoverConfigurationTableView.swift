@@ -25,10 +25,17 @@ class FlyoverConfigurationTableView: UITableView {
     // MARK: Properties
     
     /// The FlyoverConfigurationTableViewDelegate
-    weak var configurationDelegate: FlyoverConfigurationTableViewDelegate?
+    weak var configurationDelegate: FlyoverConfigurationTableViewDelegate? {
+        didSet {
+            // Set delegate on cell
+            self.cells.forEach {
+                $0.delegate = self.configurationDelegate
+            }
+        }
+    }
     
     /// The cells constructed with default configuration and delegate
-    lazy private var cells: [FlyoverConfigurationTableViewCell] = {
+    private lazy var cells: [FlyoverConfigurationTableViewCell] = {
         // Initialize default configurations
         let defaultConfigurations: [FlyoverConfiguration] = [
             .flyover(true),
@@ -38,7 +45,10 @@ class FlyoverConfigurationTableView: UITableView {
             .headingStep(20.0),
             .duration(4.0)
         ]
-        return defaultConfigurations.map { FlyoverConfigurationTableViewCell($0, self.configurationDelegate) }
+        // Map to Cells
+        return defaultConfigurations.map {
+            FlyoverConfigurationTableViewCell($0)
+        }
     }()
     
     // MARK: Initializer

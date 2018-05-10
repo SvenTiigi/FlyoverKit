@@ -64,16 +64,13 @@ class FlyoverConfigurationTableViewCell: UITableViewCell {
     
     // MARK: Initializer
     
-    /// Default initializer with Configuration and Delegate
+    /// Default initializer with Configuration
     ///
     /// - Parameters:
     ///   - configuration: The Configuration
-    ///   - delegate: The Delegate
-    init(_ configuration: FlyoverConfiguration, _ delegate: FlyoverConfigurationTableViewDelegate?) {
+    init(_ configuration: FlyoverConfiguration) {
         // Set configuration
         self.configuration = configuration
-        // Set delegate
-        self.delegate = delegate
         // Super Init
         super.init(style: .default, reuseIdentifier: configuration.rawValue)
         // Set clear background color
