@@ -9,11 +9,10 @@ platform :ios do
     ensure_git_status_clean
     ensure_git_branch(branch: 'master')
     test
-    pod_lib_lint(verbose: true)
     version = version_bump_podspec(path: "FlyoverKit.podspec", version_number: options[:version])
     git_commit(
       path: ["FlyoverKit.podspec"],
-      message: "[Fastlane Release 🚀] Bump to #{version}"
+      message: "[FlyoverKit Release 🚀] Bump to #{version}"
     )
     add_git_tag(tag: version)
     push_git_tags()
@@ -25,31 +24,27 @@ platform :ios do
   lane :test do
     scan(
       project: "FlyoverKit.xcodeproj",
-      scheme: "FlyoverKit-iOS",
+      scheme: "FlyoverKit-tvOS",
       clean: true,
       code_coverage: true
     )
     scan(
       project: "FlyoverKit.xcodeproj",
-      scheme: "FlyoverKit-tvOS",
+      scheme: "FlyoverKit-iOS",
       clean: true,
       code_coverage: true
     )
+    pod_lib_lint(verbose: true)
   end
 
   desc "Runs coverage"
   lane :coverage do
-    coverage_files_to_ignore = [
-        'Example/*',
-        'Carthage/*',
-        'Tests/*'
-    ]
     slather(
       proj: "FlyoverKit.xcodeproj",
       scheme: "FlyoverKit-iOS",
       travis: true,
       cobertura_xml: true,
-      ignore: coverage_files_to_ignore
+      ignore: ["Tests/*"]
     )
   end
   
