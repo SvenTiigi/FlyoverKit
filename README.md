@@ -3,33 +3,34 @@
 </p>
 
 <p align="center">
-   <a href="https://developer.apple.com/swift/">
-      <img src="https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat" alt="Swift 4.0">
-   </a>
-   <a href="https://travis-ci.org/SvenTiigi/FlyoverKit">
-      <img src="https://travis-ci.org/SvenTiigi/FlyoverKit.svg?branch=master" alt="Build Status">
-   </a>
-   <a href="http://cocoapods.org/pods/FlyoverKit">
-      <img src="https://img.shields.io/cocoapods/v/FlyoverKit.svg?style=flat" alt="Version">
-   </a>
-   <a href="https://github.com/Carthage/Carthage">
-      <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
-   </a>
-   <a href="http://cocoapods.org/pods/FlyoverKit">
-      <img src="https://img.shields.io/cocoapods/p/FlyoverKit.svg?style=flat" alt="Platform">
-   </a>
-   <a href="https://codebeat.co/projects/github-com-sventiigi-flyoverkit-master">
-      <img src="https://codebeat.co/badges/c170aedf-d49e-4538-be5c-6c2819c8d7f4" alt="Codebeat">
-   </a>
-   <a href="https://codecov.io/gh/SvenTiigi/FlyoverKit">
-		<img src="https://img.shields.io/codecov/c/github/SvenTiigi/FlyoverKit.svg" alt="Coverage">
-	</a>
-   <a href="https://sventiigi.github.io/FlyoverKit">
-      <img src="https://github.com/SvenTiigi/FlyoverKit/blob/gh-pages/badge.svg" alt="Documentation">
-   </a>
-   <a href="https://twitter.com/SvenTiigi/">
-      <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
-   </a>
+    <a href="https://developer.apple.com/swift/">
+        <img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat" alt="Swift 4.0">
+    </a>
+    <a href="https://travis-ci.org/SvenTiigi/FlyoverKit">
+        <img src="https://travis-ci.org/SvenTiigi/FlyoverKit.svg?branch=master" alt="Build Status">
+    </a>
+    <a href="http://cocoapods.org/pods/FlyoverKit">
+        <img src="https://img.shields.io/cocoapods/v/FlyoverKit.svg?style=flat" alt="Version">
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
+    </a>
+    <a href="http://cocoapods.org/pods/FlyoverKit">
+        <img src="https://img.shields.io/cocoapods/p/FlyoverKit.svg?style=flat" alt="Platform">
+    </a>
+    <br/>
+    <a href="https://codeclimate.com/github/SvenTiigi/WhatsNewKit/maintainability">
+        <img src="https://api.codeclimate.com/v1/badges/e1a0a92affd3c0d0f402/maintainability" alt="Maintainability">
+    </a>
+    <a href="https://codeclimate.com/github/SvenTiigi/WhatsNewKit/test_coverage">
+        <img src="https://api.codeclimate.com/v1/badges/e1a0a92affd3c0d0f402/test_coverage" alt="Test Coverage">
+    </a>
+    <a href="https://sventiigi.github.io/FlyoverKit">
+        <img src="https://github.com/SvenTiigi/FlyoverKit/blob/gh-pages/badge.svg" alt="Documentation">
+    </a>
+    <a href="https://twitter.com/SvenTiigi/">
+        <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
+    </a>
 </p>
 
 <br/>

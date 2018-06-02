@@ -25,11 +25,25 @@ platform :ios do
   lane :test do
     scan(
       project: "FlyoverKit.xcodeproj",
-      scheme: "FlyoverKit-iOS"
+      scheme: "FlyoverKit-iOS",
+      clean: true,
+      code_coverage: true
     )
     scan(
       project: "FlyoverKit.xcodeproj",
-      scheme: "FlyoverKit-tvOS"
+      scheme: "FlyoverKit-tvOS",
+      clean: true,
+      code_coverage: true
+    )
+  end
+
+  desc "Runs coverage"
+  lane :coverage do
+    slather(
+      proj: "FlyoverKit.xcodeproj",
+      scheme: "FlyoverKit-iOS",
+      travis: true,
+      cobertura_xml: true
     )
   end
   
