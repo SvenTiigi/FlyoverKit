@@ -19,11 +19,11 @@
         <img src="https://img.shields.io/cocoapods/p/FlyoverKit.svg?style=flat" alt="Platform">
     </a>
     <br/>
-    <a href="https://codeclimate.com/github/SvenTiigi/WhatsNewKit/maintainability">
-        <img src="https://api.codeclimate.com/v1/badges/e1a0a92affd3c0d0f402/maintainability" alt="Maintainability">
+    <a href="https://codeclimate.com/github/SvenTiigi/FlyoverKit/maintainability">
+        <img src="https://api.codeclimate.com/v1/badges/67fab45d0f3b1d232e67/maintainability" alt="Maintainability">
     </a>
-    <a href="https://codeclimate.com/github/SvenTiigi/WhatsNewKit/test_coverage">
-        <img src="https://api.codeclimate.com/v1/badges/e1a0a92affd3c0d0f402/test_coverage" alt="Test Coverage">
+    <a href="https://codeclimate.com/github/SvenTiigi/FlyoverKit/test_coverage">
+        <img src="https://api.codeclimate.com/v1/badges/67fab45d0f3b1d232e67/test_coverage" alt="Test Coverage">
     </a>
     <a href="https://sventiigi.github.io/FlyoverKit">
         <img src="https://github.com/SvenTiigi/FlyoverKit/blob/gh-pages/badge.svg" alt="Documentation">
