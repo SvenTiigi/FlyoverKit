@@ -109,6 +109,7 @@ open class FlyoverMapView: MKMapView {
     
     /// Stop Flyover
     open func stop() {
+        // Stop FlyoverCamera
         self.flyoverCamera.stop()
         // Enable userInteraction
         self.isUserInteractionEnabled = true
