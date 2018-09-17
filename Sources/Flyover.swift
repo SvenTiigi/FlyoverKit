@@ -46,12 +46,7 @@ extension MKMapView: Flyover {
         return self.centerCoordinate
     }
 }
-extension MKMapPoint: Flyover {
-    /// The flyover coordinate
-    public var coordinate: CLLocationCoordinate2D {
-        return MKCoordinateForMapPoint(self)
-    }
-}
+extension MKMapPoint: Flyover {}
 extension MKCoordinateRegion: Flyover {
     /// The flyover coordinate
     public var coordinate: CLLocationCoordinate2D {

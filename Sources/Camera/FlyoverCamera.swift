@@ -35,7 +35,7 @@ open class FlyoverCamera {
     open var state: State
     
     /// The animation curve
-    open let curve: UIViewAnimationCurve = .linear
+    open var curve: UIView.AnimationCurve = .linear
     
     // MARK: Private properties
     
@@ -74,14 +74,14 @@ open class FlyoverCamera {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.applicationWillResignActive),
-            name: .UIApplicationWillResignActive,
+            name: UIApplication.willResignActiveNotification,
             object: nil
         )
         // Add application did become active observer
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.applicationDidBecomeActive),
-            name: .UIApplicationDidBecomeActive,
+            name: UIApplication.didBecomeActiveNotification,
             object: nil
         )
     }
