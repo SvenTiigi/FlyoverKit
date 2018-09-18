@@ -118,9 +118,9 @@ open class SplitScreenViewController: UIViewController {
             configuration: configuration
         )
         // Add ChildViewControllers
-        [topViewController, bottomViewController].forEach(self.addChildViewController)
+        [topViewController, bottomViewController].forEach(self.addChild)
         // DidMove to ParentViewController
-        [topViewController, bottomViewController].forEach { $0.didMove(toParentViewController: self) }
+        [topViewController, bottomViewController].forEach { $0.didMove(toParent: self) }
     }
     
     /// Convenience initializer with TopViewController, BottomViewController and Configuration Closure
