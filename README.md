@@ -4,7 +4,7 @@
 
 <p align="center">
     <a href="https://developer.apple.com/swift/">
-        <img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat" alt="Swift 4.0">
+        <img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift 4.2">
     </a>
     <a href="https://travis-ci.org/SvenTiigi/FlyoverKit">
         <img src="https://travis-ci.org/SvenTiigi/FlyoverKit.svg?branch=master" alt="Build Status">
@@ -21,9 +21,6 @@
     <br/>
     <a href="https://codeclimate.com/github/SvenTiigi/FlyoverKit/maintainability">
         <img src="https://api.codeclimate.com/v1/badges/67fab45d0f3b1d232e67/maintainability" alt="Maintainability">
-    </a>
-    <a href="https://codeclimate.com/github/SvenTiigi/FlyoverKit/test_coverage">
-        <img src="https://api.codeclimate.com/v1/badges/67fab45d0f3b1d232e67/test_coverage" alt="Test Coverage">
     </a>
     <a href="https://sventiigi.github.io/FlyoverKit">
         <img src="https://github.com/SvenTiigi/FlyoverKit/blob/gh-pages/badge.svg" alt="Documentation">

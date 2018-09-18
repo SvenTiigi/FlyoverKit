@@ -35,7 +35,7 @@ open class FlyoverCamera {
     open var state: State
     
     /// The animation curve
-    open let curve: UIViewAnimationCurve = .linear
+    open var curve: UIView.AnimationCurve = .linear
     
     // MARK: Private properties
     
@@ -73,15 +73,15 @@ open class FlyoverCamera {
         // Add application will resign active observer
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(applicationWillResignActive),
-            name: .UIApplicationWillResignActive,
+            selector: #selector(self.applicationWillResignActive),
+            name: UIApplication.willResignActiveNotification,
             object: nil
         )
         // Add application did become active observer
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(applicationDidBecomeActive),
-            name: .UIApplicationDidBecomeActive,
+            selector: #selector(self.applicationDidBecomeActive),
+            name: UIApplication.didBecomeActiveNotification,
             object: nil
         )
     }
@@ -125,14 +125,20 @@ open class FlyoverCamera {
             let startAnimator = UIViewPropertyAnimator(
                 duration: duration,
                 curve: curve,
-                animations: {
+                animations: { [weak self] in
+                    // Verify self is available
+                    guard let strongSelf = self else {
+                        // Self isn't available return out of function
+                        return
+                    }
                     // Set MapView Camera
-                    self.mapView?.camera = self.mapCamera
-            })
+                    strongSelf.mapView?.camera = strongSelf.mapCamera
+                }
+            )
             // Add completion
-            startAnimator.setCompletion {
+            startAnimator.setCompletion { [weak self] in
                 // Start rotation
-                self.performFlyover(flyover)
+                self?.performFlyover(flyover)
             }
             // Start animation
             startAnimator.startAnimation()
@@ -165,15 +171,20 @@ open class FlyoverCamera {
         self.animator = UIViewPropertyAnimator(
             duration: 0,
             curve: self.curve,
-            animations: {
+            animations: { [weak self] in
+                // Verify self is available
+                guard let strongSelf = self else {
+                    // Self isn't available return out of function
+                    return
+                }
                 // Substract the headingStep from current heading to retrieve start value
-                heading -= self.configuration.headingStep
+                heading -= strongSelf.configuration.headingStep
                 // Initialize the percentage of the compeleted heading step
-                let percentageCompletedHeadingStep = Double(fractionComplete) * self.configuration.headingStep
+                let percentageCompletedHeadingStep = Double(fractionComplete) * strongSelf.configuration.headingStep
                 // Set MapCamera Heading
-                self.mapCamera.heading = fmod(heading + percentageCompletedHeadingStep, 360)
+                strongSelf.mapCamera.heading = fmod(heading + percentageCompletedHeadingStep, 360)
                 // Set MapView Camera
-                self.mapView?.camera = self.mapCamera
+                strongSelf.mapView?.camera = strongSelf.mapCamera
         })
         // Start animation
         self.animator?.startAnimation()
@@ -198,16 +209,21 @@ open class FlyoverCamera {
         self.animator = UIViewPropertyAnimator(
             duration: self.configuration.duration,
             curve: self.curve,
-            animations: {
+            animations: { [weak self] in
+                // Verify self is available
+                guard let strongSelf = self else {
+                    // Self isn't available return out of function
+                    return
+                }
                 // Update MapViewCamera
-                self.mapView?.camera = self.mapCamera
+                strongSelf.mapView?.camera = strongSelf.mapCamera
         })
         // Add completion
-        self.animator?.setCompletion {
+        self.animator?.setCompletion { [weak self] in
             // Check if flyovers are nearly equal
-            if self.flyover ~~ flyover {
+            if self?.flyover ~~ flyover {
                 // Invoke recursion
-                self.performFlyover(flyover)
+                self?.performFlyover(flyover)
             }
         }
         // Start Animation

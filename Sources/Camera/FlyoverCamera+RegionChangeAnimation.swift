@@ -17,7 +17,7 @@ public extension FlyoverCamera {
         case none
         /// Animation with given TimeInterval and AnimationCurve
         /// should be performed
-        case animated(duration: TimeInterval, curve: UIViewAnimationCurve)
+        case animated(duration: TimeInterval, curve: UIView.AnimationCurve)
     }
     
 }
