@@ -85,6 +85,9 @@ class FlyoverProtocolTests: BaseTests {
     }
     
     func testFlyoverAwesomePlaceCases() {
+        for place in FlyoverAwesomePlace.allCases {
+            XCTAssertFlyover(place, place.coordinate)
+        }
         for place in FlyoverAwesomePlace.iterate() {
             XCTAssertFlyover(place, place.coordinate)
         }

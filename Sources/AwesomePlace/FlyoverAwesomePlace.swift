@@ -12,7 +12,7 @@ import CoreLocation
 
 /// Awesome 360° locations and landmarks like
 /// NewYorkStatueOfLiberty, GooglePlex, SydneyOperaHouse and many more.
-public enum FlyoverAwesomePlace {
+public enum FlyoverAwesomePlace: CaseIterable {
     // MARK: USA
     /// New York Statue of Liberty
     case newYorkStatueOfLiberty
@@ -137,18 +137,8 @@ public extension FlyoverAwesomePlace {
     /// Iterate through all FlyoverAwesomePlace cases
     ///
     /// - Returns: Iterator of the enumeration
-    static func iterate() -> AnyIterator<FlyoverAwesomePlace> {
-        var counter = 0
-        return AnyIterator {
-            let next = withUnsafePointer(to: &counter) {
-                $0.withMemoryRebound(to: self, capacity: 1) { $0.pointee }
-            }
-            if next.hashValue != counter {
-                return nil
-            }
-            counter += 1
-            return next
-        }
+    static func iterate() -> IndexingIterator<[FlyoverAwesomePlace]> {
+        return FlyoverAwesomePlace.allCases.makeIterator()
     }
     
 }
