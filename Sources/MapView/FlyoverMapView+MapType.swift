@@ -13,7 +13,7 @@ import MapKit
 public extension FlyoverMapView {
     
     /// The FlyoverMapView supported MapType
-    enum MapType {
+    enum MapType: String, Equatable, Hashable, CaseIterable {
         /// Standard
         case standard
         /// Satellite Flyover

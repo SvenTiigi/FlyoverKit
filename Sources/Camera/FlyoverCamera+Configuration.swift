@@ -13,7 +13,7 @@ import CoreLocation
 public extension FlyoverCamera {
     
     /// The FlyoverCamera Configuration
-    struct Configuration {
+    struct Configuration: Equatable, Hashable {
         
         /// The duration
         public var duration: TimeInterval
@@ -37,29 +37,18 @@ public extension FlyoverCamera {
         ///   - altitude: The altitude
         ///   - pitch: The pitch
         ///   - headingStep: The heading step
-        ///   - regionChangeAnimation: The region change animation
-        public init(duration: TimeInterval, altitude: CLLocationDistance, pitch: Double,
-                    headingStep: Double, regionChangeAnimation: RegionChangeAnimation = .none) {
+        ///   - regionChangeAnimation: The region change animation. Default value `none`
+        public init(duration: TimeInterval,
+                    altitude: CLLocationDistance,
+                    pitch: Double,
+                    headingStep: Double,
+                    regionChangeAnimation: RegionChangeAnimation = .none) {
             self.duration = duration
             self.altitude = altitude
             self.pitch = pitch
             self.headingStep = headingStep
             self.regionChangeAnimation = regionChangeAnimation
         }
-    }
-    
-}
-
-// MARK: - Configuration Equatable Extension
-
-extension FlyoverCamera.Configuration: Equatable {
-    
-    /// Returns a Boolean value indicating whether two Configurations are equal.
-    public static func == (lhs: FlyoverCamera.Configuration, rhs: FlyoverCamera.Configuration) -> Bool {
-        return lhs.duration == rhs.duration
-            && lhs.altitude == rhs.altitude
-            && lhs.pitch == rhs.pitch
-            && lhs.headingStep == rhs.headingStep
     }
     
 }
