@@ -9,19 +9,51 @@ platform :ios do
     ensure_git_status_clean
     ensure_git_branch(branch: 'master')
     test
-    version = version_bump_podspec(path: "FlyoverKit.podspec", version_number: options[:version])
-    git_commit(
-      path: ["FlyoverKit.podspec"],
-      message: "[FlyoverKit Release 🚀] Bump to #{version}"
-    )
+    version = options[:version]
+    increment(version: version)
     add_git_tag(tag: version)
     push_git_tags()
     push_to_git_remote()
     pod_push()
   end
 
+  desc "Increment Version"
+    lane :increment do |options|
+    version = options[:version]
+    version_bump_podspec(
+      path: "FlyoverKit.podspec", 
+      version_number: version
+    )
+    set_info_plist_value(
+      path: "Configs/FlyoverKit.plist", 
+      key: "CFBundleShortVersionString", 
+      value: version
+    )
+    set_info_plist_value(
+      path: "Configs/FlyoverKitTests.plist", 
+      key: "CFBundleShortVersionString", 
+      value: version
+    )
+    set_info_plist_value(
+      path: "Example/Supporting Files/Info.plist", 
+      key: "CFBundleShortVersionString", 
+      value: version
+    )
+    git_commit(
+        path: [
+          "FlyoverKit.podspec", 
+          "Configs/FlyoverKit.plist", 
+          "Configs/FlyoverKitTests.plist", 
+          "Example/Supporting Files/Info.plist"
+        ],
+        message: "FlyoverKit Version #{version} 🚀"
+    )
+  end
+
   desc "Runs all the tests"
   lane :test do
+    carthage(command: "build", no_skip_current: true, cache_builds: true)
+    pod_lib_lint
     scan(
       project: "FlyoverKit.xcodeproj",
       scheme: "FlyoverKit-tvOS",
@@ -34,7 +66,6 @@ platform :ios do
       clean: true,
       code_coverage: true
     )
-    pod_lib_lint
   end
 
   desc "Runs coverage"
