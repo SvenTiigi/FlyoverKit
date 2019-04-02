@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                      = "FlyoverKit"
-    s.version                   = "1.2.2"
+    s.version                   = "1.3.0"
     s.summary                   = "360° flyover on an MKMapView"
     s.homepage                  = "https://github.com/SvenTiigi/FlyoverKit"
     s.social_media_url          = 'http://twitter.com/SvenTiigi'
