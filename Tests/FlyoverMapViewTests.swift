@@ -72,10 +72,6 @@ class FlyoverMapViewTests: BaseTests {
         XCTAssertEqual(configuration, flyoverMapView.configuration)
     }
     
-    func testFlyoverMapViewUnsupportedInitializer() {
-        XCTAssertNil(FlyoverMapView(coder: NSCoder()))
-    }
-    
     // MARK: FlyoverMapViewController
     
     func testFlyoverMapViewController() {
@@ -101,10 +97,6 @@ class FlyoverMapViewTests: BaseTests {
         XCTAssertFlyover(flyover, controller.flyover)
         XCTAssertEqual(controller.flyoverMapView.configuration, .farAway)
         XCTAssertEqual(controller.flyoverMapView.flyoverMapType, .satelliteFlyover)
-    }
-    
-    func testFlyoverMapViewControllerUnsupportedInitializer() {
-        XCTAssertNil(FlyoverMapViewController(coder: NSCoder()))
     }
     
 }
