@@ -14,7 +14,7 @@ public extension FlyoverCamera {
     ///
     /// - started: The FlyoverCamera is started and running
     /// - stopped: The FlyoverCamera is stopped (Initial-Value)
-    enum State: String {
+    enum State: String, Equatable, Hashable, CaseIterable {
         /// Started
         case started
         /// Stopped
