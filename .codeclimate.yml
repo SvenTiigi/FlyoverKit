@@ -12,7 +12,6 @@ exclude_patterns:
   - ".swiftlint.yml"
   - ".travis.yml"
   - ".gitignore"
-  - ".swift-version"
   - "LICENSE"
   - "*.md"
   - "*.podspec"
