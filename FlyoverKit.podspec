@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
     s.license                   = 'MIT'
     s.author                    = { "Sven Tiigi" => "sven.tiigi@gmail.com" }
     s.source                    = { :git => "https://github.com/SvenTiigi/FlyoverKit.git", :tag => s.version.to_s }
+    s.swift_version             = "5.0"
     s.ios.deployment_target     = "10.0"
     s.tvos.deployment_target    = "10.0"
     s.requires_arc              = true
