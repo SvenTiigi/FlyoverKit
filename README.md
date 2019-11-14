@@ -6,21 +6,18 @@
     <a href="https://developer.apple.com/swift/">
         <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat" alt="Swift 5.0">
     </a>
-    <a href="https://travis-ci.org/SvenTiigi/FlyoverKit">
-        <img src="https://travis-ci.org/SvenTiigi/FlyoverKit.svg?branch=master" alt="Build Status">
-    </a>
+    <a href="https://github.com/SvenTiigi/FlyoverKit/actions?query=workflow%3ACI">
+      <img src="https://github.com/SvenTiigi/FlyoverKit/workflows/CI/badge.svg" alt="CI Status">
+   </a>
     <a href="http://cocoapods.org/pods/FlyoverKit">
         <img src="https://img.shields.io/cocoapods/v/FlyoverKit.svg?style=flat" alt="Version">
     </a>
     <a href="https://github.com/Carthage/Carthage">
         <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
     </a>
+    <br/>
     <a href="http://cocoapods.org/pods/FlyoverKit">
         <img src="https://img.shields.io/cocoapods/p/FlyoverKit.svg?style=flat" alt="Platform">
-    </a>
-    <br/>
-    <a href="https://codeclimate.com/github/SvenTiigi/FlyoverKit/maintainability">
-        <img src="https://api.codeclimate.com/v1/badges/67fab45d0f3b1d232e67/maintainability" alt="Maintainability">
     </a>
     <a href="https://sventiigi.github.io/FlyoverKit">
         <img src="https://github.com/SvenTiigi/FlyoverKit/blob/gh-pages/badge.svg" alt="Documentation">
