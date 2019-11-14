@@ -1,4 +1,4 @@
-fastlane_version "2.57.2"
+fastlane_version "2.120.0"
 
 default_platform :ios
 
@@ -6,77 +6,93 @@ platform :ios do
 
   desc "Release a new version of FlyoverKit"
   lane :release do |options|
+    # Ensure Git status is clean
     ensure_git_status_clean
+    # Ensure Git branch is master
     ensure_git_branch(branch: 'master')
-    test
+    # Perform Dependency-Manager compatibility tests
+    compatibilityTests
+    # Perform Tests
+    tests
+    # Retrieve Version from options
     version = options[:version]
+    # Increment Version
     increment(version: version)
+    # Add Git Tag
     add_git_tag(tag: version)
+    # Push Git Tag
     push_git_tags()
+    # Push Git commit
     push_to_git_remote()
+    # Pod push / Pod trunk
     pod_push()
   end
 
   desc "Increment Version"
-    lane :increment do |options|
+  lane :increment do |options|
+    # Retrieve Version from options
     version = options[:version]
+    # Set Podspec version
     version_bump_podspec(
       path: "FlyoverKit.podspec", 
       version_number: version
     )
+    # Set Framework plist version
     set_info_plist_value(
       path: "Configs/FlyoverKit.plist", 
       key: "CFBundleShortVersionString", 
       value: version
     )
+    # Set Framework Tests plist version
     set_info_plist_value(
       path: "Configs/FlyoverKitTests.plist", 
       key: "CFBundleShortVersionString", 
       value: version
     )
+    # Set Example plist version
     set_info_plist_value(
-      path: "Example/Supporting Files/Info.plist", 
+      path: "Example/Resources/Info.plist", 
       key: "CFBundleShortVersionString", 
       value: version
     )
+    # Commit modified files
     git_commit(
         path: [
           "FlyoverKit.podspec", 
           "Configs/FlyoverKit.plist", 
           "Configs/FlyoverKitTests.plist", 
-          "Example/Supporting Files/Info.plist"
+          "Example/Resources/Info.plist"
         ],
         message: "FlyoverKit Version #{version} 🚀"
     )
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    carthage(command: "build", no_skip_current: true, cache_builds: true)
-    pod_lib_lint
+  desc "Runs tests"
+  lane :tests do
+    # Perform iOS Tests
+    scan(
+      project: "FlyoverKit.xcodeproj",
+      scheme: "FlyoverKit-iOS",
+      clean: true
+    )
+    # Perform tvOS Tests
     scan(
       project: "FlyoverKit.xcodeproj",
       scheme: "FlyoverKit-tvOS",
-      clean: true,
-      code_coverage: true
-    )
-    scan(
-      project: "FlyoverKit.xcodeproj",
-      scheme: "FlyoverKit-iOS",
-      clean: true,
-      code_coverage: true
+      clean: true
     )
   end
 
-  desc "Runs coverage"
-  lane :coverage do
-    slather(
-      proj: "FlyoverKit.xcodeproj",
-      scheme: "FlyoverKit-iOS",
-      travis: true,
-      cobertura_xml: true,
-      ignore: ["Tests/*"]
+  desc "Run Dependency-Manager compatibility tests"
+  lane :compatibilityTests do
+    # Carthage build to ensure Carthage compatibility
+    carthage(
+      command: "build", 
+      no_skip_current: true, 
+      cache_builds: true
     )
+    # Pod lib lint to ensure CocoaPods compatibility
+    pod_lib_lint(allow_warnings: true)
   end
   
 end
