@@ -48,6 +48,11 @@ open class FlyoverMapView: MKMapView {
         self.flyoverCamera.state
     }
     
+    /// The current Flyover
+    public var flyover: Flyover? {
+        self.flyoverCamera.flyover
+    }
+    
     // MARK: Initializer
     
     /// Default initializer with flyover configuration and map type

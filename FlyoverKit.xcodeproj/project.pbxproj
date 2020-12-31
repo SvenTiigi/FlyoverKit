@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D41EC80259E000D00DDC743 /* FlyoverKitSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCF111F259DE1DA00DE2718 /* FlyoverKitSwiftUI.framework */; };
+		3D41EC81259E000D00DDC743 /* FlyoverKitSwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCF111F259DE1DA00DE2718 /* FlyoverKitSwiftUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D83F777208C7E1900B3FF60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F776208C7E1900B3FF60 /* AppDelegate.swift */; };
 		3D83F779208C7E1900B3FF60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F778208C7E1900B3FF60 /* ViewController.swift */; };
 		3D83F77E208C7E1B00B3FF60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D83F77D208C7E1B00B3FF60 /* Assets.xcassets */; };
@@ -38,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3D41EC82259E000D00DDC743 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCF110B259DE1DA00DE2718;
+			remoteInfo = FlyoverKitSwiftUI;
+		};
 		3DC2AF4320A39B5B00690DFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
@@ -69,6 +78,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				3DC2AF4220A39B5B00690DFF /* FlyoverKit.framework in Embed Frameworks */,
+				3D41EC81259E000D00DDC743 /* FlyoverKitSwiftUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,7 +116,7 @@
 		3DCF114E259DE3EF00DE2718 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3DCF114F259DE3EF00DE2718 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		3DCF1150259DE3EF00DE2718 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		3DCF1151259DE3EF00DE2718 /* FlyoverKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlyoverKit.podspec; sourceTree = SOURCE_ROOT; };
+		3DCF1151259DE3EF00DE2718 /* FlyoverKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlyoverKit.podspec; sourceTree = SOURCE_ROOT; };
 		3DCF1152259DE3EF00DE2718 /* .jazzy.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .jazzy.yaml; sourceTree = SOURCE_ROOT; };
 		3DCF1153259DE3EF00DE2718 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		3DCF1154259DE3FE00DE2718 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = text; path = fastlane; sourceTree = SOURCE_ROOT; };
@@ -123,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC2AF4120A39B5B00690DFF /* FlyoverKit.framework in Frameworks */,
+				3D41EC80259E000D00DDC743 /* FlyoverKitSwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +353,7 @@
 			);
 			dependencies = (
 				3DC2AF4420A39B5B00690DFF /* PBXTargetDependency */,
+				3D41EC83259E000D00DDC743 /* PBXTargetDependency */,
 			);
 			name = "FlyoverKit-Example";
 			productName = Example;
@@ -446,10 +458,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D83F773208C7E1900B3FF60 /* FlyoverKit-Example */,
 				52D6D97B1BEFF229002C0205 /* FlyoverKit */,
 				3DCF110B259DE1DA00DE2718 /* FlyoverKitSwiftUI */,
 				52D6D9851BEFF229002C0205 /* FlyoverKit Tests */,
+				3D83F773208C7E1900B3FF60 /* FlyoverKit-Example */,
 			);
 		};
 /* End PBXProject section */
@@ -572,6 +584,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3D41EC83259E000D00DDC743 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCF110B259DE1DA00DE2718 /* FlyoverKitSwiftUI */;
+			targetProxy = 3D41EC82259E000D00DDC743 /* PBXContainerItemProxy */;
+		};
 		3DC2AF4420A39B5B00690DFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52D6D97B1BEFF229002C0205 /* FlyoverKit */;
@@ -619,7 +636,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.tiigi.FlyoverKit-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -647,7 +664,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.tiigi.FlyoverKit-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";

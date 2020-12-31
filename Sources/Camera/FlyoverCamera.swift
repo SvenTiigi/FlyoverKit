@@ -50,8 +50,8 @@ open class FlyoverCamera {
         return camera
     }()
     
-    /// The flyover
-    private var flyover: Flyover?
+    /// The current Flyover
+    public private(set) var flyover: Flyover?
     
     /// The UIViewPropertyAnimator
     private var animator: UIViewPropertyAnimator?
@@ -106,6 +106,7 @@ open class FlyoverCamera {
     open func start(
         flyover: Flyover
     ) {
+        print("START")
         // Set flyover
         self.flyover = flyover
         // Check if applicationState is not active
@@ -158,6 +159,7 @@ open class FlyoverCamera {
     
     /// Stop flyover
     open func stop() {
+        print("STOPPED")
         // Change state
         self.state = .stopped
         // Unwrap MapView Camera Heading and fractionComplete

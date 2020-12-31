@@ -90,10 +90,13 @@ extension FlyoverView: UIViewRepresentable {
         }
         // Check if a flyover is started
         if self.isStarted {
+            // Check if State is started and Flyover is identicial
+            if uiView.state == .started && uiView.flyover == self.flyover {
+                // Return out of function as Flyover does not need to be restarted
+                return
+            }
             // Start Flyover
-            uiView.start(
-                flyover: self.flyover
-            )
+            uiView.start(flyover: self.flyover)
         } else {
             // Stop Flyover
             uiView.stop()
