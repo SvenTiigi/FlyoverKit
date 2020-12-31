@@ -32,17 +32,7 @@
 		3D83F7CC208C831200B3FF60 /* FlyoverConfigurationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F7C9208C831200B3FF60 /* FlyoverConfigurationTableViewCell.swift */; };
 		3DC2AF4120A39B5B00690DFF /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FlyoverKit.framework */; };
 		3DC2AF4220A39B5B00690DFF /* FlyoverKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FlyoverKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DCF110D259DE1DA00DE2718 /* FlyoverCamera+Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F789208C7EA000B3FF60 /* FlyoverCamera+Configuration.swift */; };
-		3DCF110E259DE1DA00DE2718 /* Flyover+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F792208C7EA000B3FF60 /* Flyover+Operators.swift */; };
-		3DCF110F259DE1DA00DE2718 /* Flyover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F78D208C7EA000B3FF60 /* Flyover.swift */; };
-		3DCF1110259DE1DA00DE2718 /* FlyoverMapView+MapType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F78F208C7EA000B3FF60 /* FlyoverMapView+MapType.swift */; };
-		3DCF1111259DE1DA00DE2718 /* FlyoverAwesomePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F78C208C7EA000B3FF60 /* FlyoverAwesomePlace.swift */; };
 		3DCF1112259DE1DA00DE2718 /* FlyoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF1101259DE0F800DE2718 /* FlyoverView.swift */; };
-		3DCF1113259DE1DA00DE2718 /* FlyoverCamera+RegionChangeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F78A208C7EA000B3FF60 /* FlyoverCamera+RegionChangeAnimation.swift */; };
-		3DCF1114259DE1DA00DE2718 /* FlyoverMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F790208C7EA000B3FF60 /* FlyoverMapViewController.swift */; };
-		3DCF1115259DE1DA00DE2718 /* FlyoverMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F791208C7EA000B3FF60 /* FlyoverMapView.swift */; };
-		3DCF1116259DE1DA00DE2718 /* FlyoverCamera+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F788208C7EA000B3FF60 /* FlyoverCamera+State.swift */; };
-		3DCF1117259DE1DA00DE2718 /* FlyoverCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D83F787208C7EA000B3FF60 /* FlyoverCamera.swift */; };
 		3DCF1140259DE25700DE2718 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FlyoverKit.framework */; };
 		52D6D9871BEFF229002C0205 /* FlyoverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* FlyoverKit.framework */; };
 /* End PBXBuildFile section */
@@ -547,17 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DCF110D259DE1DA00DE2718 /* FlyoverCamera+Configuration.swift in Sources */,
-				3DCF110E259DE1DA00DE2718 /* Flyover+Operators.swift in Sources */,
-				3DCF110F259DE1DA00DE2718 /* Flyover.swift in Sources */,
-				3DCF1110259DE1DA00DE2718 /* FlyoverMapView+MapType.swift in Sources */,
-				3DCF1111259DE1DA00DE2718 /* FlyoverAwesomePlace.swift in Sources */,
 				3DCF1112259DE1DA00DE2718 /* FlyoverView.swift in Sources */,
-				3DCF1113259DE1DA00DE2718 /* FlyoverCamera+RegionChangeAnimation.swift in Sources */,
-				3DCF1114259DE1DA00DE2718 /* FlyoverMapViewController.swift in Sources */,
-				3DCF1115259DE1DA00DE2718 /* FlyoverMapView.swift in Sources */,
-				3DCF1116259DE1DA00DE2718 /* FlyoverCamera+State.swift in Sources */,
-				3DCF1117259DE1DA00DE2718 /* FlyoverCamera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
