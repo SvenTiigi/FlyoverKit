@@ -78,10 +78,16 @@ extension FlyoverView: UIViewRepresentable {
         _ uiView: FlyoverKit.FlyoverMapView,
         context: Context
     ) {
-        // Set Configuration
-        uiView.configuration = self.configuration
-        // Set MapType
-        uiView.flyoverMapType = self.mapType
+        // Check if Configuration has changed
+        if uiView.configuration != self.configuration {
+            // Set new Configuration
+            uiView.configuration = self.configuration
+        }
+        // Check if MapType has changed
+        if uiView.flyoverMapType != self.mapType {
+            // Set new MapType
+            uiView.flyoverMapType = self.mapType
+        }
         // Check if a flyover is started
         if self.isStarted {
             // Start Flyover
