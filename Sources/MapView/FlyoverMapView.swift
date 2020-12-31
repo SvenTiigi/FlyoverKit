@@ -22,25 +22,25 @@ open class FlyoverMapView: MKMapView {
     
     /// The FlyoverMapView MapType
     open var flyoverMapType: MapType? {
-        set {
-            // Set mapType rawValue
-            newValue.flatMap { self.mapType = $0.rawValue }
-        }
         get {
             // Return MapType constructed with MKMapType otherwise return standard
             return MapType(rawValue: self.mapType)
+        }
+        set {
+            // Set mapType rawValue
+            newValue.flatMap { self.mapType = $0.rawValue }
         }
     }
     
     /// The FlyoverCamera Configuration computed property for easy access
     open var configuration: FlyoverCamera.Configuration {
-        set {
-            // Set new value
-            self.flyoverCamera.configuration = newValue
-        }
         get {
             // Return FlyoverCamera configuration
             return self.flyoverCamera.configuration
+        }
+        set {
+            // Set new value
+            self.flyoverCamera.configuration = newValue
         }
     }
     
