@@ -22,7 +22,10 @@ public struct FlyoverView: View {
     // MARK: Properties
     
     /// The `Flyover`
-    public let flyover: FlyoverKit.Flyover?
+    public let flyover: FlyoverKit.Flyover
+    
+    /// Bool value if flyover is started
+    public let isStarted: Bool
     
     /// The `FlyoverCamera.Configuration`
     public let configuration: FlyoverKit.FlyoverCamera.Configuration
@@ -34,17 +37,20 @@ public struct FlyoverView: View {
     
     /// Designated Initializer
     /// - Parameters:
-    ///   - flyover: The optional `Flyover`
+    ///   - flyover: The `Flyover`
+    ///   - isStarted: Bool value if flyover is started. Default value `true`
     ///   - configuration: The `FlyoverCamera.Configuration`. Default value `.default`
     ///   - mapType: The `FlyoverMapView.MapType`. Default value `.standard`
     public init(
-        flyover: FlyoverKit.Flyover?,
+        flyover: FlyoverKit.Flyover,
+        isStarted: Bool = true,
         configuration: FlyoverKit.FlyoverCamera.Configuration = .default,
         mapType: FlyoverKit.FlyoverMapView.MapType = .standard
     ) {
+        self.flyover = flyover
+        self.isStarted = isStarted
         self.configuration = configuration
         self.mapType = mapType
-        self.flyover = flyover
     }
     
 }
@@ -76,11 +82,11 @@ extension FlyoverView: UIViewRepresentable {
         uiView.configuration = self.configuration
         // Set MapType
         uiView.flyoverMapType = self.mapType
-        // Check if a Flyover is available
-        if let flyover = self.flyover {
+        // Check if a flyover is started
+        if self.isStarted {
             // Start Flyover
             uiView.start(
-                flyover: flyover
+                flyover: self.flyover
             )
         } else {
             // Stop Flyover
