@@ -178,18 +178,18 @@ open class FlyoverCamera {
             curve: self.curve,
             animations: { [weak self] in
                 // Verify self is available
-                guard let strongSelf = self else {
+                guard let self = self else {
                     // Self isn't available return out of function
                     return
                 }
                 // Substract the headingStep from current heading to retrieve start value
-                heading -= strongSelf.configuration.headingStep
+                heading -= self.configuration.headingStep
                 // Initialize the percentage of the compeleted heading step
-                let percentageCompletedHeadingStep = Double(fractionComplete) * strongSelf.configuration.headingStep
+                let percentageCompletedHeadingStep = Double(fractionComplete) * self.configuration.headingStep
                 // Set MapCamera Heading
-                strongSelf.mapCamera.heading = fmod(heading + percentageCompletedHeadingStep, 360)
+                self.mapCamera.heading = fmod(heading + percentageCompletedHeadingStep, 360)
                 // Set MapView Camera
-                strongSelf.mapView?.camera = strongSelf.mapCamera
+                self.mapView?.camera = self.mapCamera
         })
         // Start animation
         self.animator?.startAnimation()
