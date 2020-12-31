@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
-               BuildableName = "FlyoverKit.framework"
-               BlueprintName = "FlyoverKit-tvOS"
+               BlueprintIdentifier = "3D83F773208C7E1900B3FF60"
+               BuildableName = "FlyoverKit-Example.app"
+               BlueprintName = "FlyoverKit-Example"
                ReferencedContainer = "container:FlyoverKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,28 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
-            BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit-tvOS"
-            ReferencedContainer = "container:FlyoverKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DD75028C1C690C7A006590AF"
-               BuildableName = "FlyoverKit-tvOS Tests.xctest"
-               BlueprintName = "FlyoverKit-tvOS Tests"
-               ReferencedContainer = "container:FlyoverKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -60,15 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
-            BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit-tvOS"
+            BlueprintIdentifier = "3D83F773208C7E1900B3FF60"
+            BuildableName = "FlyoverKit-Example.app"
+            BlueprintName = "FlyoverKit-Example"
             ReferencedContainer = "container:FlyoverKit.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -76,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "52D6D9EF1BEFFFBE002C0205"
-            BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit-tvOS"
+            BlueprintIdentifier = "3D83F773208C7E1900B3FF60"
+            BuildableName = "FlyoverKit-Example.app"
+            BlueprintName = "FlyoverKit-Example"
             ReferencedContainer = "container:FlyoverKit.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

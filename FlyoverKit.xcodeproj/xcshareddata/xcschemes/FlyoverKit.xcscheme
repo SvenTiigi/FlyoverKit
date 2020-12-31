@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
                BuildableName = "FlyoverKit.framework"
-               BlueprintName = "FlyoverKit-iOS"
+               BlueprintName = "FlyoverKit"
                ReferencedContainer = "container:FlyoverKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,7 +33,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit-iOS"
+            BlueprintName = "FlyoverKit"
             ReferencedContainer = "container:FlyoverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -43,8 +43,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "52D6D9851BEFF229002C0205"
-               BuildableName = "FlyoverKit-iOS Tests.xctest"
-               BlueprintName = "FlyoverKit-iOS Tests"
+               BuildableName = "FlyoverKit Tests.xctest"
+               BlueprintName = "FlyoverKit Tests"
                ReferencedContainer = "container:FlyoverKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit-iOS"
+            BlueprintName = "FlyoverKit"
             ReferencedContainer = "container:FlyoverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -81,7 +81,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "52D6D97B1BEFF229002C0205"
             BuildableName = "FlyoverKit.framework"
-            BlueprintName = "FlyoverKit-iOS"
+            BlueprintName = "FlyoverKit"
             ReferencedContainer = "container:FlyoverKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

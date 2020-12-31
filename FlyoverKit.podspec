@@ -9,8 +9,19 @@ Pod::Spec.new do |s|
     s.source                    = { :git => "https://github.com/SvenTiigi/FlyoverKit.git", :tag => s.version.to_s }
     s.swift_version             = "5.0"
     s.ios.deployment_target     = "10.0"
-    s.tvos.deployment_target    = "10.0"
-    s.requires_arc              = true
     s.source_files              = 'Sources/**/*'
-    s.frameworks                = 'UIKit', 'MapKit'
+    s.frameworks                = 'Foundation', 'UIKit', 'MapKit'
+    s.default_subspecs = "Core"
+    
+    s.subspec "Core" do |sp|
+        sp.source_files  = ["Sources/**/*"]
+        sp.exclude_files = ["Sources/SwiftUI/**"]
+    end
+
+    s.subspec "SwiftUI" do |sp|
+        sp.source_files = ["Sources/SwiftUI/**"]
+        sp.dependency "FlyoverKit/Core"
+        sp.ios.deployment_target = "13.0"
+        sp.pod_target_xcconfig = { 'OTHER_SWIFT_FLAGS' => '-DFlyoverKitCocoaPods' }
+    end
 end

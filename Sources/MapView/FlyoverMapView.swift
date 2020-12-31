@@ -64,10 +64,8 @@ open class FlyoverMapView: MKMapView {
         self.flyoverCamera.configuration = configuration
         // Set flyover map type
         self.flyoverMapType = mapType
-        // Hide compass on iOS
-        #if os(iOS)
-            self.showsCompass = false
-        #endif
+        // Hide compass
+        self.showsCompass = false
         // Show buildings
         self.showsBuildings = true
     }
