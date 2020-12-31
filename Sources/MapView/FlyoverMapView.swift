@@ -71,7 +71,7 @@ open class FlyoverMapView: MKMapView {
     }
     
     /// Initializer with NSCoder (not supported) returns nil
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         return nil
     }
     
