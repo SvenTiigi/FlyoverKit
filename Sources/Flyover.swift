@@ -12,8 +12,10 @@ import MapKit
 
 /// The Flyover Protocol
 public protocol Flyover {
+    
     /// The flyover coordinate
     var coordinate: CLLocationCoordinate2D { get }
+    
 }
 
 // MARK: - CoreLocation Framework Flyover Extensions

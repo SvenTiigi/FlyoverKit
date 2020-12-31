@@ -16,15 +16,13 @@ open class FlyoverMapView: MKMapView {
     // MARK: Properties
     
     /// The FlyoverCamera
-    open lazy var flyoverCamera: FlyoverCamera = {
-        return FlyoverCamera(mapView: self)
-    }()
+    open lazy var flyoverCamera = FlyoverCamera(mapView: self)
     
     /// The FlyoverMapView MapType
     open var flyoverMapType: MapType? {
         get {
             // Return MapType constructed with MKMapType otherwise return standard
-            return MapType(rawValue: self.mapType)
+            MapType(rawValue: self.mapType)
         }
         set {
             // Set mapType rawValue
@@ -36,7 +34,7 @@ open class FlyoverMapView: MKMapView {
     open var configuration: FlyoverCamera.Configuration {
         get {
             // Return FlyoverCamera configuration
-            return self.flyoverCamera.configuration
+            self.flyoverCamera.configuration
         }
         set {
             // Set new value
@@ -47,7 +45,7 @@ open class FlyoverMapView: MKMapView {
     /// Retrieve FlyoverCamera state
     open var state: FlyoverCamera.State {
         // Return FlyoverCamera state property
-        return self.flyoverCamera.state
+        self.flyoverCamera.state
     }
     
     // MARK: Initializer
@@ -57,8 +55,10 @@ open class FlyoverMapView: MKMapView {
     /// - Parameters:
     ///   - configuration: The flyover configuration. Default value: `.default` theme
     ///   - mapType: The map type. Default value: `.standard` type
-    public init(configuration: FlyoverCamera.Configuration = .default,
-                mapType: MapType = .standard) {
+    public init(
+        configuration: FlyoverCamera.Configuration = .default,
+        mapType: MapType = .standard
+    ) {
         super.init(frame: .zero)
         // Set the configuration
         self.flyoverCamera.configuration = configuration
@@ -87,7 +87,9 @@ open class FlyoverMapView: MKMapView {
     ///
     /// - Parameters:
     ///   - annotation: The MKAnnotation
-    open func start(annotation: MKAnnotation) {
+    open func start(
+        annotation: MKAnnotation
+    ) {
         // Disable userInteraction
         self.isUserInteractionEnabled = false
         // Start flyover with annotation coordinate

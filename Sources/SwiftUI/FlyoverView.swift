@@ -21,26 +21,26 @@ public struct FlyoverView: View {
     
     // MARK: Properties
     
+    /// The `Flyover`
+    public let flyover: FlyoverKit.Flyover?
+    
     /// The `FlyoverCamera.Configuration`
     public let configuration: FlyoverKit.FlyoverCamera.Configuration
     
     /// The `FlyoverMapView.MapType`
     public let mapType: FlyoverKit.FlyoverMapView.MapType
     
-    /// The `Flyover`
-    public let flyover: FlyoverKit.Flyover?
-    
     // MARK: Initializer
     
     /// Designated Initializer
     /// - Parameters:
+    ///   - flyover: The optional `Flyover`
     ///   - configuration: The `FlyoverCamera.Configuration`. Default value `.default`
     ///   - mapType: The `FlyoverMapView.MapType`. Default value `.standard`
-    ///   - flyover: The optional `Flyover`
     public init(
+        flyover: FlyoverKit.Flyover?,
         configuration: FlyoverKit.FlyoverCamera.Configuration = .default,
-        mapType: FlyoverKit.FlyoverMapView.MapType = .standard,
-        flyover: FlyoverKit.Flyover?
+        mapType: FlyoverKit.FlyoverMapView.MapType = .standard
     ) {
         self.configuration = configuration
         self.mapType = mapType
@@ -86,6 +86,18 @@ extension FlyoverView: UIViewRepresentable {
             // Stop Flyover
             uiView.stop()
         }
+    }
+    
+    /// Dismantle UIView
+    /// - Parameters:
+    ///   - uiView: The UIView
+    ///   - coordinator: The Coordinator
+    public static func dismantleUIView(
+        _ uiView: FlyoverKit.FlyoverMapView,
+        coordinator: Coordinator
+    ) {
+        // Stop Flyover
+        uiView.stop()
     }
     
 }

@@ -63,7 +63,10 @@ open class FlyoverCamera {
     /// - Parameters:
     ///   - mapView: The MapView
     ///   - configuration: The Configuration. Default value: `.default` theme
-    public init(mapView: MKMapView, configuration: Configuration = .default) {
+    public init(
+        mapView: MKMapView,
+        configuration: Configuration = .default
+    ) {
         // Set MapView
         self.mapView = mapView
         // Set Configuration
@@ -100,7 +103,9 @@ open class FlyoverCamera {
     ///
     /// - Parameters:
     ///   - flyover: The Flyover object (e.g. CLLocationCoordinate2D, CLLocation, MKMapPoint)
-    open func start(flyover: Flyover) {
+    open func start(
+        flyover: Flyover
+    ) {
         // Set flyover
         self.flyover = flyover
         // Check if applicationState is not active
@@ -197,7 +202,9 @@ open class FlyoverCamera {
     /// Perform flyover at the given Flyover coordinate
     ///
     /// - Parameter flyover: The Flyover object
-    private func performFlyover(_ flyover: Flyover?) {
+    private func performFlyover(
+        _ flyover: Flyover?
+    ) {
         // Unwrap Flyover
         guard let flyover = flyover else {
             // Flyover unavailable return out of function

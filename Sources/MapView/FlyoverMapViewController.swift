@@ -34,9 +34,11 @@ open class FlyoverMapViewController: UIViewController {
     ///   - flyover: The flyover object
     ///   - configuration: The flyover configuration. Default value: `.default` theme
     ///   - mapType: The map type. Default value `.standard` type
-    public init(flyover: Flyover,
-                configuration: FlyoverCamera.Configuration = .default,
-                mapType: FlyoverMapView.MapType = .standard) {
+    public init(
+        flyover: Flyover,
+        configuration: FlyoverCamera.Configuration = .default,
+        mapType: FlyoverMapView.MapType = .standard
+    ) {
         self.flyoverMapView = FlyoverMapView(configuration: configuration, mapType: mapType)
         self.flyover = flyover
         super.init(nibName: nil, bundle: nil)

@@ -38,11 +38,13 @@ public extension FlyoverCamera {
         ///   - pitch: The pitch
         ///   - headingStep: The heading step
         ///   - regionChangeAnimation: The region change animation. Default value `none`
-        public init(duration: TimeInterval,
-                    altitude: CLLocationDistance,
-                    pitch: Double,
-                    headingStep: Double,
-                    regionChangeAnimation: RegionChangeAnimation = .none) {
+        public init(
+            duration: TimeInterval,
+            altitude: CLLocationDistance,
+            pitch: Double,
+            headingStep: Double,
+            regionChangeAnimation: RegionChangeAnimation = .none
+        ) {
             self.duration = duration
             self.altitude = altitude
             self.pitch = pitch

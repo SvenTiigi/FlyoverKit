@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - State
+
 public extension FlyoverCamera {
     
     /// The FlyoverCamera State

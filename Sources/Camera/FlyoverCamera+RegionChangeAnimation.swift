@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - RegionChangeAnimation
+
 public extension FlyoverCamera {
     
     /// The RegionChangeAnimation Enum specifies if the

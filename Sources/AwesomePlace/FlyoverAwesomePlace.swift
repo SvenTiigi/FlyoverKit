@@ -13,7 +13,9 @@ import CoreLocation
 /// Awesome 360° locations and landmarks like
 /// NewYorkStatueOfLiberty, GooglePlex, SydneyOperaHouse and many more.
 public enum FlyoverAwesomePlace: String, Codable, Equatable, Hashable, CaseIterable {
+    
     // MARK: USA
+    
     /// New York Statue of Liberty
     case newYorkStatueOfLiberty
     /// New York Manhatten
@@ -34,7 +36,9 @@ public enum FlyoverAwesomePlace: String, Codable, Equatable, Hashable, CaseItera
     case luxorResortLasVegas
     /// Apple Headquarter
     case appleHeadquarter
+    
     // MARK: Germany
+    
     /// Berlin Brandenbuger Gate
     case berlinBrandenburgerGate
     /// Hamburg Townhall
@@ -49,25 +53,36 @@ public enum FlyoverAwesomePlace: String, Codable, Equatable, Hashable, CaseItera
     case hamburgElbPhilharmonic
     /// Muenster Castle
     case muensterCastle
+    
     // MARK: Italy
+    
     /// Colosseum Rom
     case romeColosseum
     /// Piazza Di Trevi
     case piazzaDiTrevi
+    
     // MARK: Spain
+    
     /// Sagrade Familia Spain
     case sagradaFamiliaSpain
+    
     // MARK: England
+    
     /// London Big Ben
     case londonBigBen
     /// London Eye
     case londonEye
+    
     // MARK: Australia
+    
     /// Opera House Sydney
     case sydneyOperaHouse
+    
     // MARK: France
+    
     /// Paris Eiffel Tower
     case parisEiffelTower
+    
 }
 
 // MARK: - FlyoverAwesomePlace Flyover Extension
