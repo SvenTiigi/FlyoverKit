@@ -1,6 +1,6 @@
 # FlyoverKit document generator jazzy settings
 
-copyright: Copyright 2018 Sven Tiigi
+copyright: Copyright 2020 Sven Tiigi
 author: Sven Tiigi
 github_url: https://github.com/SvenTiigi/FlyoverKit
 xcodebuild_arguments: [-target, FlyoverKit-iOS]
