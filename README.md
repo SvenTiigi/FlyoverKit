@@ -75,27 +75,29 @@ Check out the example application to see FlyoverKit in action. Simply open the `
 When using SwiftUI a `FlyoverMap` can be used to render and control a flyover.
 
 ```swift
-FlyoverMap(
-    // Bool value if flyover is started or stopped
-    isStarted: true,
-    // The coordinate to perform the flyover on
-    coordinate: CLLocationCoordinate2D(
-        latitude: 37.8023, 
-        longitude: -122.4057
-    ),
-    configuration: Flyover.Configuration(
-        // The animation curve
-        animationCurve: .linear,
-        // The altitude in meter
-        altitude: 900,
-        // The pitch in degree
-        pitch: 45.0,
-        // The heading step
-        headingStep: .incremented(by: 1.5)
-    ),
-    // The map type e.g. .standard, .satellite, .hybrid
-    mapType: .standard
-)
+var body: some View {
+    FlyoverMap(
+        // Bool value if flyover is started or stopped
+        isStarted: true,
+        // The coordinate to perform the flyover on
+        coordinate: CLLocationCoordinate2D(
+            latitude: 37.8023, 
+            longitude: -122.4057
+        ),
+        configuration: Flyover.Configuration(
+            // The animation curve
+            animationCurve: .linear,
+            // The altitude in meter
+            altitude: 900,
+            // The pitch in degree
+            pitch: 45.0,
+            // The heading
+            heading: .incremented(by: 1.5)
+        ),
+        // The map type e.g. .standard, .satellite, .hybrid
+        mapType: .standard
+    )
+}
 ```
 
 ### UIKit
