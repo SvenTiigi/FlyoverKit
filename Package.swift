@@ -1,30 +1,25 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.2
 
 import PackageDescription
 
 let package = Package(
     name: "FlyoverKit",
     platforms: [
-        .iOS(.v10),
-        .tvOS(.v10)
+        .iOS(.v13),
+        .tvOS(.v13)
     ],
     products: [
         .library(
             name: "FlyoverKit",
-            targets: ["FlyoverKit"]
-        ),
+            targets: [
+                "FlyoverKit"
+            ]
+        )
     ],
-    dependencies: [],
     targets: [
         .target(
             name: "FlyoverKit",
-            dependencies: [],
             path: "Sources"
-        ),
-        .testTarget(
-            name: "FlyoverKitTests",
-            dependencies: ["FlyoverKit"],
-            path: "Tests"
-        ),
+        )
     ]
 )
