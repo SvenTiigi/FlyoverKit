@@ -20,15 +20,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: xcodebuild build-for-testing -scheme VanMoofKit -destination 'platform=iOS Simulator,name=iPhone 14'
+        run: xcodebuild build-for-testing -scheme FlyoverKit -destination 'platform=iOS Simulator,name=iPhone 14'
       - name: Test
-        run: xcodebuild test-without-building -scheme VanMoofKit -destination 'platform=iOS Simulator,name=iPhone 14'
+        run: xcodebuild test-without-building -scheme FlyoverKit -destination 'platform=iOS Simulator,name=iPhone 14'
   tvOS:
     name: Build and test on tvOS
     runs-on: macOS-12
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: xcodebuild build-for-testing -scheme VanMoofKit -destination 'platform=tvOS Simulator,name=Apple TV'
+        run: xcodebuild build-for-testing -scheme FlyoverKit -destination 'platform=tvOS Simulator,name=Apple TV'
       - name: Test
-        run: xcodebuild test-without-building -scheme VanMoofKit -destination 'platform=tvOS Simulator,name=Apple TV'
+        run: xcodebuild test-without-building -scheme FlyoverKit -destination 'platform=tvOS Simulator,name=Apple TV'
