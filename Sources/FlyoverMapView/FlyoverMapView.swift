@@ -39,14 +39,14 @@ open class FlyoverMapView: MKMapView {
         super.init(frame: frame)
         #if !os(tvOS)
         self.showsCompass = false
+        self.isPitchEnabled = false
+        self.isRotateEnabled = false
         #endif
         self.pointOfInterestFilter = .excludingAll
         self.showsBuildings = true
         self.showsScale = false
         self.isZoomEnabled = false
-        self.isPitchEnabled = false
         self.isScrollEnabled = false
-        self.isRotateEnabled = false
     }
     
     /// Initializer with NSCoder is unavailable
