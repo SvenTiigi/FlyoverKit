@@ -41,10 +41,8 @@ struct ContentView: View {
 
     var body: some View {
         FlyoverMap(
-            coordinate: .init(
-                latitude: 37.8023,
-                longitude: -122.4057
-            )
+            latitude: 37.3348,
+            longitude: -122.0090
         )
     }
 
