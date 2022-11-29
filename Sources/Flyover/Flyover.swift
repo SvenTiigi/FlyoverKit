@@ -135,7 +135,7 @@ public extension Flyover {
     /// - Returns: A Bool value if the Flyover could be resumed
     @discardableResult
     func resume() -> Bool {
-        // Verify is not started
+        // Verify flyover is not started
         guard !self.isStarted else {
             // Otherwise return false as Flyover can not be resumed
             return false
