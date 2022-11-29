@@ -1,7 +1,7 @@
 <br/>
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/SvenTiigi/FlyoverKit/gh-pages/readMeAssets/logo.png" width="30%" alt="logo">
+    <img src="Assets/logo.png" width="30%" alt="logo">
 </p>
 
 <h1 align="center">
@@ -13,33 +13,41 @@
 </p>
 
 <p align="center">
-   <a href="https://github.com/SvenTiigi/FlyoverKit/actions?query=workflow%3ACI">
-      <img src="https://github.com/SvenTiigi/FlyoverKit/workflows/CI/badge.svg" alt="CI Status">
+   <a href="https://swiftpackageindex.com/SvenTiigi/FlyoverKit">
+    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FSvenTiigi%2FFlyoverKit%2Fbadge%3Ftype%3Dswift-versions" alt="Swift Version">
    </a>
-   <a href="https://sventiigi.github.io/FlyoverKit">
-      <img src="https://github.com/SvenTiigi/FlyoverKit/blob/gh-pages/badge.svg" alt="Documentation">
+   <a href="https://swiftpackageindex.com/SvenTiigi/FlyoverKit">
+    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FSvenTiigi%2FFlyoverKit%2Fbadge%3Ftype%3Dplatforms" alt="Platforms">
    </a>
-   <img src="https://img.shields.io/badge/platform-iOS%20%7C%20tvOS-F05138" alt="Platform">
+   <br/>
+   <a href="https://github.com/SvenTiigi/FlyoverKit/actions/workflows/build_and_test.yml">
+       <img src="https://github.com/SvenTiigi/FlyoverKit/actions/workflows/build_and_test.yml/badge.svg" alt="Build and Test Status">
+   </a>
+   <a href="https://sventiigi.github.io/FlyoverKit/documentation/flyoverkit/">
+       <img src="https://img.shields.io/badge/Documentation-DocC-blue" alt="Documentation">
+   </a>
    <a href="https://twitter.com/SvenTiigi/">
       <img src="https://img.shields.io/badge/Twitter-@SvenTiigi-blue.svg?style=flat" alt="Twitter">
    </a>
 </p>
+
+<img align="right" width="307" src="Assets/example-app.png" alt="Example application">
 
 ```swift
 import SwiftUI
 import FlyoverKit
 
 struct ContentView: View {
-    
+
     var body: some View {
         FlyoverMap(
             coordinate: .init(
-                latitude: 37.8023, 
+                latitude: 37.8023,
                 longitude: -122.4057
             )
         )
     }
-    
+
 }
 ```
 
@@ -81,7 +89,7 @@ var body: some View {
         isStarted: true,
         // The coordinate to perform the flyover on
         coordinate: CLLocationCoordinate2D(
-            latitude: 37.8023, 
+            latitude: 37.8023,
             longitude: -122.4057
         ),
         configuration: Flyover.Configuration(
@@ -111,7 +119,7 @@ if flyoverMapView.isFlyoverStarted {
 
 flyoverMapView.startFlyover(
     at: CLLocationCoordinate2D(
-        latitude: 37.8023, 
+        latitude: 37.8023,
         longitude: -122.4057
     ),
     configuration: .default
@@ -131,6 +139,7 @@ let flyover = Flyover(
     mapView: self.mapView
 )
 ```
+
 > Note: The provided MKMapView is always weakly referenced
 
 ## License
