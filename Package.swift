@@ -20,6 +20,13 @@ let package = Package(
         .target(
             name: "FlyoverKit",
             path: "Sources"
+        ),
+        .testTarget(
+            name: "FlyoverKitTests",
+            dependencies: [
+                "FlyoverKit"
+            ],
+            path: "Tests"
         )
     ]
 )
