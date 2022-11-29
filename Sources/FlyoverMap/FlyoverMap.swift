@@ -48,6 +48,40 @@ public struct FlyoverMap {
     
 }
 
+// MARK: - Convenience Initializer
+
+public extension FlyoverMap {
+    
+    /// Creates a new instance of `FlyoverMap`
+    /// - Parameters:
+    ///   - isStarted: Bool value if Flyover is started. Default value `true`
+    ///   - latitude: The latitude.
+    ///   - longitude: The longitude.
+    ///   - configuration: The Flyover Configuration. Default value `.default`
+    ///   - mapView: The MapType. Default value `.standard`
+    ///   - updateMapView: A closure to update the underlying FlyoverMapView. Default value `nil`
+    init(
+        isStarted: Bool = true,
+        latitude: CLLocationDegrees,
+        longitude: CLLocationDegrees,
+        configuration: Flyover.Configuration = .default,
+        mapType: MKMapType = .standard,
+        updateMapView: ((FlyoverMapView) -> Void)? = nil
+    ) {
+        self.init(
+            isStarted: isStarted,
+            coordinate: .init(
+                latitude: latitude,
+                longitude: longitude
+            ),
+            configuration: configuration,
+            mapType: mapType,
+            updateMapView: updateMapView
+        )
+    }
+    
+}
+
 // MARK: - UIViewRepresentable
 
 extension FlyoverMap: UIViewRepresentable {
