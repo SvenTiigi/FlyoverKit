@@ -1,0 +1,34 @@
+name: Build and Test
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'Sources/**'
+      - 'Tests/**'
+      - '!Sources/Documentation.docc/**'
+  pull_request:
+    paths:
+      - 'Sources/**'
+      - 'Tests/**'
+      - '!Sources/Documentation.docc/**'
+
+jobs:
+  iOS:
+    name: Build and test on iOS
+    runs-on: macOS-12
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: xcodebuild build-for-testing -scheme VanMoofKit -destination 'platform=iOS Simulator,name=iPhone 14'
+      - name: Test
+        run: xcodebuild test-without-building -scheme VanMoofKit -destination 'platform=iOS Simulator,name=iPhone 14'
+  tvOS:
+    name: Build and test on tvOS
+    runs-on: macOS-12
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: xcodebuild build-for-testing -scheme VanMoofKit -destination 'platform=tvOS Simulator,name=Apple TV'
+      - name: Test
+        run: xcodebuild test-without-building -scheme VanMoofKit -destination 'platform=tvOS Simulator,name=Apple TV'
