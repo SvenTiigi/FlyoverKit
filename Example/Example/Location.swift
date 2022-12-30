@@ -78,13 +78,6 @@ extension Location {
             )
         ),
         .init(
-            name: "Golden Gate Bridge",
-            coordinate: .init(
-                latitude: 37.8199,
-                longitude: -122.4783
-            )
-        ),
-        .init(
             name: "Coit Tower",
             coordinate: .init(
                 latitude: 37.8024,
@@ -117,13 +110,6 @@ extension Location {
             coordinate: .init(
                 latitude: 51.4994,
                 longitude: -0.1245
-            )
-        ),
-        .init(
-            name: "Tower Bridge",
-            coordinate: .init(
-                latitude: 51.5055,
-                longitude: -0.0754
             )
         )
     ]

@@ -195,7 +195,7 @@ private extension ContentView {
                     title: "Altitude",
                     content: Slider(
                         value: self.$altitude,
-                        in: 0...2000,
+                        in: 0...5000,
                         label: { EmptyView() },
                         minimumValueLabel: { Text(verbatim: "") },
                         maximumValueLabel: {
