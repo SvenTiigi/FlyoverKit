@@ -55,12 +55,13 @@ public extension Flyover {
         // Check if coordinate has changed
         if self.context?.matches(with: coordinate) == false {
             // Change camera to new coordinate without animation
-            mapView.camera = .init(
+            let newCamera = MKMapCamera(
                 lookingAtCenter: coordinate,
                 fromDistance: mapView.camera.centerCoordinateDistance,
                 pitch: mapView.camera.pitch,
                 heading: mapView.camera.heading
             )
+            mapView.setCamera(newCamera, animated: configuration.animateLocationChanges)
         }
         // Set Context
         self.context = .init(
